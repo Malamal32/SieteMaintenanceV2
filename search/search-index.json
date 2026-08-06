@@ -1,0 +1,39 @@
+[
+  {
+    "title": "DACs Check Weigher",
+    "machine": "DACs",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/dacs.html",
+    "keywords": [
+      "check weigher",
+      "weight",
+      "lines 1 3 4"
+    ]
+  },
+  {
+    "title": "DACs Operation and Service Manual",
+    "machine": "DACs",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/dacs/operation-service-manual.html",
+    "keywords": [
+      "overview",
+      "setup",
+      "mechanical",
+      "electrical",
+      "troubleshooting"
+    ]
+  },
+  {
+    "title": "DACs Check Weigher Calibration",
+    "machine": "DACs",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/dacs/calibration.pdf",
+    "keywords": [
+      "calibration",
+      "weight"
+    ]
+  }
+]
