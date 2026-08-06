@@ -13,6 +13,90 @@
     <title>Siete Maintenance</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .portal-search-section {
+            padding: 0 24px 24px;
+        }
+
+        .portal-search-form {
+            display: flex;
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid rgba(20, 106, 165, 0.28);
+            border-radius: 12px;
+            box-shadow: 0 7px 20px rgba(18, 62, 105, 0.12);
+        }
+
+        .portal-search-input {
+            flex: 1;
+            min-width: 0;
+            padding: 14px 16px;
+            color: #172033;
+            background: #ffffff;
+            border: 0;
+            font: inherit;
+        }
+
+        .portal-search-input:focus {
+            outline: none;
+        }
+
+        .portal-search-button {
+            flex-shrink: 0;
+            padding: 12px 18px;
+            color: #ffffff;
+            background: #146aa5;
+            border: 0;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .portal-search-button:hover {
+            background: #0f4f82;
+        }
+
+        .portal-search-note {
+            max-width: 760px;
+            margin: 7px auto 0;
+            color: #66788a;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            .portal-search-section {
+                padding: 0 14px 18px;
+            }
+
+            .portal-search-form {
+                display: block;
+                overflow: visible;
+                background: transparent;
+                border: 0;
+                box-shadow: none;
+            }
+
+            .portal-search-input,
+            .portal-search-button {
+                width: 100%;
+                border-radius: 9px;
+            }
+
+            .portal-search-input {
+                border: 1px solid rgba(20, 106, 165, 0.28);
+                box-shadow: 0 5px 14px rgba(18, 62, 105, 0.1);
+            }
+
+            .portal-search-button {
+                margin-top: 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +118,41 @@
             </p>
 
         </header>
+
+        <section
+            class="portal-search-section"
+            aria-label="Search maintenance documentation"
+        >
+
+            <form
+                class="portal-search-form"
+                action="search/index.html"
+                method="get"
+            >
+
+                <input
+                    class="portal-search-input"
+                    type="search"
+                    name="q"
+                    placeholder="Search machines, manuals, SOPs, or keywords..."
+                    aria-label="Search maintenance documentation"
+                >
+
+                <button
+                    class="portal-search-button"
+                    type="submit"
+                >
+                    Search
+                </button>
+
+            </form>
+
+            <p class="portal-search-note">
+                Search examples: DACs, calibration, servo parameters, load cell, or troubleshooting.
+            </p>
+
+        </section>
+
 
 
         <section class="department-section">
@@ -131,7 +250,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/ishida-bagger.html">
+                                    <a href="machines/chips/ishida-bagger.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -161,7 +280,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/raumak-bagger.html">
+                                    <a href="machines/chips/raumak-bagger.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -191,7 +310,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/ishida-scaler.html">
+                                    <a href="machines/chips/ishida-scaler.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -221,7 +340,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/fastback.html">
+                                    <a href="machines/chips/fastback.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -251,7 +370,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/fryer.html">
+                                    <a href="machines/chips/fryer.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -281,7 +400,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/sprayer-tumbler.html">
+                                    <a href="machines/chips/sprayer-tumbler.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -311,7 +430,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="chips/bpa-collator.html">
+                                    <a href="machines/chips/bpa-collator.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -432,7 +551,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/dacs.html">
+                                    <a href="machines/tortillas/dacs.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -462,7 +581,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/x-ray.html">
+                                    <a href="machines/tortillas/x-ray.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -492,7 +611,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/sealer.html">
+                                    <a href="machines/tortillas/sealer.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -522,7 +641,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/box-former.html">
+                                    <a href="machines/tortillas/box-former.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -552,7 +671,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/rotary-table.html">
+                                    <a href="machines/tortillas/rotary-table.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -582,7 +701,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/taping-machine.html">
+                                    <a href="machines/tortillas/taping-machine.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -611,7 +730,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/counter-stacker.html">
+                                    <a href="machines/tortillas/counter-stacker.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -641,7 +760,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/am-press.html">
+                                    <a href="machines/tortillas/am-press.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
@@ -671,7 +790,7 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="tortillas/vemag.html">
+                                    <a href="machines/tortillas/vemag.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
