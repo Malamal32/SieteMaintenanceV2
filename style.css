@@ -1,0 +1,850 @@
+/* =========================
+   Base Reset
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef6ff 0%,
+            #ffffff 50%,
+            #e8f2fc 100%
+        );
+
+    color: #172033;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   Main Page Container
+========================= */
+
+.page-container {
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d7e4f0;
+    border-radius: 14px;
+
+    box-shadow:
+        0 14px 34px rgba(18, 62, 105, 0.15);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.site-header {
+    padding: 34px 29px 29px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f4f9ff 100%
+        );
+
+    border-bottom: 3px solid #14588f;
+}
+
+.site-header h1 {
+    margin-bottom: 21px;
+
+    color: #14588f;
+
+    font-size: clamp(1.75rem, 4vw, 2.65rem);
+    font-weight: 750;
+
+    letter-spacing: 0.6px;
+}
+
+.site-logo {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto 19px;
+
+    border-radius: 9px;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 6px 15px rgba(19, 42, 69, 0.16);
+}
+
+.site-subtitle {
+    color: #52657a;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   Department Section
+========================= */
+
+.department-section {
+    padding: 29px;
+}
+
+.department-card {
+    margin-bottom: 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #bad1e8;
+    border-radius: 11px;
+
+    box-shadow:
+        0 6px 15px rgba(17, 76, 130, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.department-card:last-child {
+    margin-bottom: 0;
+}
+
+.department-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 21px rgba(17, 76, 130, 0.14);
+}
+
+.chips-card:hover,
+.chips-card[open] {
+    border-color: #36c4b5;
+}
+
+.tortillas-card:hover,
+.tortillas-card[open] {
+    border-color: #e5007d;
+}
+
+
+/* =========================
+   Department Dropdown Header
+========================= */
+
+.department-title {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 62px;
+
+    padding: 16px 60px;
+
+    color: #ffffff;
+
+    font-size: 1.1rem;
+    font-weight: 750;
+
+    text-align: center;
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+    user-select: none;
+
+    list-style: none;
+}
+
+.department-title::-webkit-details-marker {
+    display: none;
+}
+
+.department-title::marker {
+    content: "";
+}
+
+.department-name {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.chips-card .department-title {
+    background:
+        linear-gradient(
+            135deg,
+            #20a99b,
+            #3bc8b8
+        );
+}
+
+.tortillas-card .department-title {
+    background:
+        linear-gradient(
+            135deg,
+            #c90073,
+            #e60082
+        );
+}
+
+
+/* =========================
+   Department Arrow
+========================= */
+
+.dropdown-icon {
+    position: absolute;
+
+    top: 50%;
+    right: 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.department-title:hover .dropdown-icon {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.department-card[open] .dropdown-icon {
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+
+/* =========================
+   Department Content
+========================= */
+
+.department-content {
+    padding: 20px;
+
+    background-color: #fbfdff;
+}
+
+
+/* =========================
+   All SOPs and Manuals
+========================= */
+
+.featured-links {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 23px;
+}
+
+.featured-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 71px;
+
+    padding: 14px;
+
+    color: #174d7a;
+
+    background-color: #ffffff;
+
+    border: 1px solid #b9d2ea;
+    border-left: 4px solid #14588f;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 4px 11px rgba(18, 82, 140, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.featured-link:hover {
+    transform: translateY(-2px);
+
+    background-color: #eef6ff;
+
+    box-shadow:
+        0 7px 15px rgba(18, 82, 140, 0.14);
+}
+
+.link-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: #e7f2fc;
+
+    border-radius: 8px;
+
+    font-size: 1.2rem;
+}
+
+.link-text {
+    display: block;
+}
+
+.featured-link strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #0d5da1;
+
+    font-size: 0.85rem;
+}
+
+.featured-link small {
+    display: block;
+
+    color: #637489;
+
+    font-size: 0.67rem;
+}
+
+
+/* =========================
+   Machine Section
+========================= */
+
+.machine-section {
+    padding-top: 3px;
+}
+
+.machine-heading {
+    margin-bottom: 11px;
+    padding-bottom: 8px;
+
+    color: #123f68;
+
+    border-bottom: 2px solid #dbe9f6;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Machine List
+========================= */
+
+.machine-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   Individual Machine Card
+========================= */
+
+.machine-dropdown {
+    width: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d2e1ef;
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 8px rgba(17, 76, 130, 0.05);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.machine-dropdown:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(17, 76, 130, 0.1);
+}
+
+
+/* =========================
+   Machine Name Button
+========================= */
+
+.machine-dropdown summary {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+    min-height: 41px;
+
+    padding: 11px 38px 11px 14px;
+
+    color: #174e7c;
+    background-color: #ffffff;
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    user-select: none;
+
+    list-style: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.machine-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.machine-dropdown summary::marker {
+    content: "";
+}
+
+.machine-dropdown summary::after {
+    content: "⌄";
+
+    position: absolute;
+
+    top: 50%;
+    right: 13px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    transform: translateY(-50%);
+
+    transition: transform 0.2s ease;
+}
+
+.machine-dropdown[open] summary::after {
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+
+/* =========================
+   Stacked Machine Links
+========================= */
+
+.machine-resources {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border-top: 1px solid #dce8f3;
+
+    background-color: #f8fbff;
+}
+
+.machine-resources a {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    width: 100%;
+    min-height: 38px;
+
+    padding: 8px 11px;
+
+    color: #174e7c;
+    background-color: #ffffff;
+
+    border: 1px solid #d8e5f0;
+    border-radius: 6px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    text-align: left;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.machine-resources a:hover {
+    transform: translateX(2px);
+}
+
+.machine-resources a span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 23px;
+    height: 23px;
+
+    border-radius: 5px;
+
+    background-color: #edf4fb;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   Chips Colors
+========================= */
+
+.chips-card .featured-link {
+    border-left-color: #27b6a8;
+}
+
+.chips-card .featured-link strong {
+    color: #128c82;
+}
+
+.chips-card .link-icon {
+    background-color: #e3f8f5;
+}
+
+.chips-card .machine-dropdown summary::after {
+    color: #128c82;
+}
+
+.chips-card .machine-dropdown[open] {
+    border-color: #57c9bd;
+}
+
+.chips-card .machine-dropdown summary:hover,
+.chips-card .machine-dropdown[open] > summary {
+    color: #117d75;
+
+    background-color: #ebfbf8;
+}
+
+.chips-card .machine-resources {
+    background-color: #f3fcfa;
+}
+
+.chips-card .machine-resources a {
+    color: #117d75;
+
+    border-color: #cceee9;
+}
+
+.chips-card .machine-resources a span {
+    background-color: #e3f8f5;
+}
+
+.chips-card .machine-resources a:hover {
+    color: #0b716a;
+
+    background-color: #e1f8f4;
+
+    border-color: #57c9bd;
+}
+
+
+/* =========================
+   Tortillas Colors
+========================= */
+
+.tortillas-card .featured-link {
+    border-left-color: #d70078;
+}
+
+.tortillas-card .featured-link strong {
+    color: #c1006d;
+}
+
+.tortillas-card .link-icon {
+    background-color: #fde8f3;
+}
+
+.tortillas-card .machine-dropdown summary::after {
+    color: #c1006d;
+}
+
+.tortillas-card .machine-dropdown[open] {
+    border-color: #ec79b7;
+}
+
+.tortillas-card .machine-dropdown summary:hover,
+.tortillas-card .machine-dropdown[open] > summary {
+    color: #a90060;
+
+    background-color: #fff0f7;
+}
+
+.tortillas-card .machine-resources {
+    background-color: #fff7fb;
+}
+
+.tortillas-card .machine-resources a {
+    color: #a90060;
+
+    border-color: #f1cade;
+}
+
+.tortillas-card .machine-resources a span {
+    background-color: #fde8f3;
+}
+
+.tortillas-card .machine-resources a:hover {
+    color: #930054;
+
+    background-color: #fde5f1;
+
+    border-color: #ec79b7;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    padding: 20px 15px;
+
+    color: #ffffff;
+
+    background-color: #14588f;
+
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 0.8rem;
+    font-weight: 650;
+}
+
+.footer-note {
+    margin-top: 4px;
+
+    color: #d7e8f8;
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================
+   Keyboard Accessibility
+========================= */
+
+a:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   Tablet and Mobile
+========================= */
+
+@media screen and (max-width: 700px) {
+
+    body {
+        padding: 15px 9px;
+    }
+
+    .site-header {
+        padding: 26px 17px 23px;
+    }
+
+    .site-header h1 {
+        margin-bottom: 17px;
+    }
+
+    .site-logo {
+        border-radius: 7px;
+    }
+
+    .department-section {
+        padding: 17px;
+    }
+
+    .department-title {
+        min-height: 53px;
+
+        padding: 14px 49px;
+
+        font-size: 0.95rem;
+    }
+
+    .dropdown-icon {
+        right: 14px;
+
+        width: 26px;
+        height: 26px;
+
+        font-size: 1rem;
+    }
+
+    .department-content {
+        padding: 15px;
+    }
+
+    .featured-links {
+        grid-template-columns: 1fr;
+    }
+
+    .machine-list {
+        grid-template-columns: 1fr;
+    }
+
+    .machine-dropdown summary {
+        font-size: 0.8rem;
+    }
+
+    .machine-resources a {
+        font-size: 0.75rem;
+    }
+
+}
+
+
+@media screen and (max-width: 420px) {
+
+    body {
+        padding: 0;
+    }
+
+    .page-container {
+        border: none;
+        border-radius: 0;
+    }
+
+    .site-header {
+        padding: 23px 12px 19px;
+    }
+
+    .site-header h1 {
+        font-size: 1.65rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .department-section {
+        padding: 12px;
+    }
+
+    .department-content {
+        padding: 12px;
+    }
+
+    .department-title {
+        padding-right: 44px;
+        padding-left: 44px;
+    }
+
+    .dropdown-icon {
+        right: 11px;
+
+        width: 25px;
+        height: 25px;
+    }
+
+    .featured-link {
+        align-items: flex-start;
+
+        padding: 12px;
+    }
+
+    .featured-link small {
+        font-size: 0.7rem;
+    }
+
+}
