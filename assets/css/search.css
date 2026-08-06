@@ -1,0 +1,3 @@
+
+.search-wrap{position:relative;width:min(760px,100%);margin:0 auto 24px}.search-input{width:100%;padding:14px 16px;border:1px solid #b9dcef;border-radius:10px;font:inherit;box-shadow:0 4px 14px rgba(18,62,105,.08)}
+.search-results{display:none;margin-top:8px;overflow:hidden;background:#fff;border:1px solid #cfddea;border-radius:10px;box-shadow:0 10px 24px rgba(18,62,105,.15)}.search-results.active{display:block}.search-result{display:block;padding:12px 14px;color:#173e61;border-bottom:1px solid #e3edf4;text-decoration:none}.search-result:hover{background:#f1f9ff}.search-result strong{display:block;color:#0f5f98}.search-result span{color:#66788a;font-size:.75rem}.search-empty{padding:14px;color:#66788a;font-size:.8rem}
