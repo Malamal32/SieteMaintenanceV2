@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ishida scaler and multihead weigher machine information for all Chips lines.">
+<title>Ishida Scaler | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:24px;
+}
+.action-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:76px;
+    padding:18px;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    background:#fff;
+    text-decoration:none;
+    font-weight:800;
+    color:#0a4f86;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+.spec-table,.asset-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    overflow:hidden;
+}
+.spec-table th,.spec-table td,.asset-table th,.asset-table td{
+    padding:15px 18px;
+    border-bottom:1px solid #dbe7f1;
+    text-align:left;
+    vertical-align:top;
+}
+.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{
+    border-bottom:0;
+}
+.spec-table th{
+    width:33%;
+    background:#f1f7fb;
+    color:#074d82;
+}
+.asset-table thead th{
+    background:#17679f;
+    color:#fff;
+}
+.asset-table tbody tr:nth-child(even){
+    background:#f6f9fc;
+}
+.line-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    background:#eaf4fb;
+    color:#07578f;
+    font-weight:800;
+}
+.notice{
+    margin-top:20px;
+    padding:18px;
+    border-left:5px solid #e2b400;
+    border-radius:12px;
+    background:#fff9dd;
+}
+@media(max-width:720px){
+    .action-grid{grid-template-columns:1fr}
+    .spec-table th,.spec-table td{display:block;width:auto}
+    .asset-table{display:block;overflow-x:auto}
+}
+</style>
+</head>
+
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="../../index.html">← Home</a>
+
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">⚖️</div>
+<div>
+<p class="eyebrow">Chips Maintenance</p>
+<h1>Ishida Scaler</h1>
+<p class="header-subtitle">CCW-RV / CCW-RVE Series Multihead Computer Weigher</p>
+</div>
+</div>
+</header>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Quick Access</p>
+<h2>Ishida Scaler Resources</h2>
+</div>
+<span class="line-badge">All Chips Lines</span>
+</div>
+
+<div class="action-grid">
+<a class="action-card" href="../../manuals/chips/ishida-scaler.html">📘 Manuals</a>
+<a class="action-card" href="../../sops/chips/ishida-scaler.html">📋 SOPs</a>
+<a class="action-card" href="#machine-information">⚙️ Machine Information</a>
+</div>
+</section>
+
+
+<section class="content-section" id="machine-information">
+<div class="section-heading">
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
+</div>
+<span class="line-badge">Plant-Wide / All Lines</span>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
+<tr><th>Equipment Type</th><td>Multihead Computer Weigher / Combination Scaler</td></tr>
+<tr><th>Series</th><td>CCW-RV / CCW-RVE Series</td></tr>
+<tr><th>Installed Area</th><td>Used across all Chips production lines</td></tr>
+<tr><th>Primary Function</th><td>Automatically weighs product using multiple weigh hoppers and selects the hopper combination that most closely matches the required target package weight.</td></tr>
+<tr><th>Product Flow</th><td>Dispersion table → radial feeders → pool hoppers → weigh hoppers → discharge chutes → packaging machine</td></tr>
+<tr><th>Control System</th><td>Remote operation panel / HMI with product presets, production settings, weighing adjustments, diagnostics, maintenance functions, and operating-level access</td></tr>
+<tr><th>Manual Families Available</th><td>CCW-RV-2**W Instruction Manual, CCW-RVE-2**W Spanish Instruction Manual, CCW-RVE-214W-1S/30-PB Parts Manual, and CCW-R-214W-1S/30 Technical Notes</td></tr>
+</tbody>
+</table>
+
+<div class="notice">
+<strong>Individual scaler identification is required for model-specific work.</strong><br>
+Because Ishida scalers are used across all Chips lines and the documentation covers multiple CCW-RV/RVE configurations, verify the exact model, project number, serial number, manufacturing date, and electrical data from each machine's nameplate before ordering parts or performing model-specific service.
+</div>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Weighing Process</p>
+<h2>Combination Weighing Overview</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>1. Dispersion Table</th><td>Receives incoming product and distributes it toward the radial feeder pans.</td></tr>
+<tr><th>2. Radial Feeders</th><td>Vibrate to move product from the dispersion area into the pool hoppers.</td></tr>
+<tr><th>3. Pool Hoppers</th><td>Temporarily hold product before releasing it into the weigh hoppers.</td></tr>
+<tr><th>4. Weigh Hoppers</th><td>Load cells measure the product in each hopper.</td></tr>
+<tr><th>5. Combination Calculation</th><td>The controller evaluates available hopper weights and selects the combination closest to the target package weight.</td></tr>
+<tr><th>6. Discharge</th><td>The selected product is released through the discharge chute to the bagger or downstream packaging machine.</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Reference Model</p>
+<h2>CCW-RVE-214W-1S/30-PB Parts Manual</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Model</th><td>CCW-RVE-214W-1S/30-PB</td></tr>
+<tr><th>Order Number</th><td>683867</td></tr>
+<tr><th>Project Number</th><td>2055376-01</td></tr>
+<tr><th>Parts Manual Coverage</th><td>Dispersion system, feed base, radial feeders, pool hoppers, weigh hoppers, main frame, discharge chute, main body, electrical unit, remote control box, and associated components.</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Asset Identification</p>
+<h2>Installed Ishida Scalers</h2>
+</div>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Production Line</th>
+<th>Model</th>
+<th>Project No.</th>
+<th>Serial No.</th>
+<th>Mfg. Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All Chips Lines</td>
+<td>Verify individual machine nameplate</td>
+<td>Verify individual machine nameplate</td>
+<td>Verify individual machine nameplate</td>
+<td>Verify individual machine nameplate</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Manufacturer Information</p>
+<h2>Ishida Co., Ltd.</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
+<tr><th>Country of Manufacture</th><td>Japan</td></tr>
+<tr><th>Manual Identification</th><td>The CCW-RV-2**W instruction manual uses PN 000-143-9007-39.</td></tr>
+<tr><th>Machine Identification</th><td>Model and machine identification are located on the device plate attached to each scaler.</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+</body>
+</html>
