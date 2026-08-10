@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All Chips manuals in Siete Maintenance.">
+<title>All Chips Manuals | Siete Maintenance</title>
+<link rel="stylesheet" href="assets/css/shared-blue-docs.css?v=2">
+<style>
+.search-panel {
+    margin: 24px 0 8px;
+}
+.manual-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 18px;
+    border: 1px solid #bfd6e8;
+    border-radius: 12px;
+    font: inherit;
+    background: #fff;
+    color: #123;
+}
+.manual-search:focus {
+    outline: 3px solid rgba(23,103,159,.16);
+    border-color: #17679f;
+}
+.search-status {
+    margin: 10px 2px 0;
+    color: #5b6f80;
+    font-size: .95rem;
+}
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+.manual-card {
+    display: grid;
+    grid-template-columns: 48px 1fr 26px;
+    gap: 14px;
+    align-items: start;
+    padding: 20px;
+    border: 1px solid #cfe0ef;
+    border-radius: 14px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+.manual-card:hover {
+    border-color: #8dbbdb;
+    transform: translateY(-1px);
+}
+.manual-card-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+.machine-label {
+    margin: 0 0 4px;
+    color: #17679f;
+    font-weight: 800;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+.manual-card h3 {
+    margin: 0 0 10px;
+    color: #073e69;
+}
+.manual-card ul {
+    margin: 0;
+    padding-left: 19px;
+    color: #516574;
+}
+.manual-card li + li {
+    margin-top: 5px;
+}
+.open-arrow {
+    font-size: 30px;
+    color: #17679f;
+    line-height: 1;
+}
+.no-results {
+    display: none;
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px dashed #b8cedf;
+    border-radius: 12px;
+    text-align: center;
+    color: #607687;
+    background: #f8fbfd;
+}
+@media (max-width: 800px) {
+    .manual-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="index.html">← Home</a>
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">📚</div>
+<div>
+<p class="eyebrow">Chips Maintenance</p>
+<h1>All Chips Manuals</h1>
+<p class="header-subtitle">Search or browse every chips manual currently in Siete Maintenance.</p>
+</div>
+</div>
+</header>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Manual Library</p>
+<h2>Available Equipment</h2>
+</div>
+<span class="count-badge">7 Machines · 19 Manual Entries</span>
+</div>
+
+<div class="search-panel">
+<label for="manualSearch" class="section-label">Search Manuals</label>
+<input id="manualSearch"
+       class="manual-search"
+       type="search"
+       placeholder="Search machine, model, manual, troubleshooting, electrical..."
+       autocomplete="off">
+<p id="searchStatus" class="search-status">Showing all 7 equipment groups.</p>
+</div>
+
+<div id="manualGrid" class="manual-grid">
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/ishida-bagger.html"
+   data-search="ishida bagger atlas-204/234 maintenance manual manual en español atlas-204/234 204 electrical and pneumatic prints atlas-234r parts manual atlas-204r-itps parts manual">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Ishida Bagger</p>
+        <h3>Ishida Bagger Manuals</h3>
+        <ul><li>ATLAS-204/234 Maintenance Manual</li><li>Manual en Español ATLAS-204/234</li><li>204 Electrical and Pneumatic Prints</li><li>ATLAS-234R Parts Manual</li><li>ATLAS-204R-ITPS Parts Manual</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/raumak-bagger.html"
+   data-search="raumak bagger multi bag g operation and maintenance manual">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Raumak Bagger</p>
+        <h3>Raumak Bagger Manuals</h3>
+        <ul><li>MULTI BAG G Operation and Maintenance Manual</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/ishida-scaler.html"
+   data-search="ishida scaler ccw-rv-2**w instruction manual manual de instrucciones ccw-rve-2**w ccw-rve-214w-1s/30-pb parts manual ccw-r-214w-1s/30 technical notes">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Ishida Scaler</p>
+        <h3>Ishida Scaler Manuals</h3>
+        <ul><li>CCW-RV-2**W Instruction Manual</li><li>Manual de Instrucciones CCW-RVE-2**W</li><li>CCW-RVE-214W-1S/30-PB Parts Manual</li><li>CCW-R-214W-1S/30 Technical Notes</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/collator.html"
+   data-search="collator bpa collator 200 user manual 97250 mechanical assemblies 110 vac 1 phase collator electrical schematics">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Collator</p>
+        <h3>Collator Manuals</h3>
+        <ul><li>BPA Collator 200 User Manual</li><li>97250 Mechanical Assemblies</li><li>110 VAC 1 Phase Collator Electrical Schematics</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/fastback.html"
+   data-search="fastback fastback 90e / 90e-g2 technical manual fastback 260e-g2 technical manual ppm cd30/35 controller manual &amp; start guide">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">FastBack</p>
+        <h3>FastBack Manuals</h3>
+        <ul><li>FastBack 90E / 90E-G2 Technical Manual</li><li>FastBack 260E-G2 Technical Manual</li><li>PPM CD30/35 Controller Manual &amp; Start Guide</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/fryer.html"
+   data-search="fryer honeywell udc3200 temperature controller">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Fryer</p>
+        <h3>Fryer Manuals</h3>
+        <ul><li>Honeywell UDC3200 Temperature Controller</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/sprayer-tumbler.html"
+   data-search="sprayer &amp; tumbler spray dynamics scarf feeder drawings">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Sprayer &amp; Tumbler</p>
+        <h3>Sprayer &amp; Tumbler Manuals</h3>
+        <ul><li>Spray Dynamics Scarf Feeder</li><li>Drawings</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+</div>
+
+<div id="noResults" class="no-results">
+No manuals matched your search.
+</div>
+</section>
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+
+<script>
+const searchBox = document.getElementById('manualSearch');
+const cards = Array.from(document.querySelectorAll('.searchable-card'));
+const status = document.getElementById('searchStatus');
+const noResults = document.getElementById('noResults');
+
+function filterManuals() {
+    const terms = searchBox.value
+        .toLowerCase()
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+
+    let visible = 0;
+
+    cards.forEach(card => {
+        const haystack = (card.dataset.search + ' ' + card.textContent).toLowerCase();
+        const match = terms.every(term => haystack.includes(term));
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+    });
+
+    if (terms.length === 0) {
+        status.textContent = 'Showing all 7 equipment groups.';
+    } else {
+        status.textContent = `Showing ${visible} matching equipment group${visible === 1 ? '' : 's'}.`;
+    }
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+}
+
+searchBox.addEventListener('input', filterManuals);
+</script>
+
+</body>
+</html>
