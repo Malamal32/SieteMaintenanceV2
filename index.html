@@ -48,16 +48,21 @@
         .portal-search-button {
             flex-shrink: 0;
             padding: 12px 18px;
-            color: #ffffff;
-            background: #146aa5;
+            color: #201b36;
+            background: #f6a800;
             border: 0;
             font: inherit;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
         }
 
         .portal-search-button:hover {
-            background: #0f4f82;
+            background: #dd9600;
+        }
+
+        .portal-search-button:focus-visible {
+            outline: 3px solid rgba(246, 168, 0, 0.36);
+            outline-offset: 2px;
         }
 
         .portal-search-note {
@@ -65,6 +70,79 @@
             margin: 7px auto 0;
             color: #66788a;
             font-size: 0.75rem;
+            text-align: center;
+        }
+
+        .portal-search-results {
+            display: none;
+            width: 100%;
+            max-width: 760px;
+            margin: 12px auto 0;
+            padding: 8px;
+            background: #ffffff;
+            border: 1px solid #d3e2ef;
+            border-radius: 12px;
+            box-shadow: 0 9px 24px rgba(18, 62, 105, 0.13);
+        }
+
+        .portal-search-results.is-visible {
+            display: block;
+        }
+
+        .portal-search-result {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 12px;
+            color: #174e7c;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .portal-search-result:hover,
+        .portal-search-result:focus-visible {
+            background: #eef6ff;
+            outline: none;
+        }
+
+        .portal-search-result + .portal-search-result {
+            border-top: 1px solid #edf2f7;
+        }
+
+        .search-result-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 34px;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: #fff4cc;
+            font-size: 1rem;
+        }
+
+        .search-result-copy {
+            min-width: 0;
+        }
+
+        .search-result-title {
+            display: block;
+            color: #123f68;
+            font-size: 0.82rem;
+            font-weight: 750;
+        }
+
+        .search-result-meta {
+            display: block;
+            margin-top: 2px;
+            color: #66788a;
+            font-size: 0.68rem;
+        }
+
+        .portal-search-empty {
+            padding: 12px;
+            color: #66788a;
+            font-size: 0.76rem;
             text-align: center;
         }
 
@@ -126,12 +204,13 @@
 
             <form
                 class="portal-search-form"
-                action="search/index.html"
-                method="get"
+                id="portalSearchForm"
+                role="search"
             >
 
                 <input
                     class="portal-search-input"
+                    id="portalSearchInput"
                     type="search"
                     name="q"
                     placeholder="Search machines, manuals, SOPs, or keywords..."
@@ -148,8 +227,14 @@
             </form>
 
             <p class="portal-search-note">
-                Search examples: DACs, calibration, servo parameters, load cell, or troubleshooting.
+                Search examples: ATLAS, BEL 505, FastBack, electrical, parts, UDC3200, VEMAG, or troubleshooting.
             </p>
+
+            <div
+                class="portal-search-results"
+                id="portalSearchResults"
+                aria-live="polite"
+            ></div>
 
         </section>
 
@@ -430,17 +515,17 @@
 
                                 <div class="machine-resources">
 
-                                    <a href="machines/chips/bpa-collator.html">
+                                    <a href="machines/chips/collator.html">
                                         <span aria-hidden="true">⚙️</span>
                                         Machine Page
                                     </a>
 
-                                    <a href="sops/chips/bpa-collator.html">
+                                    <a href="sops/chips/collator.html">
                                         <span aria-hidden="true">📋</span>
                                         SOPs
                                     </a>
 
-                                    <a href="manuals/chips/bpa-collator.html">
+                                    <a href="manuals/chips/collator.html">
                                         <span aria-hidden="true">📘</span>
                                         Manuals
                                     </a>
@@ -833,6 +918,344 @@
         </footer>
 
     </main>
+
+
+    <script>
+        const manualSearchIndex = [
+        {
+                "title": "ATLAS-204/234 Maintenance Manual",
+                "machine": "Ishida Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-bagger/atlas-204-234-maintenance.html",
+                "keywords": "ishida bagger atlas 204 234 maintenance safety inspection replacement adjustment controls electrical software drivers itps troubleshooting"
+        },
+        {
+                "title": "Manual en Español ATLAS-204/234",
+                "machine": "Ishida Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-bagger/atlas-204-234-espanol.html",
+                "keywords": "ishida bagger atlas 204 234 español spanish seguridad instalación operación producción limpieza mantenimiento problemas"
+        },
+        {
+                "title": "204 Electrical and Pneumatic Prints",
+                "machine": "Ishida Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-bagger/electrical-pneumatic-prints.html",
+                "keywords": "ishida bagger 204 electrical pneumatic prints wiring mcu scu xt1 air line manifold diagram"
+        },
+        {
+                "title": "ATLAS-234R Parts Manual",
+                "machine": "Ishida Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-bagger/atlas-234r-parts.html",
+                "keywords": "ishida bagger atlas 234r parts replacement parts end seal back seal film carrier air chuck electrical"
+        },
+        {
+                "title": "ATLAS-204R-ITPS Parts Manual",
+                "machine": "Ishida Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-bagger/atlas-204r-itps-parts.html",
+                "keywords": "ishida bagger atlas 204r itps parts replacement parts electrical accessories"
+        },
+        {
+                "title": "MULTI BAG G Operation and Maintenance Manual",
+                "machine": "Raumak Bagger",
+                "department": "Chips",
+                "href": "manuals/chips/raumak-bagger/multi-bag-g-operation-maintenance.html",
+                "keywords": "raumak bagger multi bag g operation maintenance hmi installation alarm electrical pneumatic mechanical troubleshooting"
+        },
+        {
+                "title": "CCW-RV-2**W Instruction Manual",
+                "machine": "Ishida Scaler",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-scaler/ccw-rv-2-instruction-manual.html",
+                "keywords": "ishida scaler ccw rv rve instruction scale multihead weigher operation screens calibration maintenance troubleshooting"
+        },
+        {
+                "title": "Manual de Instrucciones CCW-RVE-2**W",
+                "machine": "Ishida Scaler",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-scaler/ccw-rve-2-spanish-instruction-manual.html",
+                "keywords": "ishida scaler ccw rve español spanish instrucciones pesadora calibración mantenimiento errores"
+        },
+        {
+                "title": "CCW-RVE-214W-1S/30-PB Parts Manual",
+                "machine": "Ishida Scaler",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-scaler/ccw-rve-214-parts-manual.html",
+                "keywords": "ishida scaler ccw rve 214 parts manual hopper radial feeder dispersion electrical"
+        },
+        {
+                "title": "CCW-R-214W-1S/30 Technical Notes",
+                "machine": "Ishida Scaler",
+                "department": "Chips",
+                "href": "manuals/chips/ishida-scaler/ccw-r-214-technical-notes.html",
+                "keywords": "ishida scaler ccw r 214 technical notes calibration load cell accuracy settings maintenance"
+        },
+        {
+                "title": "BPA Collator 200 User Manual",
+                "machine": "BPA Collator",
+                "department": "Chips",
+                "href": "manuals/chips/collator/bpa-collator-200-user-manual.html",
+                "keywords": "bpa blueprint automation collator 200 user manual operation maintenance troubleshooting setup changeover"
+        },
+        {
+                "title": "97250 Mechanical Assemblies",
+                "machine": "BPA Collator",
+                "department": "Chips",
+                "href": "manuals/chips/collator/97250-mechanical-assemblies.html",
+                "keywords": "bpa blueprint collator 97250 mechanical assemblies drawings conveyor guard wheel hmi"
+        },
+        {
+                "title": "110 VAC 1 Phase Collator Electrical Schematics",
+                "machine": "BPA Collator",
+                "department": "Chips",
+                "href": "manuals/chips/collator/110-vac-1ph-electrical-schematics.html",
+                "keywords": "bpa collator electrical schematic wiring plc vfd ethernet 24vdc safety 110 vac"
+        },
+        {
+                "title": "FastBack 90E / 90E-G2 Technical Manual",
+                "machine": "FastBack",
+                "department": "Chips",
+                "href": "manuals/chips/fastback/fastback-90e-90e-g2-technical-manual.html",
+                "keywords": "fastback 90e 90e-g2 heat control conveyor maintenance troubleshooting spare parts torque oem"
+        },
+        {
+                "title": "FastBack 260E-G2 Technical Manual",
+                "machine": "FastBack",
+                "department": "Chips",
+                "href": "manuals/chips/fastback/fastback-260e-g2-technical-manual.html",
+                "keywords": "fastback 260e g2 heat control conveyor maintenance troubleshooting spare parts torque"
+        },
+        {
+                "title": "PPM CD30/35 Controller Manual & Start Guide",
+                "machine": "FastBack",
+                "department": "Chips",
+                "href": "manuals/chips/fastback/ppm-cd30-35-controller-manual.html",
+                "keywords": "ppm cd30 cd35 controller start guide wiring menu settings fault troubleshooting vibratory"
+        },
+        {
+                "title": "Honeywell UDC3200 Temperature Controller",
+                "machine": "Fryer",
+                "department": "Chips",
+                "href": "manuals/chips/fryer/honeywell-udc3200-temperature-controller.html",
+                "keywords": "fryer honeywell udc3200 temperature controller configuration calibration modbus ethernet troubleshooting"
+        },
+        {
+                "title": "Spray Dynamics Scarf Feeder",
+                "machine": "Sprayer & Tumbler",
+                "department": "Chips",
+                "href": "manuals/chips/sprayer-tumbler/scarf-feeder-manual.html",
+                "keywords": "sprayer tumbler spray dynamics scarf feeder seasoning vibratory controller reovib mfs268 maintenance"
+        },
+        {
+                "title": "Sprayer & Tumbler Drawings",
+                "machine": "Sprayer & Tumbler",
+                "department": "Chips",
+                "href": "manuals/chips/sprayer-tumbler/drawings.html",
+                "keywords": "sprayer tumbler drawings spray arm drum ms-i unispense sf-100 scarf feeder engineering"
+        },
+        {
+                "title": "DACs Manuals",
+                "machine": "DACs",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/dacs.html",
+                "keywords": "dacs checkweigher check weigher calibration setup electrical mechanical troubleshooting"
+        },
+        {
+                "title": "CE-3000-HVE Sealer Manual",
+                "machine": "Sealer",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/sealer.html",
+                "keywords": "sealer ce-3000-hve ce 3000 hve specifications operational use electrical diagram sealing unit conveyor parts troubleshooting"
+        },
+        {
+                "title": "Taping Machine Manuals",
+                "machine": "Taping Machine",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/taping-machine.html",
+                "keywords": "taping machine ec series sb-2 sb2 bb-2 bb2 case taper manual"
+        },
+        {
+                "title": "Rotary Table Manuals",
+                "machine": "Rotary Table",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/rotary-table.html",
+                "keywords": "rotary table manual parts operation troubleshooting"
+        },
+        {
+                "title": "Counter Stacker Manual & Training Guide",
+                "machine": "Counter Stacker",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/counter-stacker.html",
+                "keywords": "counter stacker genesis gv38 gv 38 40 training manual operation troubleshooting"
+        },
+        {
+                "title": "ROBOT HP Series Spare Parts Catalogue",
+                "machine": "VEMAG",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/vemag/robot-hp-series-parts-manual.html",
+                "keywords": "vemag robot hp7e hp10e hp12e hp15e hp20e spare parts vacuum filler hopper feed screw controls"
+        },
+        {
+                "title": "Wexxar BEL 505 / BEL 505S Operation & Service Manual",
+                "machine": "Box Former",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/box-former/bel-505-operation-service-manual.html",
+                "keywords": "box former wexxar bel 505 505s operation service installation adjustment troubleshooting"
+        },
+        {
+                "title": "Eastey EX-CF Industrial Semi-Automatic Case Former",
+                "machine": "Box Former",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/box-former/eastey-ex-cf-user-guide.html",
+                "keywords": "box former eastey ex-cf case former pneumatic parts air diagram troubleshooting"
+        },
+        {
+                "title": "X-Ray Manuals",
+                "machine": "X-Ray",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/x-ray.html",
+                "keywords": "ishida x-ray xray inspection parts manual troubleshooting"
+        },
+        {
+                "title": "AM Press Manuals",
+                "machine": "AM Press",
+                "department": "Tortillas",
+                "href": "manuals/tortillas/am-press.html",
+                "keywords": "am press hydraulic manual"
+        }
+];
+
+        const searchForm = document.getElementById("portalSearchForm");
+        const searchInput = document.getElementById("portalSearchInput");
+        const searchResults = document.getElementById("portalSearchResults");
+
+        function normalizeSearchText(value) {
+            return value
+                .toLowerCase()
+                .replace(/[-_/]+/g, " ")
+                .replace(/[^a-z0-9áéíóúüñ* ]+/gi, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function getManualMatches(query) {
+            const normalizedQuery = normalizeSearchText(query);
+
+            if (!normalizedQuery) {
+                return [];
+            }
+
+            const terms = normalizedQuery.split(" ").filter(Boolean);
+
+            return manualSearchIndex
+                .map(item => {
+                    const haystack = normalizeSearchText(
+                        `${item.title} ${item.machine} ${item.department} ${item.keywords}`
+                    );
+
+                    const matchedTerms = terms.filter(term => haystack.includes(term)).length;
+
+                    let score = matchedTerms * 10;
+
+                    if (normalizeSearchText(item.title).includes(normalizedQuery)) {
+                        score += 25;
+                    }
+
+                    if (normalizeSearchText(item.machine).includes(normalizedQuery)) {
+                        score += 15;
+                    }
+
+                    return {
+                        ...item,
+                        score,
+                        matchesAll: matchedTerms === terms.length
+                    };
+                })
+                .filter(item => item.matchesAll)
+                .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title))
+                .slice(0, 10);
+        }
+
+        function renderManualResults(query) {
+            const matches = getManualMatches(query);
+
+            searchResults.innerHTML = "";
+
+            if (!query.trim()) {
+                searchResults.classList.remove("is-visible");
+                return;
+            }
+
+            searchResults.classList.add("is-visible");
+
+            if (matches.length === 0) {
+                searchResults.innerHTML =
+                    '<div class="portal-search-empty">No manual matched that search. Try a machine, model, part type, or topic.</div>';
+                return;
+            }
+
+            matches.forEach(item => {
+                const link = document.createElement("a");
+                link.className = "portal-search-result";
+                link.href = item.href;
+
+                const icon = document.createElement("span");
+                icon.className = "search-result-icon";
+                icon.setAttribute("aria-hidden", "true");
+                icon.textContent = "📘";
+
+                const copy = document.createElement("span");
+                copy.className = "search-result-copy";
+
+                const title = document.createElement("span");
+                title.className = "search-result-title";
+                title.textContent = item.title;
+
+                const meta = document.createElement("span");
+                meta.className = "search-result-meta";
+                meta.textContent = `${item.department} · ${item.machine}`;
+
+                copy.appendChild(title);
+                copy.appendChild(meta);
+
+                link.appendChild(icon);
+                link.appendChild(copy);
+
+                searchResults.appendChild(link);
+            });
+        }
+
+        searchInput.addEventListener("input", () => {
+            renderManualResults(searchInput.value);
+        });
+
+        searchForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            const matches = getManualMatches(searchInput.value);
+
+            if (matches.length > 0) {
+                window.location.href = matches[0].href;
+            } else {
+                renderManualResults(searchInput.value);
+                searchInput.focus();
+            }
+        });
+
+        document.addEventListener("click", event => {
+            if (!searchForm.contains(event.target) && !searchResults.contains(event.target)) {
+                searchResults.classList.remove("is-visible");
+            }
+        });
+
+        searchInput.addEventListener("focus", () => {
+            if (searchInput.value.trim()) {
+                renderManualResults(searchInput.value);
+            }
+        });
+    </script>
 
 </body>
 </html>
