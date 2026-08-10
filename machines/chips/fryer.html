@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fryer machine information and controls documentation for Chips maintenance.">
+<title>Fryer | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:24px;
+}
+
+.action-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:76px;
+    padding:18px;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    background:#fff;
+    text-decoration:none;
+    font-weight:800;
+    color:#0a4f86;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.spec-table,
+.asset-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.spec-table th,
+.spec-table td,
+.asset-table th,
+.asset-table td{
+    padding:15px 18px;
+    border-bottom:1px solid #dbe7f1;
+    text-align:left;
+    vertical-align:top;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+    border-bottom:0;
+}
+
+.spec-table th{
+    width:33%;
+    background:#f1f7fb;
+    color:#074d82;
+}
+
+.asset-table thead th{
+    background:#17679f;
+    color:#fff;
+}
+
+.asset-table tbody tr:nth-child(even){
+    background:#f6f9fc;
+}
+
+.status-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    background:#eaf4fb;
+    color:#07578f;
+    font-weight:800;
+}
+
+.notice{
+    margin-top:20px;
+    padding:18px;
+    border-left:5px solid #e2b400;
+    border-radius:12px;
+    background:#fff9dd;
+}
+
+@media(max-width:720px){
+    .action-grid{grid-template-columns:1fr}
+    .spec-table th,.spec-table td{display:block;width:auto}
+    .asset-table{display:block;overflow-x:auto}
+}
+</style>
+</head>
+
+<body>
+
+<main class="page-container">
+
+<header class="page-header">
+
+<a class="back-link" href="../../index.html">
+← Home
+</a>
+
+<div class="header-content">
+
+<div class="header-icon" aria-hidden="true">
+🔥
+</div>
+
+<div>
+
+<p class="eyebrow">
+Chips Maintenance
+</p>
+
+<h1>
+Fryer
+</h1>
+
+<p class="header-subtitle">
+Fryer Equipment and Temperature Control
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+
+<div>
+
+<p class="section-label">
+Quick Access
+</p>
+
+<h2>
+Fryer Resources
+</h2>
+
+</div>
+
+<span class="status-badge">
+Equipment Details TBD
+</span>
+
+</div>
+
+
+<div class="action-grid">
+
+<a
+    class="action-card"
+    href="../../manuals/chips/fryer.html"
+>
+📘 Manuals
+</a>
+
+<a
+    class="action-card"
+    href="../../sops/chips/fryer.html"
+>
+📋 SOPs
+</a>
+
+<a
+    class="action-card"
+    href="#machine-information"
+>
+⚙️ Machine Information
+</a>
+
+</div>
+
+</section>
+
+
+<section
+    class="content-section"
+    id="machine-information"
+>
+
+<div class="section-heading">
+
+<div>
+
+<p class="section-label">
+Equipment Information
+</p>
+
+<h2>
+Fryer Overview
+</h2>
+
+</div>
+
+</div>
+
+
+<table class="spec-table">
+
+<tbody>
+
+<tr>
+<th>Equipment</th>
+<td>Chips Fryer</td>
+</tr>
+
+<tr>
+<th>Manufacturer</th>
+<td>To be added</td>
+</tr>
+
+<tr>
+<th>Model</th>
+<td>To be added</td>
+</tr>
+
+<tr>
+<th>Installed Line / Area</th>
+<td>To be added</td>
+</tr>
+
+<tr>
+<th>Primary Process</th>
+<td>Cooking / frying product under controlled temperature conditions</td>
+</tr>
+
+<tr>
+<th>Temperature Controller</th>
+<td>Honeywell UDC3200 Universal Digital Controller</td>
+</tr>
+
+<tr>
+<th>Controller Manual</th>
+<td>Honeywell Product Manual 51-52-25-119, August 2005</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<div class="notice">
+
+<strong>
+Main fryer nameplate information still needs to be added.
+</strong>
+
+<br>
+
+The documentation currently available identifies the Honeywell UDC3200 temperature controller, but it does not identify the fryer manufacturer, fryer model, serial number, or production-line assignment. Add those fields from the fryer nameplate when available.
+
+</div>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+
+<div>
+
+<p class="section-label">
+Temperature Control
+</p>
+
+<h2>
+Honeywell UDC3200 Controller
+</h2>
+
+</div>
+
+</div>
+
+
+<table class="spec-table">
+
+<tbody>
+
+<tr>
+<th>Manufacturer</th>
+<td>Honeywell</td>
+</tr>
+
+<tr>
+<th>Controller</th>
+<td>UDC3200 Universal Digital Controller</td>
+</tr>
+
+<tr>
+<th>Controller Type</th>
+<td>Microprocessor-based stand-alone process controller</td>
+</tr>
+
+<tr>
+<th>Typical Application</th>
+<td>Temperature and process-variable control in heating, cooling, ovens, packaging, and food-processing applications</td>
+</tr>
+
+<tr>
+<th>Analog Inputs</th>
+<td>Two universal analog inputs</td>
+</tr>
+
+<tr>
+<th>Typical Input Accuracy</th>
+<td>±0.20% of full scale</td>
+</tr>
+
+<tr>
+<th>Input Sampling</th>
+<td>Six samples per second (166 ms)</td>
+</tr>
+
+<tr>
+<th>Supported Input Types</th>
+<td>Thermocouple, RTD, Radiamatic, millivolt, voltage, and current configurations depending on setup</td>
+</tr>
+
+<tr>
+<th>Outputs</th>
+<td>Supports relay, solid-state relay, open collector, and current output configurations depending on installed options</td>
+</tr>
+
+<tr>
+<th>Communications</th>
+<td>Modbus RTU / RS-422/485 and Ethernet TCP/IP options; infrared configuration interface</td>
+</tr>
+
+<tr>
+<th>Front Protection</th>
+<td>NEMA 4X / IP66 when properly panel mounted</td>
+</tr>
+
+<tr>
+<th>Standard Power</th>
+<td>90–264 VAC, 50/60 Hz; optional 24 VAC/DC instrument power</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+
+<div>
+
+<p class="section-label">
+Controller Functions
+</p>
+
+<h2>
+UDC3200 Reference
+</h2>
+
+</div>
+
+</div>
+
+
+<table class="spec-table">
+
+<tbody>
+
+<tr>
+<th>Configuration</th>
+<td>Tuning, setpoint ramp, Accutune, algorithms, outputs, inputs, communications, alarms, and display settings</td>
+</tr>
+
+<tr>
+<th>Operation</th>
+<td>Process monitoring, manual/automatic control, setpoints, alarms, timer, tuning, failsafe, and ramp/soak programming</td>
+</tr>
+
+<tr>
+<th>Calibration</th>
+<td>Input and output calibration procedures are included in the fryer manual library</td>
+</tr>
+
+<tr>
+<th>Troubleshooting</th>
+<td>Power-up tests, status tests, background tests, controller failure symptoms, communications troubleshooting, and factory configuration restoration</td>
+</tr>
+
+<tr>
+<th>Service Parts</th>
+<td>Exploded view and controller parts identification are included in the Honeywell manual</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+
+<div>
+
+<p class="section-label">
+Asset Identification
+</p>
+
+<h2>
+Installed Fryer
+</h2>
+
+</div>
+
+</div>
+
+
+<table class="asset-table">
+
+<thead>
+
+<tr>
+<th>Area / Line</th>
+<th>Fryer Manufacturer</th>
+<th>Fryer Model</th>
+<th>Serial / Asset No.</th>
+<th>Controller</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>To be added</td>
+<td>To be added</td>
+<td>To be added</td>
+<td>To be added</td>
+<td>Honeywell UDC3200</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<footer class="page-footer">
+
+<p>
+Siete Maintenance Documentation
+</p>
+
+<a href="../../index.html">
+Return to Maintenance Portal
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
