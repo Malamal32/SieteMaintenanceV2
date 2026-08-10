@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BluePrint Automation Collator 200 machine information for Chips Lines 1 through 6.">
+<title>Collator | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:24px;
+}
+.action-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:76px;
+    padding:18px;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    background:#fff;
+    text-decoration:none;
+    font-weight:800;
+    color:#0a4f86;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+.spec-table,.asset-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    overflow:hidden;
+}
+.spec-table th,.spec-table td,.asset-table th,.asset-table td{
+    padding:15px 18px;
+    border-bottom:1px solid #dbe7f1;
+    text-align:left;
+    vertical-align:top;
+}
+.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{
+    border-bottom:0;
+}
+.spec-table th{
+    width:33%;
+    background:#f1f7fb;
+    color:#074d82;
+}
+.asset-table thead th{
+    background:#17679f;
+    color:#fff;
+}
+.asset-table tbody tr:nth-child(even){
+    background:#f6f9fc;
+}
+.line-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    background:#eaf4fb;
+    color:#07578f;
+    font-weight:800;
+}
+.notice{
+    margin-top:20px;
+    padding:18px;
+    border-left:5px solid #e2b400;
+    border-radius:12px;
+    background:#fff9dd;
+}
+@media(max-width:720px){
+    .action-grid{grid-template-columns:1fr}
+    .spec-table th,.spec-table td{display:block;width:auto}
+    .asset-table{display:block;overflow-x:auto}
+}
+</style>
+</head>
+
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="../../index.html">← Home</a>
+
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">📦</div>
+<div>
+<p class="eyebrow">Chips Maintenance</p>
+<h1>Collator</h1>
+<p class="header-subtitle">BluePrint Automation Collator 200</p>
+</div>
+</div>
+</header>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Quick Access</p>
+<h2>Collator Resources</h2>
+</div>
+<span class="line-badge">Lines 1–6</span>
+</div>
+
+<div class="action-grid">
+<a class="action-card" href="../../manuals/chips/collator.html">📘 Manuals</a>
+<a class="action-card" href="../../sops/chips/collator.html">📋 SOPs</a>
+<a class="action-card" href="#machine-information">⚙️ Machine Information</a>
+</div>
+</section>
+
+
+<section class="content-section" id="machine-information">
+<div class="section-heading">
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Specifications</h2>
+</div>
+<span class="line-badge">Lines 1–6</span>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Manufacturer</th><td>BluePrint Automation, Inc. (BPA)</td></tr>
+<tr><th>Equipment Type</th><td>Flexible Semi-Automatic Product Package Vertical Collator</td></tr>
+<tr><th>Model / Series</th><td>Collator 200</td></tr>
+<tr><th>Installed Lines</th><td>Chips Lines 1, 2, 3, 4, 5, and 6</td></tr>
+<tr><th>Job Number</th><td>97250</td></tr>
+<tr><th>Known Serial Numbers in Manual Set</th><td>5595 and 5596</td></tr>
+<tr><th>Voltage Requirement</th><td>110 VAC, single phase, 60 Hz</td></tr>
+<tr><th>Full Load Amps</th><td>27.4 A shown on the installation drawing; electrical schematic notes 29.3 A for the standard collator build</td></tr>
+<tr><th>Main Disconnect</th><td>30 A</td></tr>
+<tr><th>Disconnect Fuse Size</th><td>30 A</td></tr>
+<tr><th>Largest Motor</th><td>0.5 HP</td></tr>
+<tr><th>Main Drives</th><td>Infeed belt motor, collate wheel motor, and collate belt motor controlled by VFDs</td></tr>
+<tr><th>Control Voltage</th><td>24 VDC control distribution</td></tr>
+<tr><th>Controls</th><td>HMI with PLC control, safety circuit, photo eyes, VFDs, and Ethernet network</td></tr>
+<tr><th>Primary Sensors</th><td>Wheel position photo eye, count photo eye, jam-detect photo eye, and guard door switch</td></tr>
+<tr><th>Approx. Overall Length</th><td>161.1 in. (4091 mm)</td></tr>
+<tr><th>Approx. Equipment Height</th><td>61.6 in. (1565 mm) maximum shown on installation drawing</td></tr>
+</tbody>
+</table>
+
+<div class="notice">
+<strong>Serial number verification required by line.</strong><br>
+The supplied documentation references serial numbers 5595 and 5596, but the collator is used on Chips Lines 1 through 6. Verify each installed machine's serial number and asset ID before ordering parts or performing unit-specific service.
+</div>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>Collator Assignment</h2>
+</div>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Serial Number</th>
+<th>Asset / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>Line 1</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr><td><strong>Line 2</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr><td><strong>Line 3</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr><td><strong>Line 4</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr><td><strong>Line 5</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr><td><strong>Line 6</strong></td><td>BPA</td><td>Collator 200</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Major Components</p>
+<h2>Mechanical and Control Systems</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Conveyors</th><td>Stainless infeed conveyor and exit conveyor</td></tr>
+<tr><th>Collating Mechanism</th><td>Collate wheel, collate belt, product guides, and collator blades</td></tr>
+<tr><th>Motors</th><td>Infeed belt motor, collate wheel motor, and collate belt motor</td></tr>
+<tr><th>Safety</th><td>Emergency stop, guard door switch, safety circuit, and guarding</td></tr>
+<tr><th>Detection</th><td>Count photo eye, wheel-position photo eye, and jam-detect photo eye</td></tr>
+<tr><th>Operator Interface</th><td>Floor-mounted HMI and PLC-based controls</td></tr>
+<tr><th>Electrical</th><td>30 A disconnect, VFDs, 24 VDC distribution, PLC I/O, and Ethernet network</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Manufacturer Information</p>
+<h2>BluePrint Automation</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Technical Support</th><td>001 804 520 5400</td></tr>
+<tr><th>Technical Support Email</th><td>Help@blueprintautomation.com</td></tr>
+<tr><th>Parts / Service Orders</th><td>Orders@blueprintautomation.com</td></tr>
+<tr><th>Virginia Facility</th><td>16037 Innovation Drive, South Chesterfield, VA 23834-5951 USA</td></tr>
+<tr><th>Colorado Facility</th><td>4093 Specialty Pl A, Longmont, CO 80504-5400</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+</body>
+</html>
