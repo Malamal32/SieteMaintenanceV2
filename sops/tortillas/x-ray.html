@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SOPs for the Ishida X-Ray Inspection System.">
+<title>X-Ray SOPs | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.pending-card {
+    opacity: .72;
+    cursor: default;
+}
+.pending-card .open-label {
+    color: #7a8b99;
+}
+.pending-note {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border: 1px dashed #b9cfdf;
+    border-radius: 10px;
+    background: #f8fbfd;
+    color: #5f7384;
+    font-size: .9rem;
+}
+</style>
+</head>
+
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="../../machines/tortillas/x-ray.html">← X-Ray Machine Page</a>
+
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">📋</div>
+<div>
+<p class="eyebrow">Tortillas Maintenance</p>
+<h1>X-Ray SOPs</h1>
+<p class="header-subtitle">Standard Operating Procedures and Preventative Maintenance</p>
+</div>
+</div>
+</header>
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Standard Operating Procedures</p>
+<h2>Available SOPs</h2>
+</div>
+<span class="count-badge">1 SOP</span>
+</div>
+
+<div class="card-list">
+
+<a
+    id="pmDocument"
+    class="content-card pending-card"
+    href="x-ray/x-ray-preventative-maintenance.pdf"
+    target="_blank"
+    rel="noopener"
+    aria-disabled="true"
+>
+<span class="card-icon" aria-hidden="true">🛠️</span>
+
+<span class="card-info">
+<h3>X-Ray Preventative Maintenance</h3>
+<p id="pmStatusText">Document ready for upload.</p>
+</span>
+
+<span id="pmOpenLabel" class="open-label">Pending Upload</span>
+</a>
+
+</div>
+
+<div class="pending-note">
+<strong>PDF upload path:</strong><br>
+<code>sops/tortillas/x-ray/x-ray-preventative-maintenance.pdf</code>
+<br><br>
+Once a PDF with this exact filename is uploaded, this page will automatically enable the Preventative Maintenance button.
+</div>
+
+</section>
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../machines/tortillas/x-ray.html">Return to X-Ray</a>
+</footer>
+
+</main>
+
+<script>
+const pmDocument = document.getElementById("pmDocument");
+const pmStatusText = document.getElementById("pmStatusText");
+const pmOpenLabel = document.getElementById("pmOpenLabel");
+
+async function checkPreventativeMaintenanceDocument() {
+    try {
+        const response = await fetch(pmDocument.getAttribute("href"), {
+            method: "HEAD",
+            cache: "no-store"
+        });
+
+        if (response.ok) {
+            pmDocument.classList.remove("pending-card");
+            pmDocument.removeAttribute("aria-disabled");
+            pmStatusText.textContent = "Preventative maintenance document.";
+            pmOpenLabel.textContent = "Open PDF →";
+            return;
+        }
+    } catch (error) {}
+
+    pmDocument.addEventListener("click", function(event) {
+        event.preventDefault();
+    });
+}
+
+checkPreventativeMaintenanceDocument();
+</script>
+
+</body>
+</html>
