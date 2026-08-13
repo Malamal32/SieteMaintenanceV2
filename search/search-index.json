@@ -296,5 +296,131 @@
       "msi",
       "scarf"
     ]
+  },
+  {
+    "title": "Seal Checker",
+    "machine": "Seal Checker",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/seal-checker.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs",
+      "tsc rs",
+      "thickness seal checker",
+      "lines 1 2 3 4 5 6",
+      "seal inspection",
+      "reject conveyor",
+      "brush conditioner",
+      "j-belt",
+      "infeed conveyor"
+    ]
+  },
+  {
+    "title": "Seal Checker Manuals",
+    "machine": "Seal Checker",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs",
+      "tsc-rs-120",
+      "tsc-rs-120r",
+      "operation manual",
+      "maintenance manual",
+      "parts manual",
+      "troubleshooting",
+      "electrical",
+      "replacement",
+      "adjustment"
+    ]
+  },
+  {
+    "title": "TSC-RS Series Operation Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-operation.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs",
+      "operation",
+      "safety",
+      "installation",
+      "rcu",
+      "remote control unit",
+      "production",
+      "cleanup",
+      "periodic maintenance",
+      "troubleshooting",
+      "preset",
+      "auto calc"
+    ]
+  },
+  {
+    "title": "TSC-RS-120 Maintenance Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-120-maintenance.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs-120",
+      "maintenance",
+      "replacement",
+      "adjustment",
+      "sensor",
+      "dc motor",
+      "servo motor",
+      "timing belt",
+      "conveyor belt",
+      "electrical control unit",
+      "ssc board",
+      "dmu board",
+      "expert settings",
+      "troubleshooting"
+    ]
+  },
+  {
+    "title": "TSC-RS-120R Parts Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-120r-parts.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs-120r",
+      "parts",
+      "replacement parts",
+      "main body",
+      "stabilizer",
+      "conveyor",
+      "conditioning",
+      "chute",
+      "rejector",
+      "drop belt",
+      "remote control box",
+      "control unit",
+      "harness"
+    ]
+  },
+  {
+    "title": "Seal Checker Manufacturer SOPs",
+    "machine": "Seal Checker",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/seal-checker/manufacturer-sops.html",
+    "keywords": [
+      "manufacturer sops",
+      "belt cover replacement",
+      "save servo drive parameters",
+      "motor setting ssc board",
+      "manual motor test",
+      "i/o",
+      "io",
+      "auto calc",
+      "turning off on tsc rs auto calc"
+    ]
   }
 ]
