@@ -35,5 +35,266 @@
       "calibration",
       "weight"
     ]
+  },
+  {
+    "title": "Ishida Bagger Manuals",
+    "machine": "Ishida Bagger",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-bagger.html",
+    "keywords": [
+      "atlas 204 234",
+      "maintenance",
+      "spanish",
+      "electrical",
+      "pneumatic",
+      "atlas 234r parts",
+      "atlas 204r itps parts",
+      "atlas 202r itps parts"
+    ]
+  },
+  {
+    "title": "ATLAS-202R-ITPS Parts Manual",
+    "machine": "Ishida Bagger",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-bagger/atlas-202r-itps-parts.html",
+    "keywords": [
+      "atlas-202r-itps",
+      "202r itps",
+      "parts",
+      "main body",
+      "air unit",
+      "end seal",
+      "back seal",
+      "film carrier",
+      "electrical",
+      "remote control"
+    ]
+  },
+  {
+    "title": "Raumak Bagger Manuals",
+    "machine": "Raumak Bagger",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/raumak-bagger.html",
+    "keywords": [
+      "multi bag g",
+      "operation",
+      "maintenance",
+      "raumak"
+    ]
+  },
+  {
+    "title": "Ishida Scaler Manuals",
+    "machine": "Ishida Scaler",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-scaler.html",
+    "keywords": [
+      "ccw-rv",
+      "ccw-rve",
+      "instruction manual",
+      "manual de instrucciones",
+      "parts manual",
+      "technical notes",
+      "weigher",
+      "scale"
+    ]
+  },
+  {
+    "title": "Collator Manuals",
+    "machine": "Collator",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/collator.html",
+    "keywords": [
+      "bpa collator 200",
+      "user manual",
+      "service manual",
+      "61391",
+      "mechanical assemblies",
+      "electrical schematics",
+      "drawings"
+    ]
+  },
+  {
+    "title": "BPA Collator 200 Service Manual",
+    "machine": "Collator",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/collator/bpa-collator-200-service-manual.html",
+    "keywords": [
+      "bpa",
+      "collator 200",
+      "service manual",
+      "61391",
+      "introduction",
+      "safety",
+      "installation",
+      "setup",
+      "changeover",
+      "operation",
+      "maintenance",
+      "troubleshooting",
+      "replacement parts",
+      "index"
+    ]
+  },
+  {
+    "title": "BPA Collator Drawings",
+    "machine": "Collator",
+    "type": "Drawings",
+    "department": "Chips",
+    "url": "../manuals/chips/collator/drawings.html",
+    "keywords": [
+      "drawings",
+      "mechanical",
+      "electrical",
+      "110 vac",
+      "220 vac",
+      "rev g packer",
+      "job 67510",
+      "assembly",
+      "schematics"
+    ]
+  },
+  {
+    "title": "FastBack Manuals",
+    "machine": "FastBack",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback.html",
+    "keywords": [
+      "fastback 90e",
+      "90e-g2",
+      "260e-g2",
+      "technical manual",
+      "ppm cd30",
+      "cd35",
+      "controller",
+      "start guide"
+    ]
+  },
+  {
+    "title": "Fryer Manuals",
+    "machine": "Fryer",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer.html",
+    "keywords": [
+      "honeywell",
+      "udc3200",
+      "temperature controller",
+      "fryer"
+    ]
+  },
+  {
+    "title": "Sprayer & Tumbler Manuals",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler.html",
+    "keywords": [
+      "spray dynamics",
+      "master series i",
+      "msi",
+      "liquid applicator",
+      "scarf feeder",
+      "uni-spense iii",
+      "soft flight coating drum",
+      "electrical schematics",
+      "panel layouts",
+      "drawings"
+    ]
+  },
+  {
+    "title": "Master Series I Liquid Applicator Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/msi-manual.html",
+    "keywords": [
+      "msi",
+      "master series i",
+      "micro-meter",
+      "airless",
+      "liquid applicator",
+      "spray dynamics",
+      "pump",
+      "nozzle",
+      "spray arm",
+      "maintenance"
+    ]
+  },
+  {
+    "title": "Spray Dynamics Scarf Feeder Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/scarf-feeder-manual.html",
+    "keywords": [
+      "scarf feeder",
+      "scarf plate feeder",
+      "vibratory",
+      "controller",
+      "maintenance",
+      "operation",
+      "installation",
+      "spare parts"
+    ]
+  },
+  {
+    "title": "Uni-Spense III Dry Ingredient Feeder Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/unispense-iii-feeder-manual.html",
+    "keywords": [
+      "uni-spense iii",
+      "unispense",
+      "dry ingredient feeder",
+      "auger",
+      "seasoning",
+      "hopper",
+      "maintenance",
+      "troubleshooting"
+    ]
+  },
+  {
+    "title": "Soft Flight Coating Drum Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/coating-drum-manual.html",
+    "keywords": [
+      "soft flight",
+      "coating drum",
+      "drum",
+      "tumbler",
+      "spray dynamics",
+      "sanitation",
+      "maintenance",
+      "adjustment",
+      "operation"
+    ]
+  },
+  {
+    "title": "Electrical Schematics & Panel Layouts",
+    "machine": "Sprayer & Tumbler",
+    "type": "Electrical Drawings",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/electrical-schematics-panel-layouts.html",
+    "keywords": [
+      "electrical schematics",
+      "panel layouts",
+      "control panel 32095129",
+      "bill of material",
+      "device key",
+      "drum",
+      "uni-spense",
+      "msi",
+      "scarf"
+    ]
   }
 ]
