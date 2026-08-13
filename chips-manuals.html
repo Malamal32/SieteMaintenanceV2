@@ -119,7 +119,7 @@
 <p class="section-label">Manual Library</p>
 <h2>Available Equipment</h2>
 </div>
-<span class="count-badge">7 Machines · 26 Manual Entries</span>
+<span class="count-badge">8 Machines · 29 Manual Entries</span>
 </div>
 
 <div class="search-panel">
@@ -129,7 +129,7 @@
        type="search"
        placeholder="Search machine, model, manual, troubleshooting, electrical..."
        autocomplete="off">
-<p id="searchStatus" class="search-status">Showing all 7 equipment groups.</p>
+<p id="searchStatus" class="search-status">Showing all 8 equipment groups.</p>
 </div>
 
 <div id="manualGrid" class="manual-grid">
@@ -218,6 +218,20 @@
     <span class="open-arrow" aria-hidden="true">›</span>
 </a>
 
+
+<a class="manual-card searchable-card"
+   href="manuals/chips/seal-checker.html"
+   data-search="seal checker ishida tsc-rs tsc rs tsc-rs-120 tsc rs 120 tsc-rs-120r operation manual maintenance manual parts manual thickness seal checker troubleshooting electrical servo motor conveyor reject">
+    <div class="manual-card-icon" aria-hidden="true">📘</div>
+    <div class="manual-card-content">
+        <p class="machine-label">Seal Checker</p>
+        <h3>Seal Checker Manuals</h3>
+        <ul><li>TSC-RS Series Operation Manual</li><li>TSC-RS-120 Maintenance Manual</li><li>TSC-RS-120R Parts Manual</li></ul>
+    </div>
+    <span class="open-arrow" aria-hidden="true">›</span>
+</a>
+
+
 </div>
 
 <div id="noResults" class="no-results">
@@ -255,7 +269,7 @@ function filterManuals() {
     });
 
     if (terms.length === 0) {
-        status.textContent = 'Showing all 7 equipment groups.';
+        status.textContent = 'Showing all 8 equipment groups.';
     } else {
         status.textContent = `Showing ${visible} matching equipment group${visible === 1 ? '' : 's'}.`;
     }
