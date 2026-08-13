@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Machine information for the Ishida TSC-RS Seal Checker used on Chips Lines 1 through 6.">
+<title>Seal Checker | Siete Maintenance</title>
+
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+.info-card{
+    padding:20px;
+    background:#fff;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+.info-card h3{
+    margin:0 0 12px;
+    color:#073e69;
+}
+.info-card p{
+    margin:6px 0;
+    color:#516574;
+}
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+.resource-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:20px;
+    background:#fff;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    text-decoration:none;
+    color:inherit;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+.resource-card:hover{
+    border-color:#8dbbdb;
+    transform:translateY(-1px);
+}
+.resource-icon{
+    font-size:30px;
+}
+.resource-card h3{
+    margin:0 0 5px;
+    color:#073e69;
+}
+.resource-card p{
+    margin:0;
+    color:#516574;
+}
+.line-table,
+.spec-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+.line-table th,
+.line-table td,
+.spec-table th,
+.spec-table td{
+    padding:12px 14px;
+    border:1px solid #d7e4ee;
+    text-align:left;
+    vertical-align:top;
+}
+.line-table th,
+.spec-table th{
+    color:#073e69;
+    background:#f5faff;
+}
+.spec-table th{
+    width:35%;
+}
+.note{
+    margin-top:14px;
+    color:#607687;
+    font-size:.92rem;
+}
+@media(max-width:760px){
+    .machine-grid,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="../../index.html">← Home</a>
+
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">⚙️</div>
+
+<div>
+<p class="eyebrow">Chips Maintenance</p>
+<h1>Seal Checker</h1>
+<p class="header-subtitle">Ishida TSC-RS Series · Lines 1–6</p>
+</div>
+</div>
+</header>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Machine Resources</p>
+<h2>Documentation</h2>
+</div>
+</div>
+
+<div class="resource-grid">
+
+<a class="resource-card" href="../../manuals/chips/seal-checker.html">
+<span class="resource-icon" aria-hidden="true">📘</span>
+<span>
+<h3>Manuals</h3>
+<p>Operation, maintenance, and parts documentation.</p>
+</span>
+</a>
+
+<a class="resource-card" href="../../sops/chips/seal-checker.html">
+<span class="resource-icon" aria-hidden="true">📋</span>
+<span>
+<h3>SOPs</h3>
+<p>Manufacturer and plant procedures for the Seal Checker.</p>
+</span>
+</a>
+
+</div>
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>Line Assignments</h2>
+</div>
+<span class="count-badge">6 Lines</span>
+</div>
+
+<table class="line-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Manufacturer</th>
+<th>Machine</th>
+<th>Model</th>
+</tr>
+</thead>
+
+<tbody>
+<tr><td>Line 1</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+<tr><td>Line 2</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+<tr><td>Line 3</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+<tr><td>Line 4</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+<tr><td>Line 5</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+<tr><td>Line 6</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
+</tbody>
+</table>
+
+<p class="note">The available documentation includes TSC-RS Series operation information, TSC-RS-120 maintenance information, and TSC-RS-120R parts information.</p>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Machine Information</p>
+<h2>Standard Specifications</h2>
+</div>
+</div>
+
+<table class="spec-table">
+
+<tr>
+<th>Manufacturer</th>
+<td>Ishida Co., Ltd.</td>
+</tr>
+
+<tr>
+<th>Machine Type</th>
+<td>Thickness / Seal Checker</td>
+</tr>
+
+<tr>
+<th>Documented Models</th>
+<td>TSC-RS Series / TSC-RS-120 / TSC-RS-120R</td>
+</tr>
+
+<tr>
+<th>Minimum Thickness Indication</th>
+<td>0.01 mm</td>
+</tr>
+
+<tr>
+<th>Product Type</th>
+<td>Pillow package</td>
+</tr>
+
+<tr>
+<th>Product Width</th>
+<td>50–330 mm</td>
+</tr>
+
+<tr>
+<th>Product Length</th>
+<td>100–650 mm</td>
+</tr>
+
+<tr>
+<th>Product Thickness</th>
+<td>15–120 mm</td>
+</tr>
+
+<tr>
+<th>J-Belt Conveyor Speed</th>
+<td>15–90 m/min</td>
+</tr>
+
+<tr>
+<th>Infeed Conveyor Speed</th>
+<td>15–70 m/min</td>
+</tr>
+
+<tr>
+<th>Brush Conditioner Speed</th>
+<td>15–70 m/min</td>
+</tr>
+
+<tr>
+<th>Seal Check Conveyor Speed</th>
+<td>15–70 m/min</td>
+</tr>
+
+<tr>
+<th>Reject Conveyor Speed</th>
+<td>15–90 m/min</td>
+</tr>
+
+<tr>
+<th>Main Body Size</th>
+<td>Approx. 800 mm × 1500 mm × 2800 mm</td>
+</tr>
+
+<tr>
+<th>Weight</th>
+<td>Approx. 220 kg</td>
+</tr>
+
+<tr>
+<th>Power Supply</th>
+<td>Single-phase AC 200 / 208 / 220 / 230 / 240 V, 50/60 Hz</td>
+</tr>
+
+<tr>
+<th>Air Pressure</th>
+<td>0.4–1.0 MPa</td>
+</tr>
+
+<tr>
+<th>Air Consumption</th>
+<td>6.4 Nl/min (ANR) during reject discharge</td>
+</tr>
+
+<tr>
+<th>Ambient Temperature</th>
+<td>0–40°C, no freezing</td>
+</tr>
+
+<tr>
+<th>Humidity</th>
+<td>30–85% RH, no dew condensation</td>
+</tr>
+
+</table>
+
+<p class="note">Specifications are based on the standard-model information in the Ishida documentation and may differ from the exact configuration installed on each production line.</p>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">System Overview</p>
+<h2>Main Components</h2>
+</div>
+</div>
+
+<div class="machine-grid">
+
+<div class="info-card">
+<h3>Product Infeed</h3>
+<p><strong>J-Belt Conveyor:</strong> receives packaged product from the upstream packer and transfers it to the infeed conveyor.</p>
+<p><strong>Infeed Conveyor:</strong> carries product into the seal-check section.</p>
+</div>
+
+<div class="info-card">
+<h3>Product Conditioning</h3>
+<p><strong>Brush Conditioner:</strong> stabilizes and flattens the package before it enters the seal-check device.</p>
+<p><strong>Cleaning Brush:</strong> removes dirt and debris from the conveyor belt when fitted.</p>
+</div>
+
+<div class="info-card">
+<h3>Seal Inspection</h3>
+<p><strong>Lower Seal Check Conveyor:</strong> carries the package through the measurement area.</p>
+<p><strong>Upper Seal Check Conveyor:</strong> applies load to the passing package so thickness changes can be measured.</p>
+<p><strong>Seal Check Device:</strong> evaluates package thickness for seal quality.</p>
+</div>
+
+<div class="info-card">
+<h3>Reject System</h3>
+<p><strong>Photoelectric Sensors:</strong> detect product presence and movement through the inspection section.</p>
+<p><strong>Reject Conveyor / Air Jet:</strong> directs accepted or rejected product according to the machine judgment.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+</body>
+</html>
