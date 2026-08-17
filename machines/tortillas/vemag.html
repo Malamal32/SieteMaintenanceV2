@@ -158,15 +158,6 @@
     font-weight:800;
 }
 
-.notice{
-    margin-top:20px;
-    padding:18px;
-    border-left:5px solid #e2b400;
-    border-radius:12px;
-    background:#fff9dd;
-    color:#4f4a2a;
-}
-
 .contact-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
@@ -179,6 +170,7 @@
     border:1px solid var(--vemag-border);
     border-radius:14px;
     background:#fff;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
 }
 
 .contact-card h3{
@@ -199,12 +191,6 @@
 
 .contact-card a:hover{
     text-decoration:underline;
-}
-
-.small-note{
-    margin-top:12px;
-    color:var(--vemag-muted);
-    font-size:.92rem;
 }
 
 @media(max-width:900px){
@@ -308,11 +294,11 @@
 
 <tr>
 <th>Equipment Type</th>
-<td>Vacuum / continuous filler</td>
+<td>Vacuum / Continuous Filler</td>
 </tr>
 
 <tr>
-<th>Installed Model</th>
+<th>Model</th>
 <td>HP20E</td>
 </tr>
 
@@ -322,23 +308,17 @@
 </tr>
 
 <tr>
-<th>Electrical Supply</th>
-<td>3-phase, 50/60 Hz; machine plates show the 400–460 V configuration</td>
+<th>Manufacturer Address</th>
+<td>Weserstrasse 32, D-27283 Verden (Aller), Germany</td>
 </tr>
 
 <tr>
-<th>Manufacturer Location</th>
-<td>Weserstrasse 32, 27283 Verden (Aller), Germany</td>
-</tr>
-
-<tr>
-<th>Parts Identification</th>
-<td>Verify the machine number and nameplate information for the specific line before ordering model-specific parts.</td>
+<th>Frequency</th>
+<td>3~ 50/60 Hz</td>
 </tr>
 
 </tbody>
 </table>
-
 
 </section>
 
@@ -351,7 +331,7 @@
 <h2>VEMAG Line Assignment</h2>
 </div>
 
-<span class="status-badge">HP20E on all 3 lines</span>
+<span class="status-badge">HP20E</span>
 </div>
 
 <table class="asset-table">
@@ -360,10 +340,9 @@
 <th>Line</th>
 <th>Model</th>
 <th>Machine No.</th>
+<th>Year</th>
 <th>Current</th>
 <th>Power</th>
-<th>Air Pressure</th>
-<th>E-Diagram</th>
 </tr>
 </thead>
 
@@ -371,31 +350,28 @@
 <tr>
 <td>Line 1</td>
 <td>HP20E</td>
-<td>Partially legible — verify plate</td>
-<td>37 A @ 400–460 V</td>
-<td>Partially legible</td>
-<td>5–6 bar</td>
-<td>162890011ac (appears on plate)</td>
+<td>1631151</td>
+<td>2017</td>
+<td>38 A</td>
+<td>23 kW</td>
 </tr>
 
 <tr>
 <td>Line 3</td>
 <td>HP20E</td>
-<td>163112… (final digit(s) obscured)</td>
-<td>38 A @ 400–460 V</td>
-<td>Not legible in photo</td>
-<td>Not legible in photo</td>
-<td>162890011ac</td>
+<td>1631123</td>
+<td>2017</td>
+<td>38 A</td>
+<td>23 kW</td>
 </tr>
 
 <tr>
 <td>Line 4</td>
 <td>HP20E</td>
-<td>1631131</td>
-<td>Not legible in photo</td>
-<td>23 kW</td>
-<td>Not legible in photo</td>
-<td>162890011ac</td>
+<td>1630447</td>
+<td>—</td>
+<td>37 A</td>
+<td>20 kW</td>
 </tr>
 </tbody>
 </table>
@@ -407,8 +383,8 @@
 
 <div class="section-heading">
 <div>
-<p class="section-label">Nameplate Detail</p>
-<h2>Installed Machine Plates</h2>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
 </div>
 </div>
 
@@ -421,13 +397,15 @@
 </div>
 
 <ul class="plate-list">
-<li><strong>Machine name</strong><span>Filler</span></li>
-<li><strong>Model</strong><span>HP20E</span></li>
-<li><strong>Machine No.</strong><span>Verify directly from plate</span></li>
+<li><strong>Machine Name</strong><span>Filler</span></li>
+<li><strong>Machine No.</strong><span>1631151</span></li>
+<li><strong>Year</strong><span>2017</span></li>
+<li><strong>Voltage</strong><span>400–460 V</span></li>
+<li><strong>Current</strong><span>38 A</span></li>
 <li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
-<li><strong>400–460 V current</strong><span>37 A</span></li>
-<li><strong>Air pressure</strong><span>5–6 bar</span></li>
-<li><strong>E-Diagram</strong><span>162890011ac (appears on plate)</span></li>
+<li><strong>Power</strong><span>23 kW</span></li>
+<li><strong>SCCR</strong><span>5 kA rms</span></li>
+<li><strong>E-Diagram</strong><span>162890011ac</span></li>
 </ul>
 </article>
 
@@ -439,11 +417,13 @@
 </div>
 
 <ul class="plate-list">
-<li><strong>Machine name</strong><span>Filler</span></li>
-<li><strong>Model</strong><span>HP20E</span></li>
-<li><strong>Machine No.</strong><span>163112… — final digit(s) obscured</span></li>
+<li><strong>Machine Name</strong><span>Filler</span></li>
+<li><strong>Machine No.</strong><span>1631123</span></li>
+<li><strong>Year</strong><span>2017</span></li>
+<li><strong>Voltage</strong><span>400–460 V</span></li>
+<li><strong>Current</strong><span>38 A</span></li>
 <li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
-<li><strong>400–460 V current</strong><span>38 A</span></li>
+<li><strong>Power</strong><span>23 kW</span></li>
 <li><strong>SCCR</strong><span>5 kA rms</span></li>
 <li><strong>E-Diagram</strong><span>162890011ac</span></li>
 </ul>
@@ -457,21 +437,19 @@
 </div>
 
 <ul class="plate-list">
-<li><strong>Machine name</strong><span>Filler</span></li>
-<li><strong>Model</strong><span>HP20E</span></li>
-<li><strong>Machine No.</strong><span>1631131</span></li>
-<li><strong>Year</strong><span>2017</span></li>
+<li><strong>Machine Name</strong><span>Filler</span></li>
+<li><strong>Machine No.</strong><span>1630447</span></li>
+<li><strong>Voltage</strong><span>400–460 V</span></li>
+<li><strong>Current</strong><span>37 A</span></li>
 <li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
-<li><strong>Power</strong><span>23 kW</span></li>
-<li><strong>E-Diagram</strong><span>162890011ac</span></li>
+<li><strong>Power</strong><span>20 kW</span></li>
+<li><strong>Air Quantity</strong><span>110 l/min</span></li>
+<li><strong>Air Pressure</strong><span>5–6 bar</span></li>
+<li><strong>E-Diagram</strong><span>162890011</span></li>
 </ul>
 </article>
 
 </div>
-
-<p class="small-note">
-For troubleshooting, ordering parts, or contacting VEMAG, identify the production line first and then verify the exact machine number on that unit's nameplate.
-</p>
 
 </section>
 
@@ -490,7 +468,7 @@ For troubleshooting, ordering parts, or contacting VEMAG, identify the productio
 <article class="contact-card">
 <h3>General Contact</h3>
 <p><strong>VEMAG Maschinenbau GmbH</strong></p>
-<p>Weserstrasse 32<br>27283 Verden (Aller), Germany</p>
+<p>Weserstrasse 32<br>D-27283 Verden (Aller), Germany</p>
 <p>Phone: <a href="tel:+4942317770">+49 4231 777 0</a></p>
 <p>Fax: +49 4231 777 241</p>
 <p>Email: <a href="mailto:e-mail@vemag.de">e-mail@vemag.de</a></p>
@@ -498,25 +476,29 @@ For troubleshooting, ordering parts, or contacting VEMAG, identify the productio
 
 <article class="contact-card">
 <h3>Technical Support</h3>
-<p>VEMAG service support</p>
 <p>Phone: <a href="tel:+494231777666">+49 4231 777-666</a></p>
 <p>Email: <a href="mailto:service@vemag.de">service@vemag.de</a></p>
-<p><a href="https://www.vemag.de/en/service/customer-service/" target="_blank" rel="noopener">Official Customer Service ↗</a></p>
+<p>
+<a href="https://www.vemag.de/en/service/customer-service/" target="_blank" rel="noopener">
+Official Customer Service ↗
+</a>
+</p>
 </article>
 
 <article class="contact-card">
 <h3>Spare Parts</h3>
-<p>VEMAG spare-parts service</p>
 <p>Phone: <a href="tel:+494231777111">+49 4231 777-111</a></p>
 <p>Email: <a href="mailto:ersatzteile@vemag.de">ersatzteile@vemag.de</a></p>
-<p><a href="https://www.vemag.de/en/contact/" target="_blank" rel="noopener">Official Contact Page ↗</a></p>
+<p>
+<a href="https://www.vemag.de/en/contact/" target="_blank" rel="noopener">
+Official Contact Page ↗
+</a>
+</p>
 </article>
 
 </div>
 
 </section>
-
-
 
 
 <footer class="page-footer">
