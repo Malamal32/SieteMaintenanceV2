@@ -3,11 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine information for VEMAG ROBOT HP Series vacuum fillers used in Tortillas.">
-<title>VEMAG | Siete Maintenance</title>
+<meta name="description" content="Machine information for VEMAG HP20E vacuum fillers used on Tortilla Lines 1, 3, and 4.">
+<title>VEMAG HP20E | Siete Maintenance</title>
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
+:root{
+    --vemag-blue:#0a5f96;
+    --vemag-blue-dark:#074d82;
+    --vemag-blue-light:#eef7fc;
+    --vemag-border:#cfe0ef;
+    --vemag-text:#243746;
+    --vemag-muted:#607485;
+}
+
 .action-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
@@ -21,13 +30,20 @@
     justify-content:center;
     min-height:76px;
     padding:18px;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--vemag-border);
     border-radius:14px;
     background:#fff;
     text-decoration:none;
     font-weight:800;
-    color:#0a4f86;
+    color:var(--vemag-blue-dark);
     box-shadow:0 4px 14px rgba(0,0,0,.05);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.action-card:hover{
+    transform:translateY(-2px);
+    border-color:#8ebbd9;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .spec-table,
@@ -35,7 +51,7 @@
     width:100%;
     border-collapse:separate;
     border-spacing:0;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--vemag-border);
     border-radius:14px;
     overflow:hidden;
 }
@@ -59,7 +75,7 @@
 .spec-table th{
     width:33%;
     background:#f1f7fb;
-    color:#074d82;
+    color:var(--vemag-blue-dark);
 }
 
 .asset-table thead th{
@@ -71,12 +87,66 @@
     background:#f6f9fc;
 }
 
-.notice{
-    margin-top:20px;
-    padding:18px;
-    border-left:5px solid #e2b400;
-    border-radius:12px;
-    background:#fff9dd;
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.machine-card{
+    border:1px solid var(--vemag-border);
+    border-radius:16px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+    padding:16px 18px;
+    background:linear-gradient(135deg,#17679f,#0a4f86);
+    color:#fff;
+}
+
+.machine-card-header .line{
+    margin:0 0 4px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+
+.machine-card-header h3{
+    margin:0;
+    font-size:1.25rem;
+}
+
+.plate-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.plate-list li{
+    display:grid;
+    grid-template-columns:44% 56%;
+    gap:8px;
+    padding:11px 16px;
+    border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+    border-bottom:0;
+}
+
+.plate-list strong{
+    color:var(--vemag-blue-dark);
+}
+
+.plate-list span{
+    color:var(--vemag-text);
+    overflow-wrap:anywhere;
 }
 
 .status-badge{
@@ -86,6 +156,62 @@
     background:#eaf4fb;
     color:#07578f;
     font-weight:800;
+}
+
+.notice{
+    margin-top:20px;
+    padding:18px;
+    border-left:5px solid #e2b400;
+    border-radius:12px;
+    background:#fff9dd;
+    color:#4f4a2a;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:18px;
+}
+
+.contact-card{
+    padding:18px;
+    border:1px solid var(--vemag-border);
+    border-radius:14px;
+    background:#fff;
+}
+
+.contact-card h3{
+    margin:0 0 12px;
+    color:var(--vemag-blue-dark);
+}
+
+.contact-card p{
+    margin:6px 0;
+    color:var(--vemag-text);
+}
+
+.contact-card a{
+    color:var(--vemag-blue);
+    font-weight:700;
+    text-decoration:none;
+}
+
+.contact-card a:hover{
+    text-decoration:underline;
+}
+
+.small-note{
+    margin-top:12px;
+    color:var(--vemag-muted);
+    font-size:.92rem;
+}
+
+@media(max-width:900px){
+    .machine-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 @media(max-width:720px){
@@ -103,6 +229,11 @@
         display:block;
         overflow-x:auto;
     }
+
+    .plate-list li{
+        grid-template-columns:1fr;
+        gap:2px;
+    }
 }
 </style>
 </head>
@@ -113,112 +244,61 @@
 
 <header class="page-header">
 
-<a class="back-link" href="../../index.html">
-← Home
-</a>
+<a class="back-link" href="../../index.html">← Home</a>
 
 <div class="header-content">
 
-<div class="header-icon" aria-hidden="true">
-⚙️
-</div>
+<div class="header-icon" aria-hidden="true">⚙️</div>
 
 <div>
-
-<p class="eyebrow">
-Tortillas Maintenance
-</p>
-
-<h1>
-VEMAG
-</h1>
-
-<p class="header-subtitle">
-ROBOT HP Series Vacuum Filler
-</p>
-
+<p class="eyebrow">Tortillas Maintenance</p>
+<h1>VEMAG HP20E</h1>
+<p class="header-subtitle">Vacuum Fillers — Lines 1, 3, and 4</p>
 </div>
 
 </div>
-
 </header>
 
 
 <section class="content-section">
 
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Quick Access
-</p>
-
-<h2>
-VEMAG Resources
-</h2>
-
+<p class="section-label">Quick Access</p>
+<h2>VEMAG Resources</h2>
 </div>
 
-<span class="status-badge">
-Line Assignment TBD
-</span>
-
+<span class="status-badge">Lines 1, 3 &amp; 4</span>
 </div>
-
 
 <div class="action-grid">
 
-<a
-    class="action-card"
-    href="../../manuals/tortillas/vemag.html"
->
+<a class="action-card" href="../../manuals/tortillas/vemag.html">
 📘 Manuals
 </a>
 
-<a
-    class="action-card"
-    href="../../sops/tortillas/vemag.html"
->
+<a class="action-card" href="../../sops/tortillas/vemag.html">
 📋 SOPs
 </a>
 
-<a
-    class="action-card"
-    href="#machine-information"
->
+<a class="action-card" href="#machine-information">
 ⚙️ Machine Information
 </a>
 
 </div>
-
 </section>
 
 
-<section
-    class="content-section"
-    id="machine-information"
->
+<section class="content-section" id="machine-information">
 
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Equipment Information
-</p>
-
-<h2>
-Machine Information
-</h2>
-
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
 </div>
-
 </div>
-
 
 <table class="spec-table">
-
 <tbody>
 
 <tr>
@@ -228,66 +308,40 @@ Machine Information
 
 <tr>
 <th>Equipment Type</th>
-<td>Continuous Vacuum Filler</td>
+<td>Vacuum / continuous filler</td>
 </tr>
 
 <tr>
-<th>Series</th>
-<td>ROBOT HP Series</td>
+<th>Installed Model</th>
+<td>HP20E</td>
 </tr>
 
 <tr>
-<th>Models Covered by Parts Manual</th>
-<td>HP7E, HP10E, HP12E, HP15E, and HP20E</td>
+<th>Installed Lines</th>
+<td>Lines 1, 3, and 4</td>
 </tr>
 
 <tr>
-<th>HP7E Applicable From</th>
-<td>Machine No. 160.0229</td>
+<th>Electrical Supply</th>
+<td>3-phase, 50/60 Hz; machine plates show the 400–460 V configuration</td>
 </tr>
 
 <tr>
-<th>HP10E Applicable From</th>
-<td>Machine No. 161.0432</td>
-</tr>
-
-<tr>
-<th>HP12E Applicable From</th>
-<td>Machine No. 165.0284</td>
-</tr>
-
-<tr>
-<th>HP15E Applicable From</th>
-<td>Machine No. 162.0298</td>
-</tr>
-
-<tr>
-<th>HP20E Applicable From</th>
-<td>Machine No. 163.0410</td>
+<th>Manufacturer Location</th>
+<td>Weserstrasse 32, 27283 Verden (Aller), Germany</td>
 </tr>
 
 <tr>
 <th>Parts Identification</th>
-<td>
-The machine number should be verified from the rating plate on the rear of the machine before ordering spare parts.
-</td>
+<td>Verify the machine number and nameplate information for the specific line before ordering model-specific parts.</td>
 </tr>
 
 </tbody>
-
 </table>
 
-
 <div class="notice">
-
-<strong>
-Installed model and line information still needs to be added.
-</strong>
-
-<br>
-
-The parts catalogue covers multiple ROBOT HP models. Once the installed VEMAG units are checked, update the table below with the correct line, exact model, machine number, serial/asset number, and any additional nameplate information.
-
+<strong>Nameplate note:</strong>
+Some stamped values are faint or partially obscured in the supplied photos. Values that cannot be read confidently are marked as “Not legible in photo” rather than estimated.
 </div>
 
 </section>
@@ -296,48 +350,58 @@ The parts catalogue covers multiple ROBOT HP models. Once the installed VEMAG un
 <section class="content-section">
 
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Asset Identification
-</p>
-
-<h2>
-Installed VEMAG Machines
-</h2>
-
+<p class="section-label">Installed Equipment</p>
+<h2>VEMAG Line Assignment</h2>
 </div>
 
+<span class="status-badge">HP20E on all 3 lines</span>
 </div>
-
 
 <table class="asset-table">
-
 <thead>
-
 <tr>
 <th>Line</th>
 <th>Model</th>
 <th>Machine No.</th>
-<th>Serial / Asset No.</th>
-<th>Notes</th>
+<th>Current</th>
+<th>Power</th>
+<th>Air Pressure</th>
+<th>E-Diagram</th>
 </tr>
-
 </thead>
 
 <tbody>
-
 <tr>
-<td>To be added</td>
-<td>Verify from nameplate</td>
-<td>Verify from rating plate</td>
-<td>To be added</td>
-<td>Update after installed units are identified</td>
+<td>Line 1</td>
+<td>HP20E</td>
+<td>Partially legible — verify plate</td>
+<td>37 A @ 400–460 V</td>
+<td>Partially legible</td>
+<td>5–6 bar</td>
+<td>162890011ac (appears on plate)</td>
 </tr>
 
-</tbody>
+<tr>
+<td>Line 3</td>
+<td>HP20E</td>
+<td>163112… (final digit(s) obscured)</td>
+<td>38 A @ 400–460 V</td>
+<td>Not legible in photo</td>
+<td>Not legible in photo</td>
+<td>162890011ac</td>
+</tr>
 
+<tr>
+<td>Line 4</td>
+<td>HP20E</td>
+<td>1631131</td>
+<td>Not legible in photo</td>
+<td>23 kW</td>
+<td>Not legible in photo</td>
+<td>162890011ac</td>
+</tr>
+</tbody>
 </table>
 
 </section>
@@ -346,59 +410,72 @@ Installed VEMAG Machines
 <section class="content-section">
 
 <div class="section-heading">
-
 <div>
+<p class="section-label">Nameplate Detail</p>
+<h2>Installed Machine Plates</h2>
+</div>
+</div>
 
-<p class="section-label">
-Major Systems
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 1</p>
+<h3>VEMAG HP20E</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Machine name</strong><span>Filler</span></li>
+<li><strong>Model</strong><span>HP20E</span></li>
+<li><strong>Machine No.</strong><span>Verify directly from plate</span></li>
+<li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
+<li><strong>400–460 V current</strong><span>37 A</span></li>
+<li><strong>Air pressure</strong><span>5–6 bar</span></li>
+<li><strong>E-Diagram</strong><span>162890011ac (appears on plate)</span></li>
+</ul>
+</article>
+
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 3</p>
+<h3>VEMAG HP20E</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Machine name</strong><span>Filler</span></li>
+<li><strong>Model</strong><span>HP20E</span></li>
+<li><strong>Machine No.</strong><span>163112… — final digit(s) obscured</span></li>
+<li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
+<li><strong>400–460 V current</strong><span>38 A</span></li>
+<li><strong>SCCR</strong><span>5 kA rms</span></li>
+<li><strong>E-Diagram</strong><span>162890011ac</span></li>
+</ul>
+</article>
+
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 4</p>
+<h3>VEMAG HP20E</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Machine name</strong><span>Filler</span></li>
+<li><strong>Model</strong><span>HP20E</span></li>
+<li><strong>Machine No.</strong><span>1631131</span></li>
+<li><strong>Year</strong><span>2017</span></li>
+<li><strong>Frequency</strong><span>3~ 50/60 Hz</span></li>
+<li><strong>Power</strong><span>23 kW</span></li>
+<li><strong>E-Diagram</strong><span>162890011ac</span></li>
+</ul>
+</article>
+
+</div>
+
+<p class="small-note">
+For troubleshooting, ordering parts, or contacting VEMAG, identify the production line first and then verify the exact machine number on that unit's nameplate.
 </p>
-
-<h2>
-Parts Catalogue Coverage
-</h2>
-
-</div>
-
-</div>
-
-
-<table class="spec-table">
-
-<tbody>
-
-<tr>
-<th>Machine Structure</th>
-<td>Machine housing, front door, maintenance cover, rear cover, supports, and undercarriage</td>
-</tr>
-
-<tr>
-<th>Product Feed</th>
-<td>Feed systems, double screw drive, gear housing, feed unit drive, and feed screw sealing components</td>
-</tr>
-
-<tr>
-<th>Hopper Systems</th>
-<td>250 L, 350 L, 600 L, divided, double-walled, and optional hopper configurations</td>
-</tr>
-
-<tr>
-<th>Vacuum System</th>
-<td>16 m³/h system, optional 40 m³/h system, air ejector system, vacuum control, and water separator</td>
-</tr>
-
-<tr>
-<th>Electrical / Controls</th>
-<td>Control panel, drive controllers, graphic control units, transformer box, and associated electrical equipment</td>
-</tr>
-
-<tr>
-<th>Optional Equipment</th>
-<td>Lifting/tipping systems, trolley hoists, linker drive, bakery equipment, and quick-change nozzle system</td>
-</tr>
-
-</tbody>
-
-</table>
 
 </section>
 
@@ -406,63 +483,85 @@ Parts Catalogue Coverage
 <section class="content-section">
 
 <div class="section-heading">
-
 <div>
+<p class="section-label">Manufacturer Support</p>
+<h2>VEMAG Contact Information</h2>
+</div>
+</div>
 
-<p class="section-label">
-Manufacturer Information
-</p>
+<div class="contact-grid">
 
-<h2>
-VEMAG Maschinenbau GmbH
-</h2>
+<article class="contact-card">
+<h3>General Contact</h3>
+<p><strong>VEMAG Maschinenbau GmbH</strong></p>
+<p>Weserstrasse 32<br>27283 Verden (Aller), Germany</p>
+<p>Phone: <a href="tel:+4942317770">+49 4231 777 0</a></p>
+<p>Fax: +49 4231 777 241</p>
+<p>Email: <a href="mailto:e-mail@vemag.de">e-mail@vemag.de</a></p>
+</article>
+
+<article class="contact-card">
+<h3>Technical Support</h3>
+<p>VEMAG service support</p>
+<p>Phone: <a href="tel:+494231777666">+49 4231 777-666</a></p>
+<p>Email: <a href="mailto:service@vemag.de">service@vemag.de</a></p>
+<p><a href="https://www.vemag.de/en/service/customer-service/" target="_blank" rel="noopener">Official Customer Service ↗</a></p>
+</article>
+
+<article class="contact-card">
+<h3>Spare Parts</h3>
+<p>VEMAG spare-parts service</p>
+<p>Phone: <a href="tel:+494231777111">+49 4231 777-111</a></p>
+<p>Email: <a href="mailto:ersatzteile@vemag.de">ersatzteile@vemag.de</a></p>
+<p><a href="https://www.vemag.de/en/contact/" target="_blank" rel="noopener">Official Contact Page ↗</a></p>
+</article>
 
 </div>
 
-</div>
+</section>
 
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Reference</p>
+<h2>HP20E Documentation Notes</h2>
+</div>
+</div>
 
 <table class="spec-table">
-
 <tbody>
 
 <tr>
-<th>Location</th>
-<td>Verden, Germany</td>
+<th>Parts Catalogue Family</th>
+<td>ROBOT HP Series</td>
 </tr>
 
 <tr>
-<th>Phone</th>
-<td>+49 42 31 77 70</td>
+<th>Models Covered</th>
+<td>HP7E, HP10E, HP12E, HP15E, and HP20E</td>
 </tr>
 
 <tr>
-<th>Fax</th>
-<td>+49 42 31 77 72 41</td>
+<th>HP20E Catalogue Applicability</th>
+<td>Applicable from Machine No. 163.0410 according to the existing parts-manual reference on this page.</td>
 </tr>
 
 <tr>
-<th>Email</th>
-<td>e-mail@vemag.de</td>
+<th>Identification Practice</th>
+<td>Use the installed model and exact machine number when selecting drawings, identifying parts, or requesting manufacturer support.</td>
 </tr>
 
 </tbody>
-
 </table>
 
 </section>
 
 
 <footer class="page-footer">
-
-<p>
-Siete Maintenance Documentation
-</p>
-
-<a href="../../index.html">
-Return to Maintenance Portal
-</a>
-
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
 </footer>
 
 </main>
