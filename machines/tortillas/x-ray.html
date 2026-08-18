@@ -8,17 +8,189 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
-.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
-.action-card{display:flex;align-items:center;justify-content:center;min-height:76px;padding:18px;border:1px solid #cfe0ef;border-radius:14px;background:#fff;text-decoration:none;font-weight:800;color:#0a4f86;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.spec-table,.asset-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #cfe0ef;border-radius:14px;overflow:hidden}
-.spec-table th,.spec-table td,.asset-table th,.asset-table td{padding:15px 18px;border-bottom:1px solid #dbe7f1;text-align:left;vertical-align:top}
-.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{border-bottom:0}
-.spec-table th{width:33%;background:#f1f7fb;color:#074d82}
-.asset-table thead th{background:#17679f;color:#fff}
-.asset-table tbody tr:nth-child(even){background:#f6f9fc}
-.line-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:#eaf4fb;color:#07578f;font-weight:800}
-.notice{margin-top:20px;padding:18px;border-left:5px solid #e2b400;border-radius:12px;background:#fff9dd}
-@media(max-width:720px){.action-grid{grid-template-columns:1fr}.spec-table th,.spec-table td{display:block;width:auto}.asset-table{display:block;overflow-x:auto}}
+:root{
+  --xray-blue:#0a5f96;
+  --xray-blue-dark:#074d82;
+  --xray-border:#cfe0ef;
+  --xray-text:#243746;
+}
+
+.action-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.action-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:76px;
+  padding:18px;
+  border:1px solid var(--xray-border);
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--xray-blue-dark);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.action-card:hover{
+  transform:translateY(-2px);
+  border-color:#8ebbd9;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.spec-table,
+.asset-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--xray-border);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.spec-table th,
+.spec-table td,
+.asset-table th,
+.asset-table td{
+  padding:15px 18px;
+  border-bottom:1px solid #dbe7f1;
+  text-align:left;
+  vertical-align:top;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+  border-bottom:0;
+}
+
+.spec-table th{
+  width:33%;
+  background:#f1f7fb;
+  color:var(--xray-blue-dark);
+}
+
+.asset-table thead th{
+  background:#17679f;
+  color:#fff;
+}
+
+.asset-table tbody tr:nth-child(even){
+  background:#f6f9fc;
+}
+
+.machine-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.machine-card{
+  border:1px solid var(--xray-border);
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+  padding:16px 18px;
+  background:linear-gradient(135deg,#17679f,#0a4f86);
+  color:#fff;
+}
+
+.machine-card-header .line{
+  margin:0 0 4px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+.machine-card-header h3{
+  margin:0;
+  font-size:1.25rem;
+}
+
+.plate-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.plate-list li{
+  display:grid;
+  grid-template-columns:46% 54%;
+  gap:8px;
+  padding:11px 16px;
+  border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+  border-bottom:0;
+}
+
+.plate-list strong{
+  color:var(--xray-blue-dark);
+}
+
+.plate-list span{
+  color:var(--xray-text);
+  overflow-wrap:anywhere;
+}
+
+.line-badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#eaf4fb;
+  color:#07578f;
+  font-weight:800;
+}
+
+.notice{
+  margin-top:20px;
+  padding:18px;
+  border-left:5px solid #e2b400;
+  border-radius:12px;
+  background:#fff9dd;
+}
+
+@media(max-width:900px){
+  .machine-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:720px){
+  .action-grid{
+    grid-template-columns:1fr;
+  }
+
+  .spec-table th,
+  .spec-table td{
+    display:block;
+    width:auto;
+  }
+
+  .asset-table{
+    display:block;
+    overflow-x:auto;
+  }
+
+  .plate-list li{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+}
 </style>
 </head>
 
@@ -39,7 +211,10 @@
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Quick Access</p><h2>X-Ray Resources</h2></div>
+<div>
+<p class="section-label">Quick Access</p>
+<h2>X-Ray Resources</h2>
+</div>
 <span class="line-badge">Lines 1, 3 and 4</span>
 </div>
 
@@ -52,26 +227,10 @@
 
 <section class="content-section" id="machine-information">
 <div class="section-heading">
-<div><p class="section-label">Installed Equipment</p><h2>Production Line Assignment</h2></div>
-<span class="line-badge">Lines 1, 3 and 4</span>
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
 </div>
-
-<table class="asset-table">
-<thead>
-<tr><th>Production Line</th><th>Machine</th><th>Model</th><th>Serial / Asset No.</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Tortilla Line 1</strong></td><td>X-Ray Inspection System</td><td>IX-EN-4093</td><td>To be added</td></tr>
-<tr><td><strong>Tortilla Line 3</strong></td><td>X-Ray Inspection System</td><td>IX-EN-4093</td><td>To be added</td></tr>
-<tr><td><strong>Tortilla Line 4</strong></td><td>X-Ray Inspection System</td><td>IX-EN-4093</td><td>To be added</td></tr>
-</tbody>
-</table>
-</section>
-
-<section class="content-section">
-<div class="section-heading">
-<div><p class="section-label">Equipment Information</p><h2>General Specifications</h2></div>
-<span class="line-badge">Parts Manuals Available</span>
 </div>
 
 <table class="spec-table">
@@ -79,7 +238,142 @@
 <tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
 <tr><th>Equipment</th><td>X-Ray Inspection System</td></tr>
 <tr><th>Model</th><td>IX-EN-4093</td></tr>
-<tr><th>Installed Lines</th><td>Tortilla Lines 1, 3, and 4</td></tr>
+<tr><th>Installed Lines</th><td>Tortilla Lines 1, 3 and 4</td></tr>
+<tr><th>Manufacturer Address</th><td>44 Sanno-cho, Shogoin, Sakyo-ku, Kyoto, 606-8392 Japan</td></tr>
+<tr><th>Phase</th><td>Single Phase</td></tr>
+<tr><th>Current</th><td>6.0 A</td></tr>
+<tr><th>Frequency</th><td>50/60 Hz</td></tr>
+<tr><th>Short-Circuit Rating</th><td>2.5 kA</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>X-Ray Line Assignment</h2>
+</div>
+<span class="line-badge">IX-EN-4093</span>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Model</th>
+<th>Project No.</th>
+<th>Serial No.</th>
+<th>Mfg. Date</th>
+<th>Current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line 1</td>
+<td>IX-EN-4093</td>
+<td>209051101</td>
+<td>100506032</td>
+<td>October 2020</td>
+<td>6.0 A</td>
+</tr>
+<tr>
+<td>Line 3</td>
+<td>IX-EN-4093</td>
+<td>211172001</td>
+<td>100608713</td>
+<td>July 2022</td>
+<td>6.0 A</td>
+</tr>
+<tr>
+<td>Line 4</td>
+<td>IX-EN-4093</td>
+<td>209051001</td>
+<td>100506031</td>
+<td>October 2020</td>
+<td>6.0 A</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 1</p>
+<h3>Ishida IX-EN-4093</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>IX-EN-4093</span></li>
+<li><strong>Project No.</strong><span>209051101</span></li>
+<li><strong>Serial No.</strong><span>100506032</span></li>
+<li><strong>Mfg. Date</strong><span>October 2020</span></li>
+<li><strong>Phase</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>200 / 208 / 220 / 230 / 240 V</span></li>
+<li><strong>Current</strong><span>6.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 3</p>
+<h3>Ishida IX-EN-4093</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>IX-EN-4093</span></li>
+<li><strong>Project No.</strong><span>211172001</span></li>
+<li><strong>Serial No.</strong><span>100608713</span></li>
+<li><strong>Mfg. Date</strong><span>July 2022</span></li>
+<li><strong>Phase</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>200 / 230 / 240 V</span></li>
+<li><strong>Current</strong><span>6.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 4</p>
+<h3>Ishida IX-EN-4093</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>IX-EN-4093</span></li>
+<li><strong>Project No.</strong><span>209051001</span></li>
+<li><strong>Serial No.</strong><span>100506031</span></li>
+<li><strong>Mfg. Date</strong><span>October 2020</span></li>
+<li><strong>Phase</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>200 / 208 / 220 / 230 / 240 V</span></li>
+<li><strong>Current</strong><span>6.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+</ul>
+</article>
+
+</div>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Documentation</p>
+<h2>Parts &amp; Rejector Information</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
 <tr><th>X-Ray Parts Manual Order No.</th><td>915844</td></tr>
 <tr><th>X-Ray Parts Manual Project No.</th><td>2090511-01</td></tr>
 <tr><th>Parts Manual Customer</th><td>Heat and Control Inc.</td></tr>
@@ -89,16 +383,14 @@
 <tr><th>Available Documentation</th><td>IX-EN-4093 illustrated parts manual and RE-060 rejector illustrated parts manual</td></tr>
 </tbody>
 </table>
-
-<div class="notice">
-<strong>Verify machine-specific identification before ordering parts.</strong><br>
-The uploaded parts manuals provide model, order, and project information for the documented equipment. Verify the serial number and nameplate data on the individual Line 1, Line 3, and Line 4 machines before ordering parts or performing model-specific service.
-</div>
 </section>
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Major Assemblies</p><h2>IX-EN-4093 Parts Coverage</h2></div>
+<div>
+<p class="section-label">Major Assemblies</p>
+<h2>IX-EN-4093 Parts Coverage</h2>
+</div>
 </div>
 
 <table class="spec-table">
@@ -116,7 +408,10 @@ The uploaded parts manuals provide model, order, and project information for the
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Reject System</p><h2>RE-060 Rejector</h2></div>
+<div>
+<p class="section-label">Reject System</p>
+<h2>RE-060 Rejector</h2>
+</div>
 </div>
 
 <table class="spec-table">
