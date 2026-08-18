@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Machine information for AM Manufacturing Apache Press equipment used on Tortilla Lines 1, 3, and 4.">
+<title>AM Press | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+:root{
+    --press-blue:#0a5f96;
+    --press-blue-dark:#074d82;
+    --press-blue-light:#eef7fc;
+    --press-border:#cfe0ef;
+    --press-text:#243746;
+    --press-muted:#607485;
+}
+
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:24px;
+}
+
+.action-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:76px;
+    padding:18px;
+    border:1px solid var(--press-border);
+    border-radius:14px;
+    background:#fff;
+    text-decoration:none;
+    font-weight:800;
+    color:var(--press-blue-dark);
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.action-card:hover{
+    transform:translateY(-2px);
+    border-color:#8ebbd9;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.spec-table,
+.asset-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid var(--press-border);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.spec-table th,
+.spec-table td,
+.asset-table th,
+.asset-table td{
+    padding:15px 18px;
+    border-bottom:1px solid #dbe7f1;
+    text-align:left;
+    vertical-align:top;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+    border-bottom:0;
+}
+
+.spec-table th{
+    width:33%;
+    background:#f1f7fb;
+    color:var(--press-blue-dark);
+}
+
+.asset-table thead th{
+    background:#17679f;
+    color:#fff;
+}
+
+.asset-table tbody tr:nth-child(even){
+    background:#f6f9fc;
+}
+
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.machine-card{
+    border:1px solid var(--press-border);
+    border-radius:16px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+    padding:16px 18px;
+    background:linear-gradient(135deg,#17679f,#0a4f86);
+    color:#fff;
+}
+
+.machine-card-header .line{
+    margin:0 0 4px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+
+.machine-card-header h3{
+    margin:0;
+    font-size:1.25rem;
+}
+
+.plate-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.plate-list li{
+    display:grid;
+    grid-template-columns:48% 52%;
+    gap:8px;
+    padding:11px 16px;
+    border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+    border-bottom:0;
+}
+
+.plate-list strong{
+    color:var(--press-blue-dark);
+}
+
+.plate-list span{
+    color:var(--press-text);
+    overflow-wrap:anywhere;
+}
+
+.status-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    background:#eaf4fb;
+    color:#07578f;
+    font-weight:800;
+}
+
+@media(max-width:900px){
+    .machine-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:720px){
+    .action-grid{
+        grid-template-columns:1fr;
+    }
+
+    .spec-table th,
+    .spec-table td{
+        display:block;
+        width:auto;
+    }
+
+    .asset-table{
+        display:block;
+        overflow-x:auto;
+    }
+
+    .plate-list li{
+        grid-template-columns:1fr;
+        gap:2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page-container">
+
+<header class="page-header">
+
+<a class="back-link" href="../../index.html">← Home</a>
+
+<div class="header-content">
+
+<div class="header-icon" aria-hidden="true">⚙️</div>
+
+<div>
+<p class="eyebrow">Tortillas Maintenance</p>
+<h1>AM Press</h1>
+<p class="header-subtitle">Apache Press Equipment — Lines 1, 3, and 4</p>
+</div>
+
+</div>
+</header>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Quick Access</p>
+<h2>AM Press Resources</h2>
+</div>
+
+<span class="status-badge">Lines 1, 3 &amp; 4</span>
+</div>
+
+<div class="action-grid">
+
+<a class="action-card" href="../../manuals/tortillas/am-press.html">
+📘 Manuals
+</a>
+
+<a class="action-card" href="../../sops/tortillas/am-press.html">
+📋 SOPs
+</a>
+
+<a class="action-card" href="#machine-information">
+⚙️ Machine Information
+</a>
+
+</div>
+</section>
+
+
+<section class="content-section" id="machine-information">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+
+<tr>
+<th>Manufacturer</th>
+<td>AM Manufacturing Co.</td>
+</tr>
+
+<tr>
+<th>Equipment</th>
+<td>Apache Press</td>
+</tr>
+
+<tr>
+<th>Models</th>
+<td>TOPC 2043 / APACHE 2042</td>
+</tr>
+
+<tr>
+<th>Installed Lines</th>
+<td>Lines 1, 3, and 4</td>
+</tr>
+
+<tr>
+<th>Manufacturer Location</th>
+<td>Munster, Indiana - USA</td>
+</tr>
+
+<tr>
+<th>Voltage</th>
+<td>480 V</td>
+</tr>
+
+<tr>
+<th>Phase</th>
+<td>3</td>
+</tr>
+
+<tr>
+<th>Frequency</th>
+<td>60 Hz</td>
+</tr>
+
+</tbody>
+</table>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>AM Press Line Assignment</h2>
+</div>
+
+<span class="status-badge">Apache Press</span>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Model</th>
+<th>Serial #</th>
+<th>Mfg. Date</th>
+<th>Hydraulic Motor H.P.</th>
+<th>AMP (FLA)</th>
+<th>Drawing #</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Line 1</td>
+<td>TOPC 2043</td>
+<td>A32062x</td>
+<td>9/2018</td>
+<td>7.5 HP</td>
+<td>124.8 A</td>
+<td>20031</td>
+</tr>
+
+<tr>
+<td>Line 3</td>
+<td>APACHE 2042</td>
+<td>A42105T</td>
+<td>9/2019</td>
+<td>75 HP</td>
+<td>183.87 A</td>
+<td>23023</td>
+</tr>
+
+<tr>
+<td>Line 4</td>
+<td>APACHE 2042</td>
+<td>A42104T</td>
+<td>1/2018</td>
+<td>50 HP</td>
+<td>224.10 A</td>
+<td>20086</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 1</p>
+<h3>AM Manufacturing TOPC 2043</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Brand</strong><span>Apache Press</span></li>
+<li><strong>Model</strong><span>TOPC 2043</span></li>
+<li><strong>Serial #</strong><span>A32062x</span></li>
+<li><strong>Voltage</strong><span>480 V</span></li>
+<li><strong>Phase</strong><span>3</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Mfg. Date</strong><span>9/2018</span></li>
+<li><strong>Hydraulic Motor H.P.</strong><span>7.5 HP</span></li>
+<li><strong>Main Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>Discharge Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>AMP (FLA)</strong><span>124.8 A</span></li>
+<li><strong>Drawing #</strong><span>20031</span></li>
+</ul>
+</article>
+
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 3</p>
+<h3>AM Manufacturing APACHE 2042</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Brand</strong><span>Apache Press</span></li>
+<li><strong>Model</strong><span>APACHE 2042</span></li>
+<li><strong>Serial #</strong><span>A42105T</span></li>
+<li><strong>Voltage</strong><span>480 V</span></li>
+<li><strong>Phase</strong><span>3</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Mfg. Date</strong><span>9/2019</span></li>
+<li><strong>Hydraulic Motor H.P.</strong><span>75 HP</span></li>
+<li><strong>Main Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>Discharge Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>AMP (FLA)</strong><span>183.87 A</span></li>
+<li><strong>Drawing #</strong><span>23023</span></li>
+</ul>
+</article>
+
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 4</p>
+<h3>AM Manufacturing APACHE 2042</h3>
+</div>
+
+<ul class="plate-list">
+<li><strong>Brand</strong><span>Apache Press</span></li>
+<li><strong>Model</strong><span>APACHE 2042</span></li>
+<li><strong>Serial #</strong><span>A42104T</span></li>
+<li><strong>Voltage</strong><span>480 V</span></li>
+<li><strong>Phase</strong><span>3</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Mfg. Date</strong><span>1/2018</span></li>
+<li><strong>Hydraulic Motor H.P.</strong><span>50 HP</span></li>
+<li><strong>Main Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>Discharge Conveyor H.P.</strong><span>1 HP</span></li>
+<li><strong>AMP (FLA)</strong><span>224.10 A</span></li>
+<li><strong>Drawing #</strong><span>20086</span></li>
+</ul>
+</article>
+
+</div>
+
+</section>
+
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+
+</body>
+</html>
