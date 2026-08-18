@@ -3,22 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine information for the Arr-Tech Genesis GV38-40 flour tortilla counter stacker.">
+<meta name="description" content="Machine information for Arr-Tech GV38-40 counter stackers on Tortilla Lines 3 and 4.">
 <title>Counter Stacker | Siete Maintenance</title>
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
 <style>
-.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
-.action-card{display:flex;align-items:center;justify-content:center;min-height:76px;padding:18px;border:1px solid #cfe0ef;border-radius:14px;background:#fff;text-decoration:none;font-weight:800;color:#0a4f86;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.spec-table,.asset-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #cfe0ef;border-radius:14px;overflow:hidden}
-.spec-table th,.spec-table td,.asset-table th,.asset-table td{padding:15px 18px;border-bottom:1px solid #dbe7f1;text-align:left;vertical-align:top}
-.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{border-bottom:0}
-.spec-table th{width:33%;background:#f1f7fb;color:#074d82}
-.asset-table thead th{background:#17679f;color:#fff}
-.notice{margin-top:20px;padding:18px;border-left:5px solid #e2b400;border-radius:12px;background:#fff9dd}
-.status-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:#eaf4fb;color:#07578f;font-weight:800}
-@media(max-width:720px){.action-grid{grid-template-columns:1fr}.spec-table th,.spec-table td{display:block;width:auto}.asset-table{display:block;overflow-x:auto}}
+:root{
+  --stack-blue:#0a5f96;
+  --stack-blue-dark:#074d82;
+  --stack-border:#cfe0ef;
+  --stack-text:#243746;
+}
+
+.action-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.action-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:76px;
+  padding:18px;
+  border:1px solid var(--stack-border);
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--stack-blue-dark);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.action-card:hover{
+  transform:translateY(-2px);
+  border-color:#8ebbd9;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.spec-table,
+.asset-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--stack-border);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.spec-table th,
+.spec-table td,
+.asset-table th,
+.asset-table td{
+  padding:15px 18px;
+  border-bottom:1px solid #dbe7f1;
+  text-align:left;
+  vertical-align:top;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+  border-bottom:0;
+}
+
+.spec-table th{
+  width:33%;
+  background:#f1f7fb;
+  color:var(--stack-blue-dark);
+}
+
+.asset-table thead th{
+  background:#17679f;
+  color:#fff;
+}
+
+.asset-table tbody tr:nth-child(even){
+  background:#f6f9fc;
+}
+
+.machine-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.machine-card{
+  border:1px solid var(--stack-border);
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+  padding:16px 18px;
+  background:linear-gradient(135deg,#17679f,#0a4f86);
+  color:#fff;
+}
+
+.machine-card-header .line{
+  margin:0 0 4px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+.machine-card-header h3{
+  margin:0;
+  font-size:1.25rem;
+}
+
+.plate-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.plate-list li{
+  display:grid;
+  grid-template-columns:48% 52%;
+  gap:8px;
+  padding:11px 16px;
+  border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+  border-bottom:0;
+}
+
+.plate-list strong{
+  color:var(--stack-blue-dark);
+}
+
+.plate-list span{
+  color:var(--stack-text);
+  overflow-wrap:anywhere;
+}
+
+.status-badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#eaf4fb;
+  color:#07578f;
+  font-weight:800;
+}
+
+@media(max-width:900px){
+  .machine-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:720px){
+  .action-grid{
+    grid-template-columns:1fr;
+  }
+
+  .spec-table th,
+  .spec-table td{
+    display:block;
+    width:auto;
+  }
+
+  .asset-table{
+    display:block;
+    overflow-x:auto;
+  }
+
+  .plate-list li{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+}
 </style>
 </head>
+
 <body>
 <main class="page-container">
 
@@ -29,16 +196,20 @@
 <div>
 <p class="eyebrow">Tortillas Maintenance</p>
 <h1>Counter Stacker</h1>
-<p class="header-subtitle">Arr-Tech Genesis GV38-40 Flour Tortilla Counter Stacker with Vibration</p>
+<p class="header-subtitle">Arr-Tech GV38-40 Counter Stackers</p>
 </div>
 </div>
 </header>
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Quick Access</p><h2>Counter Stacker Resources</h2></div>
-<span class="status-badge">Line Assignment TBD</span>
+<div>
+<p class="section-label">Quick Access</p>
+<h2>Counter Stacker Resources</h2>
 </div>
+<span class="status-badge">Lines 3 and 4</span>
+</div>
+
 <div class="action-grid">
 <a class="action-card" href="../../manuals/tortillas/counter-stacker.html">📘 Manuals</a>
 <a class="action-card" href="../../sops/tortillas/counter-stacker.html">📋 SOPs</a>
@@ -48,24 +219,29 @@
 
 <section class="content-section" id="machine-information">
 <div class="section-heading">
-<div><p class="section-label">Equipment Information</p><h2>Machine Specifications</h2></div>
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
 </div>
+</div>
+
 <table class="spec-table">
 <tbody>
-<tr><th>Manufacturer</th><td>Arr-Tech Manufacturing, Inc.</td></tr>
+<tr><th>Manufacturer</th><td>Arr-Tech Automation Technology</td></tr>
 <tr><th>Equipment Type</th><td>Flour Tortilla Counter Stacker with Vibration</td></tr>
-<tr><th>Model</th><td>Genesis GV38-40</td></tr>
-<tr><th>Machine / Project</th><td>A17028 GV38-40</td></tr>
+<tr><th>Model</th><td>GV38-40</td></tr>
+<tr><th>Installed Lines</th><td>Tortilla Lines 3 and 4</td></tr>
+<tr><th>Supply Voltage</th><td>230 V</td></tr>
+<tr><th>Frequency</th><td>60 Hz</td></tr>
+<tr><th>Phase</th><td>3Ø</td></tr>
+<tr><th>Short Circuit Current Rating</th><td>65 kA</td></tr>
+<tr><th>Largest Motor</th><td>1.0 HP / 3.1 A</td></tr>
 <tr><th>Row Configuration</th><td>2, 3, or 4 rows</td></tr>
 <tr><th>Maximum Lane Rate</th><td>Up to 180 tortillas per lane per minute</td></tr>
 <tr><th>Product Size</th><td>5 in. to 12 in.</td></tr>
 <tr><th>Stack Count</th><td>6 to 36 per stack, depending on product thickness</td></tr>
 <tr><th>Maximum Stack Height</th><td>5 in.</td></tr>
 <tr><th>Production Rate</th><td>3,600 dozen/hour</td></tr>
-<tr><th>Supply Voltage</th><td>230 V ±10%, 3 phase, 60 Hz ±0.2 Hz</td></tr>
-<tr><th>Fusing</th><td>20 A</td></tr>
-<tr><th>Machine Current</th><td>14.42 A</td></tr>
-<tr><th>Approx. Running Current</th><td>8 A</td></tr>
 <tr><th>Compressed Air</th><td>5 CFM at minimum 80 psi clean, dry air</td></tr>
 <tr><th>Air Pressure Range</th><td>65 psi minimum / 100 psi maximum</td></tr>
 <tr><th>Controller</th><td>Direct Logic DL-06 PLC</td></tr>
@@ -74,32 +250,108 @@
 <tr><th>Machine Mass</th><td>Approximately 1,761 lb (799 kg)</td></tr>
 </tbody>
 </table>
-
-<div class="notice">
-<strong>Installed line information still needs to be added.</strong><br>
-This page intentionally does not assign the Counter Stacker to specific Tortilla lines. Once the installed machines are confirmed, update the Asset Identification table below.
-</div>
 </section>
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Asset Identification</p><h2>Installed Counter Stackers</h2></div>
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>Counter Stacker Line Assignment</h2>
 </div>
+<span class="status-badge">GV38-40</span>
+</div>
+
 <table class="asset-table">
-<thead><tr><th>Line</th><th>Model</th><th>Project / Machine No.</th><th>Serial / Asset No.</th></tr></thead>
+<thead>
+<tr>
+<th>Line</th>
+<th>Model</th>
+<th>Serial Number</th>
+<th>Total FLA</th>
+<th>Schematic Number</th>
+</tr>
+</thead>
 <tbody>
-<tr><td>To be added</td><td>GV38-40</td><td>Verify from machine nameplate</td><td>To be added</td></tr>
+<tr>
+<td><strong>Line 3</strong></td>
+<td>GV38-40</td>
+<td>A22068</td>
+<td>15.2 A</td>
+<td>A22068</td>
+</tr>
+<tr>
+<td><strong>Line 4</strong></td>
+<td>GV38-40</td>
+<td>A17028</td>
+<td>14.42 A</td>
+<td>A17028</td>
+</tr>
 </tbody>
 </table>
 </section>
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Manufacturer Information</p><h2>Arr-Tech Manufacturing, Inc.</h2></div>
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
 </div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 3</p>
+<h3>Arr-Tech GV38-40</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Serial Number</strong><span>A22068</span></li>
+<li><strong>Model</strong><span>GV38-40</span></li>
+<li><strong>Voltage</strong><span>230 V</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Phase</strong><span>3Ø</span></li>
+<li><strong>Total FLA Rating</strong><span>15.2 A</span></li>
+<li><strong>Short Circuit Current Rating</strong><span>65 kA</span></li>
+<li><strong>Largest Motor</strong><span>1.0 HP / 3.1 A</span></li>
+<li><strong>Schematic Number</strong><span>A22068</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 4</p>
+<h3>Arr-Tech GV38-40</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Serial Number</strong><span>A17028</span></li>
+<li><strong>Model</strong><span>GV38-40</span></li>
+<li><strong>Voltage</strong><span>230 V</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Phase</strong><span>3Ø</span></li>
+<li><strong>Total FLA Rating</strong><span>14.42 A</span></li>
+<li><strong>Short Circuit Current Rating</strong><span>65 kA</span></li>
+<li><strong>Largest Motor</strong><span>1.0 HP / 3.1 A</span></li>
+<li><strong>Schematic Number</strong><span>A17028</span></li>
+</ul>
+</article>
+
+</div>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Manufacturer Information</p>
+<h2>Arr-Tech Automation Technology</h2>
+</div>
+</div>
+
 <table class="spec-table">
 <tbody>
-<tr><th>Address</th><td>3801 W. Washington Ave., Yakima, WA 98903</td></tr>
+<tr><th>Nameplate Address</th><td>P.O. Box 10932, Yakima, Washington 98909</td></tr>
+<tr><th>Nameplate Phone</th><td>866-852-2442</td></tr>
+<tr><th>Support Address</th><td>3801 W. Washington Ave., Yakima, WA 98903</td></tr>
 <tr><th>Main / Toll Free</th><td>800-998-4301</td></tr>
 <tr><th>24-Hour Service</th><td>509-728-3238 / 800-998-4301 ext. 399</td></tr>
 </tbody>
