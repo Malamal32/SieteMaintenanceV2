@@ -3,20 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine information and technical resources for the DACs equipment on Tortilla Lines 1, 3, and 4.">
+<meta name="description" content="Machine information and technical resources for Ishida DACs checkweighers on Tortilla Lines 1, 3, and 4.">
 <title>DACs Machine Page</title>
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
 <style>
-.spec-table-wrap,.asset-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
-.spec-table,.asset-table{width:100%;border-collapse:collapse;font-size:.8rem}
-.asset-table{min-width:760px}
-.spec-table th,.spec-table td,.asset-table th,.asset-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border)}
-.spec-table th{width:34%;color:#0f4f82;background:#f1f7fb;font-weight:700}
-.asset-table thead th{color:#fff;background:var(--blue);font-weight:700}
-.asset-table tbody tr:nth-child(even){background:#f7fbfe}
-.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tbody tr:last-child td{border-bottom:0}
-.warning-note{display:grid;grid-template-columns:34px 1fr;gap:12px;margin-top:18px;padding:16px;color:#704d00;background:#fff8dc;border:1px solid #efd174;border-left:5px solid #e0b700;border-radius:9px}
-.warning-note strong{display:block;margin-bottom:4px}
+:root{
+  --dacs-blue:#0a5f96;
+  --dacs-blue-dark:#074d82;
+  --dacs-border:#cfe0ef;
+  --dacs-text:#243746;
+}
+
+.action-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.action-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:76px;
+  padding:18px;
+  border:1px solid var(--dacs-border);
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--dacs-blue-dark);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.action-card:hover{
+  transform:translateY(-2px);
+  border-color:#8ebbd9;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.spec-table,
+.asset-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--dacs-border);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.spec-table th,
+.spec-table td,
+.asset-table th,
+.asset-table td{
+  padding:15px 18px;
+  border-bottom:1px solid #dbe7f1;
+  text-align:left;
+  vertical-align:top;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+  border-bottom:0;
+}
+
+.spec-table th{
+  width:33%;
+  background:#f1f7fb;
+  color:var(--dacs-blue-dark);
+}
+
+.asset-table thead th{
+  background:#17679f;
+  color:#fff;
+}
+
+.asset-table tbody tr:nth-child(even){
+  background:#f6f9fc;
+}
+
+.machine-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.machine-card{
+  border:1px solid var(--dacs-border);
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+  padding:16px 18px;
+  background:linear-gradient(135deg,#17679f,#0a4f86);
+  color:#fff;
+}
+
+.machine-card-header .line{
+  margin:0 0 4px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+.machine-card-header h3{
+  margin:0;
+  font-size:1.2rem;
+}
+
+.plate-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.plate-list li{
+  display:grid;
+  grid-template-columns:46% 54%;
+  gap:8px;
+  padding:11px 16px;
+  border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+  border-bottom:0;
+}
+
+.plate-list strong{
+  color:var(--dacs-blue-dark);
+}
+
+.plate-list span{
+  color:var(--dacs-text);
+  overflow-wrap:anywhere;
+}
+
+.count-badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#eaf4fb;
+  color:#07578f;
+  font-weight:800;
+}
+
+@media(max-width:900px){
+  .machine-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:720px){
+  .action-grid{
+    grid-template-columns:1fr;
+  }
+
+  .spec-table th,
+  .spec-table td{
+    display:block;
+    width:auto;
+  }
+
+  .asset-table{
+    display:block;
+    overflow-x:auto;
+  }
+
+  .plate-list li{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+}
 </style>
 </head>
 <body>
@@ -29,69 +195,182 @@
 <div>
 <p class="eyebrow">Tortillas Maintenance</p>
 <h1>DACs Machine Page</h1>
-<p class="header-subtitle">Lines 1, 3, and 4</p>
+<p class="header-subtitle">Ishida DACS-GN-S060-34/SS-I-S Checkweighers — Lines 1, 3, and 4</p>
 </div>
 </div>
 </header>
 
 <section class="content-section">
-<div class="section-heading"><div><p class="section-label">Quick Access</p><h2>Documentation</h2></div></div>
-<div class="quick-links">
-<a class="quick-link" href="../../manuals/tortillas/dacs.html">📘 Manuals</a>
-<a class="quick-link" href="../../sops/tortillas/dacs.html">📋 SOPs</a>
-<a class="quick-link" href="#machine-information">⚙️ Machine Information</a>
+<div class="section-heading">
+<div>
+<p class="section-label">Quick Access</p>
+<h2>DACs Resources</h2>
+</div>
+<span class="count-badge">Lines 1, 3 and 4</span>
+</div>
+
+<div class="action-grid">
+<a class="action-card" href="../../manuals/tortillas/dacs.html">📘 Manuals</a>
+<a class="action-card" href="../../sops/tortillas/dacs.html">📋 SOPs</a>
+<a class="action-card" href="#machine-information">⚙️ Machine Information</a>
 </div>
 </section>
 
 <section class="content-section" id="machine-information">
 <div class="section-heading">
-<div><p class="section-label">Equipment Information</p><h2>Machine Specifications</h2></div>
-<span class="count-badge">Lines 1, 3 and 4</span>
+<div>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
+</div>
 </div>
 
-<div class="spec-table-wrap">
 <table class="spec-table">
 <tbody>
 <tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
-<tr><th>Equipment Type</th><td>X-Ray Inspection System</td></tr>
-<tr><th>Model</th><td>IX-EN-4093</td></tr>
-<tr><th>Installed Lines</th><td>Tortilla Lines 1, 3 and 4</td></tr>
-<tr><th>Power Phase</th><td>Single phase</td></tr>
-<tr><th>Supply Voltage</th><td>Multi-voltage configuration; verify the individual equipment nameplate before service</td></tr>
-<tr><th>Rated Current</th><td>Approximately 5–6 A, depending on the installed unit</td></tr>
+<tr><th>Equipment Type</th><td>Checkweigher</td></tr>
+<tr><th>Model</th><td>DACS-GN-S060-34/SS-I-S</td></tr>
+<tr><th>Installed Lines</th><td>Tortilla Lines 1, 3, and 4</td></tr>
+<tr><th>Weighing Capacity</th><td>6000 g</td></tr>
+<tr><th>Power</th><td>Single Phase</td></tr>
+<tr><th>Supply Voltage</th><td>AC 120–240 V</td></tr>
 <tr><th>Frequency</th><td>50/60 Hz</td></tr>
 <tr><th>Short-Circuit Rating</th><td>2.5 kA</td></tr>
 <tr><th>Country of Manufacture</th><td>Japan</td></tr>
 </tbody>
 </table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>DACs Line Assignment</h2>
+</div>
+<span class="count-badge">DACS-GN-S060-34/SS-I-S</span>
 </div>
 
-<div class="warning-note">
-<span aria-hidden="true">⚠️</span>
+<table class="asset-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Project No.</th>
+<th>Serial No.</th>
+<th>Mfg. Date</th>
+<th>Current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Line 1</strong></td>
+<td>206084901</td>
+<td>100349962</td>
+<td>May 2018</td>
+<td>3.0–4.0 A</td>
+</tr>
+<tr>
+<td><strong>Line 3</strong></td>
+<td>209789801</td>
+<td>100543947</td>
+<td>June 2021</td>
+<td>3.0–4.0 A</td>
+</tr>
+<tr>
+<td><strong>Line 4</strong></td>
+<td>206084801</td>
+<td>100349961</td>
+<td>May 2018</td>
+<td>3.0–7.0 A</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
 <div>
-<strong>Electrical verification required</strong>
-<p>Always verify voltage, current, serial number, project number, and manufacturing date directly from the individual machine nameplate before performing electrical work or ordering model-specific parts.</p>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
 </div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 1</p>
+<h3>Ishida DACS-GN-S060-34/SS-I-S</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>DACS-GN-S060-34/SS-I-S</span></li>
+<li><strong>Weighing Capacity</strong><span>6000 g</span></li>
+<li><strong>Project No.</strong><span>206084901</span></li>
+<li><strong>Serial No.</strong><span>100349962</span></li>
+<li><strong>Mfg. Date</strong><span>May 2018</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>AC 120–240 V</span></li>
+<li><strong>Current</strong><span>3.0–4.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+<li><strong>Heat &amp; Control Order No.</strong><span>804304</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 3</p>
+<h3>Ishida DACS-GN-S060-34/SS-I-S</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>DACS-GN-S060-34/SS-I-S</span></li>
+<li><strong>Weighing Capacity</strong><span>6000 g</span></li>
+<li><strong>Project No.</strong><span>209789801</span></li>
+<li><strong>Serial No.</strong><span>100543947</span></li>
+<li><strong>Mfg. Date</strong><span>June 2021</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>AC 120–240 V</span></li>
+<li><strong>Current</strong><span>3.0–4.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Tortilla Line 4</p>
+<h3>Ishida DACS-GN-S060-34/SS-I-S</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>DACS-GN-S060-34/SS-I-S</span></li>
+<li><strong>Weighing Capacity</strong><span>6000 g</span></li>
+<li><strong>Project No.</strong><span>206084801</span></li>
+<li><strong>Serial No.</strong><span>100349961</span></li>
+<li><strong>Mfg. Date</strong><span>May 2018</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>AC 120–240 V</span></li>
+<li><strong>Current</strong><span>3.0–7.0 A</span></li>
+<li><strong>Frequency</strong><span>50/60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+<li><strong>Heat &amp; Control Order No.</strong><span>804303</span></li>
+</ul>
+</article>
+
 </div>
 </section>
 
 <section class="content-section">
 <div class="section-heading">
-<div><p class="section-label">Asset Identification</p><h2>Installed DACs Machines</h2></div>
+<div>
+<p class="section-label">Manufacturer Information</p>
+<h2>Ishida Co., Ltd.</h2>
+</div>
 </div>
 
-<div class="asset-table-wrap">
-<table class="asset-table">
-<thead>
-<tr><th>Line</th><th>Model</th><th>Project No.</th><th>Serial No.</th><th>Mfg. Date</th></tr>
-</thead>
+<table class="spec-table">
 <tbody>
-<tr><td>Line 1</td><td>IX-EN-4093</td><td>209031001</td><td>100506031</td><td>October 2020</td></tr>
-<tr><td>Line 3</td><td>IX-EN-4093</td><td>209051101</td><td>100506032</td><td>October 2020</td></tr>
-<tr><td>Line 4</td><td>IX-EN-4093</td><td>211172001</td><td>100608713</td><td>July 2022</td></tr>
+<tr><th>Address</th><td>44 Sanno-cho, Shogoin, Sakyo-ku, Kyoto, 606-8392 Japan</td></tr>
+<tr><th>Country</th><td>Japan</td></tr>
 </tbody>
 </table>
-</div>
 </section>
 
 <footer class="page-footer">
