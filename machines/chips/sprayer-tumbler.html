@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
+:root{
+    --spray-blue:#0a5f96;
+    --spray-blue-dark:#074d82;
+    --spray-border:#cfe0ef;
+    --spray-text:#243746;
+}
 .action-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
@@ -20,19 +26,25 @@
     justify-content:center;
     min-height:76px;
     padding:18px;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--spray-border);
     border-radius:14px;
     background:#fff;
     text-decoration:none;
     font-weight:800;
-    color:#0a4f86;
+    color:var(--spray-blue-dark);
     box-shadow:0 4px 14px rgba(0,0,0,.05);
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+}
+.action-card:hover{
+    transform:translateY(-2px);
+    border-color:#8ebbd9;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 .spec-table,.asset-table{
     width:100%;
     border-collapse:separate;
     border-spacing:0;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--spray-border);
     border-radius:14px;
     overflow:hidden;
 }
@@ -48,7 +60,7 @@
 .spec-table th{
     width:33%;
     background:#f1f7fb;
-    color:#074d82;
+    color:var(--spray-blue-dark);
 }
 .asset-table thead th{
     background:#17679f;
@@ -56,6 +68,58 @@
 }
 .asset-table tbody tr:nth-child(even){
     background:#f6f9fc;
+}
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+.machine-card{
+    border:1px solid var(--spray-border);
+    border-radius:16px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+.machine-card-header{
+    padding:16px 18px;
+    background:linear-gradient(135deg,#17679f,#0a4f86);
+    color:#fff;
+}
+.machine-card-header .line{
+    margin:0 0 4px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+.machine-card-header h3{
+    margin:0;
+    font-size:1.15rem;
+}
+.plate-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.plate-list li{
+    display:grid;
+    grid-template-columns:44% 56%;
+    gap:8px;
+    padding:11px 16px;
+    border-bottom:1px solid #e3edf4;
+}
+.plate-list li:last-child{
+    border-bottom:0;
+}
+.plate-list strong{
+    color:var(--spray-blue-dark);
+}
+.plate-list span{
+    color:var(--spray-text);
+    overflow-wrap:anywhere;
 }
 .status-badge{
     display:inline-block;
@@ -65,17 +129,14 @@
     color:#07578f;
     font-weight:800;
 }
-.notice{
-    margin-top:20px;
-    padding:18px;
-    border-left:5px solid #e2b400;
-    border-radius:12px;
-    background:#fff9dd;
+@media(max-width:900px){
+    .machine-grid{grid-template-columns:1fr}
 }
 @media(max-width:720px){
     .action-grid{grid-template-columns:1fr}
     .spec-table th,.spec-table td{display:block;width:auto}
     .asset-table{display:block;overflow-x:auto}
+    .plate-list li{grid-template-columns:1fr;gap:2px}
 }
 </style>
 </head>
@@ -95,14 +156,13 @@
 </div>
 </header>
 
-
 <section class="content-section">
 <div class="section-heading">
 <div>
 <p class="section-label">Quick Access</p>
 <h2>Sprayer &amp; Tumbler Resources</h2>
 </div>
-<span class="status-badge">Line Assignment TBD</span>
+<span class="status-badge">5 Components</span>
 </div>
 
 <div class="action-grid">
@@ -111,7 +171,6 @@
 <a class="action-card" href="#machine-information">⚙️ Machine Information</a>
 </div>
 </section>
-
 
 <section class="content-section" id="machine-information">
 <div class="section-heading">
@@ -125,18 +184,140 @@
 <tbody>
 <tr><th>Manufacturer</th><td>Spray Dynamics / Heat and Control</td></tr>
 <tr><th>Equipment Type</th><td>Seasoning Application and Coating System</td></tr>
-<tr><th>Major Equipment</th><td>Scarf Feeder, seasoning feeder, spray system, spray arm, and coating drum</td></tr>
+<tr><th>Major Equipment</th><td>Scarf Plate Feeder, Unispense III, Continuous Spray System, MSI Applicator, and Coating Drum</td></tr>
 <tr><th>Primary Function</th><td>Distributes dry seasoning and liquid/oil spray onto product while the product tumbles through the coating drum.</td></tr>
-<tr><th>Installed Line / Area</th><td>To be added</td></tr>
+<tr><th>System SO #</th><td>2020053566</td></tr>
+<tr><th>Voltage</th><td>480 VAC, 3 Phase</td></tr>
+<tr><th>Date of Manufacture</th><td>04/14/2021</td></tr>
 </tbody>
 </table>
-
-<div class="notice">
-<strong>Installed line and asset information still needs to be added.</strong><br>
-The uploaded manual and drawings identify the major Sprayer &amp; Tumbler components, but they do not establish a specific production-line assignment for this page. Add the line, serial number, and plant asset information after field verification.
-</div>
 </section>
 
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>Sprayer &amp; Tumbler Components</h2>
+</div>
+<span class="status-badge">Spray Dynamics</span>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Component</th>
+<th>Model</th>
+<th>Serial #</th>
+<th>TLA</th>
+<th>Voltage</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>Coating Drum</strong></td><td>COATING DRUM</td><td>1504</td><td>32095130</td><td>480 VAC, 3 PH</td></tr>
+<tr><td><strong>Continuous Spray System</strong></td><td>CONT-SPRAY</td><td>1432</td><td>32095129</td><td>480 VAC, 3 PH</td></tr>
+<tr><td><strong>MSI Applicator</strong></td><td>MSI APPLICATOR</td><td>1388</td><td>32095131</td><td>480 VAC, 3 PH</td></tr>
+<tr><td><strong>Scarf Plate Feeder</strong></td><td>SCARF PLATE FEEDER</td><td>1407</td><td>32095133</td><td>480 VAC, 3 PH</td></tr>
+<tr><td><strong>Unispense III</strong></td><td>UNISPENSE III</td><td>1242</td><td>32095132</td><td>480 VAC, 3 PH</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Sprayer &amp; Tumbler</p>
+<h3>Coating Drum</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Spray Dynamics / Heat and Control</span></li>
+<li><strong>Model</strong><span>COATING DRUM</span></li>
+<li><strong>SO #</strong><span>2020053566</span></li>
+<li><strong>Serial #</strong><span>1504</span></li>
+<li><strong>TLA</strong><span>32095130</span></li>
+<li><strong>Voltage</strong><span>480 VAC, 3 PH</span></li>
+<li><strong>Date of Mfg.</strong><span>04/14/2021</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Sprayer &amp; Tumbler</p>
+<h3>Continuous Spray System</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Spray Dynamics / Heat and Control</span></li>
+<li><strong>Model</strong><span>CONT-SPRAY</span></li>
+<li><strong>SO #</strong><span>2020053566</span></li>
+<li><strong>Serial #</strong><span>1432</span></li>
+<li><strong>TLA</strong><span>32095129</span></li>
+<li><strong>Voltage</strong><span>480 VAC, 3 PH</span></li>
+<li><strong>FLA</strong><span>10 A</span></li>
+<li><strong>SCCR</strong><span>5 kA</span></li>
+<li><strong>DWG #</strong><span>32095129</span></li>
+<li><strong>Date of Mfg.</strong><span>04/14/2021</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Sprayer &amp; Tumbler</p>
+<h3>MSI Applicator</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Spray Dynamics / Heat and Control</span></li>
+<li><strong>Model</strong><span>MSI APPLICATOR</span></li>
+<li><strong>SO #</strong><span>2020053566</span></li>
+<li><strong>Serial #</strong><span>1388</span></li>
+<li><strong>TLA</strong><span>32095131</span></li>
+<li><strong>Voltage</strong><span>480 VAC, 3 PH</span></li>
+<li><strong>Date of Mfg.</strong><span>04/14/2021</span></li>
+<li><strong>Label</strong><span>H1-1 CKT 8-10-12</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Sprayer &amp; Tumbler</p>
+<h3>Scarf Plate Feeder</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Spray Dynamics / Heat and Control</span></li>
+<li><strong>Model</strong><span>SCARF PLATE FEEDER</span></li>
+<li><strong>SO #</strong><span>2020053566</span></li>
+<li><strong>Serial #</strong><span>1407</span></li>
+<li><strong>TLA</strong><span>32095133</span></li>
+<li><strong>Voltage</strong><span>480 VAC, 3 PH</span></li>
+<li><strong>Date of Mfg.</strong><span>04/14/2021</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Sprayer &amp; Tumbler</p>
+<h3>Unispense III</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Spray Dynamics / Heat and Control</span></li>
+<li><strong>Model</strong><span>UNISPENSE III</span></li>
+<li><strong>SO #</strong><span>2020053566</span></li>
+<li><strong>Serial #</strong><span>1242</span></li>
+<li><strong>TLA</strong><span>32095132</span></li>
+<li><strong>Voltage</strong><span>480 VAC, 3 PH</span></li>
+<li><strong>Date of Mfg.</strong><span>04/14/2021</span></li>
+</ul>
+</article>
+
+</div>
+</section>
 
 <section class="content-section">
 <div class="section-heading">
@@ -162,48 +343,42 @@ The uploaded manual and drawings identify the major Sprayer &amp; Tumbler compon
 </table>
 </section>
 
-
 <section class="content-section">
 <div class="section-heading">
 <div>
 <p class="section-label">Seasoning Feeder</p>
-<h2>UNI SF-100 / Unispense</h2>
+<h2>Unispense III</h2>
 </div>
 </div>
 
 <table class="spec-table">
 <tbody>
-<tr><th>Equipment</th><td>UNI SF-100 Feeder / Unispense</td></tr>
-<tr><th>Drawing Number</th><td>31200276</td></tr>
-<tr><th>Power Requirement</th><td>220–240 VAC, 3 phase, 60 Hz</td></tr>
-<tr><th>Drive</th><td>1/2 HP gearmotor, 20:1, 230 V</td></tr>
+<tr><th>Equipment</th><td>Unispense III</td></tr>
+<tr><th>TLA / Drawing Reference</th><td>32095132</td></tr>
+<tr><th>Nameplate Voltage</th><td>480 VAC, 3 phase</td></tr>
 <tr><th>Major Components</th><td>Hopper, auger, agitator, timing belts, drive components, proximity sensors, pneumatic vibrator, safety switches, and transfer tube</td></tr>
 </tbody>
 </table>
 </section>
 
-
 <section class="content-section">
 <div class="section-heading">
 <div>
 <p class="section-label">Liquid Application</p>
-<h2>MS-I Spray System</h2>
+<h2>MSI Applicator &amp; Continuous Spray System</h2>
 </div>
 </div>
 
 <table class="spec-table">
 <tbody>
-<tr><th>Equipment</th><td>MS-I, 3 Pump Spray System</td></tr>
-<tr><th>Drawing Number</th><td>32095131</td></tr>
-<tr><th>System Configuration</th><td>3-pump system with stockpot, manifold, spray arm, flexible lines, nozzle extensions, and three spray nozzles</td></tr>
-<tr><th>Spray Arm</th><td>3-pump spray arm, 10 in. centers, approximately 52 in. overall length</td></tr>
-<tr><th>Nozzles</th><td>Three N250 60-degree nozzles</td></tr>
+<tr><th>MSI Applicator TLA</th><td>32095131</td></tr>
+<tr><th>Continuous Spray TLA / DWG</th><td>32095129</td></tr>
+<tr><th>System Configuration</th><td>Spray system with stockpot, manifold, spray arm, flexible lines, nozzle extensions, and spray nozzles</td></tr>
 <tr><th>Air Requirement</th><td>9 SCFM clean air at 90 PSI</td></tr>
 <tr><th>Drum Rotation Reference</th><td>Designed for counter-clockwise drum rotation when viewed from the infeed end</td></tr>
 </tbody>
 </table>
 </section>
-
 
 <section class="content-section">
 <div class="section-heading">
@@ -215,46 +390,33 @@ The uploaded manual and drawings identify the major Sprayer &amp; Tumbler compon
 
 <table class="spec-table">
 <tbody>
-<tr><th>Drawing Number</th><td>31200275</td></tr>
-<tr><th>Drum Description</th><td>8 ft × 38 in. diameter coating drum</td></tr>
-<tr><th>System Requirement</th><td>220 VAC, 3 phase, 60 Hz</td></tr>
-<tr><th>Motor</th><td>1/2 HP, 3 phase, 56C, 208/230–480 V, 1725 RPM washdown motor</td></tr>
-<tr><th>Speed Reducer</th><td>10:1</td></tr>
+<tr><th>TLA</th><td>32095130</td></tr>
+<tr><th>Drum Description</th><td>Coating drum assembly for the seasoning application system</td></tr>
+<tr><th>Nameplate Voltage</th><td>480 VAC, 3 phase</td></tr>
 <tr><th>Rotation</th><td>Counter-clockwise as viewed from the infeed end</td></tr>
-<tr><th>Tilt Range Shown</th><td>0° to 3°</td></tr>
 <tr><th>Major Components</th><td>Upper/lower frames, lift arms, drive/idler axles, chain and sprockets, lift screw, drum wheels, bearings, guard, motor, and drum shell</td></tr>
 </tbody>
 </table>
 </section>
 
-
 <section class="content-section">
 <div class="section-heading">
 <div>
-<p class="section-label">Asset Identification</p>
-<h2>Installed Sprayer &amp; Tumbler System</h2>
+<p class="section-label">Manufacturer Information</p>
+<h2>Spray Dynamics</h2>
 </div>
 </div>
 
-<table class="asset-table">
-<thead>
-<tr>
-<th>Line / Area</th>
-<th>Component</th>
-<th>Model / Drawing</th>
-<th>Serial / Asset No.</th>
-<th>Notes</th>
-</tr>
-</thead>
+<table class="spec-table">
 <tbody>
-<tr><td>To be added</td><td>Scarf Feeder</td><td>Spray Dynamics Scarf Feeder</td><td>To be added</td><td>Verify field equipment</td></tr>
-<tr><td>To be added</td><td>Seasoning Feeder</td><td>UNI SF-100 / 31200276</td><td>To be added</td><td>Verify field equipment</td></tr>
-<tr><td>To be added</td><td>Spray System</td><td>MS-I 3 Pump / 32095131</td><td>To be added</td><td>Verify field equipment</td></tr>
-<tr><td>To be added</td><td>Coating Drum</td><td>31200275</td><td>To be added</td><td>Verify field equipment</td></tr>
+<tr><th>Division</th><td>Heat and Control</td></tr>
+<tr><th>Address</th><td>135 Corporate Drive, Union, MO 63084</td></tr>
+<tr><th>Phone</th><td>636-629-7366</td></tr>
+<tr><th>Fax</th><td>636-629-7455</td></tr>
+<tr><th>Toll Free</th><td>1-800-260-7366</td></tr>
 </tbody>
 </table>
 </section>
-
 
 <footer class="page-footer">
 <p>Siete Maintenance Documentation</p>
