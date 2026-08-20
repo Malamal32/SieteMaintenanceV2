@@ -65,6 +65,60 @@
     color:#07578f;
     font-weight:800;
 }
+
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+.machine-card{
+    border:1px solid #cfe0ef;
+    border-radius:16px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+.machine-card-header{
+    padding:16px 18px;
+    background:linear-gradient(135deg,#17679f,#0a4f86);
+    color:#fff;
+}
+.machine-card-header .line{
+    margin:0 0 4px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+.machine-card-header h3{
+    margin:0;
+    font-size:1.2rem;
+}
+.plate-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.plate-list li{
+    display:grid;
+    grid-template-columns:44% 56%;
+    gap:8px;
+    padding:11px 16px;
+    border-bottom:1px solid #e3edf4;
+}
+.plate-list li:last-child{
+    border-bottom:0;
+}
+.plate-list strong{
+    color:#074d82;
+}
+.plate-list span{
+    color:#243746;
+    overflow-wrap:anywhere;
+}
+
 .notice{
     margin-top:20px;
     padding:18px;
@@ -72,10 +126,12 @@
     border-radius:12px;
     background:#fff9dd;
 }
+@media(max-width:900px){.machine-grid{grid-template-columns:1fr}}
 @media(max-width:720px){
     .action-grid{grid-template-columns:1fr}
     .spec-table th,.spec-table td{display:block;width:auto}
     .asset-table{display:block;overflow-x:auto}
+    .plate-list li{grid-template-columns:1fr;gap:2px}
 }
 </style>
 </head>
@@ -187,16 +243,135 @@
 </div>
 </div>
 
-<table class="spec-table">
-<tbody>
-<tr><th>Line 1</th><td>120 VAC · 1 PH · 60 Hz · 22.7 A full load · 30 A disconnect · 30 A overcurrent · Serial 5661 · Project 98303 · 2/2025</td></tr>
-<tr><th>Line 2</th><td>120 VAC · 1 PH · 60 Hz · 22.7 A full load · 30 A disconnect · 30 A overcurrent · Serial 5663 · Project 98303 · 2/2025</td></tr>
-<tr><th>Line 3</th><td>120 VAC · 1 PH · 60 Hz · 22.7 A full load · 30 A disconnect · 30 A overcurrent · Serial 5661 · Project 98303 · 2/2025</td></tr>
-<tr><th>Line 4</th><td>208 VAC · 3 PH · 60 Hz · 19.8 A full load · 30 A disconnect · 25 A overcurrent · Serial 4860 · Project 67510 · 1/2021</td></tr>
-<tr><th>Line 5</th><td>110 VAC · 1 PH · 60 Hz · 28.21 A full load · 30 A disconnect · 30 A overcurrent · Serial 4884 · Project 68481 · 2/2021</td></tr>
-<tr><th>Line 6</th><td>110 VAC · 1 PH · 60 Hz · 28.2 A full load · 30 A disconnect · 30 A overcurrent · Serial 4709 · Project 65221 · 7/2020</td></tr>
-</tbody>
-</table>
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 1</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RH</span></li>
+<li><strong>Serial Number</strong><span>5661</span></li>
+<li><strong>Project Number</strong><span>98303</span></li>
+<li><strong>Date</strong><span>2/2025</span></li>
+<li><strong>Voltage</strong><span>120 VAC</span></li>
+<li><strong>Phase</strong><span>1 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>22.7 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>30 A</span></li>
+<li><strong>Largest Motor</strong><span>0.5 HP</span></li>
+<li><strong>Electrical Drawing</strong><span>COL-NA-P525-ST00.dwg</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 2</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RH</span></li>
+<li><strong>Serial Number</strong><span>5663</span></li>
+<li><strong>Project Number</strong><span>98303</span></li>
+<li><strong>Date</strong><span>2/2025</span></li>
+<li><strong>Voltage</strong><span>120 VAC</span></li>
+<li><strong>Phase</strong><span>1 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>22.7 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>30 A</span></li>
+<li><strong>Largest Motor</strong><span>0.5 HP</span></li>
+<li><strong>Electrical Drawing</strong><span>COL-NA-P525-ST00.dwg</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 3</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RH</span></li>
+<li><strong>Serial Number</strong><span>5661</span></li>
+<li><strong>Project Number</strong><span>98303</span></li>
+<li><strong>Date</strong><span>2/2025</span></li>
+<li><strong>Voltage</strong><span>120 VAC</span></li>
+<li><strong>Phase</strong><span>1 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>22.7 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>30 A</span></li>
+<li><strong>Largest Motor</strong><span>0.5 HP</span></li>
+<li><strong>Electrical Drawing</strong><span>COL-NA-P525-ST00.dwg</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 4</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RH</span></li>
+<li><strong>Serial Number</strong><span>4860</span></li>
+<li><strong>Project Number</strong><span>67510</span></li>
+<li><strong>Date</strong><span>1/2021</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Phase</strong><span>3 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>19.8 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>25 A</span></li>
+<li><strong>Largest Motor</strong><span>1.0</span></li>
+<li><strong>Electrical Drawing</strong><span>COL-NA-P4M-STD00.dwg</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 5</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RH</span></li>
+<li><strong>Serial Number</strong><span>4884</span></li>
+<li><strong>Project Number</strong><span>68481</span></li>
+<li><strong>Date</strong><span>2/2021</span></li>
+<li><strong>Voltage</strong><span>110 VAC</span></li>
+<li><strong>Phase</strong><span>1 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>28.21 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>30 A</span></li>
+<li><strong>Largest Motor</strong><span>1.0</span></li>
+<li><strong>Electrical Drawing</strong><span>COL-NA-P4M-STD00.dwg</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 6</p>
+<h3>BPA Collator 200</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>BluePrint Automation (BPA)</span></li>
+<li><strong>Project Type</strong><span>Collator RHCollator LH</span></li>
+<li><strong>Serial Number</strong><span>4709</span></li>
+<li><strong>Project Number</strong><span>65221</span></li>
+<li><strong>Date</strong><span>7/2020</span></li>
+<li><strong>Voltage</strong><span>110 VAC</span></li>
+<li><strong>Phase</strong><span>1 PH</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Full Load</strong><span>28.2 A</span></li>
+<li><strong>Disconnect</strong><span>30 A</span></li>
+<li><strong>Overcurrent</strong><span>30 A</span></li>
+<li><strong>Largest Motor</strong><span>1.0</span></li>
+
+</ul>
+</article>
+</div>
 </section>
 
 
