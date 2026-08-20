@@ -8,94 +8,50 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
-.action-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:16px;
-    margin-top:24px;
+:root{
+  --raumak-blue:#0a5f96;
+  --raumak-blue-dark:#074d82;
+  --raumak-border:#cfe0ef;
+  --raumak-text:#243746;
 }
-.action-card{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:76px;
-    padding:18px;
-    border:1px solid #cfe0ef;
-    border-radius:14px;
-    background:#fff;
-    text-decoration:none;
-    font-weight:800;
-    color:#0a4f86;
-    box-shadow:0 4px 14px rgba(0,0,0,.05);
-}
-.spec-table,.asset-table{
-    width:100%;
-    border-collapse:separate;
-    border-spacing:0;
-    border:1px solid #cfe0ef;
-    border-radius:14px;
-    overflow:hidden;
-}
-.spec-table th,.spec-table td,.asset-table th,.asset-table td{
-    padding:15px 18px;
-    border-bottom:1px solid #dbe7f1;
-    text-align:left;
-    vertical-align:top;
-}
-.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{
-    border-bottom:0;
-}
-.spec-table th{
-    width:33%;
-    background:#f1f7fb;
-    color:#074d82;
-}
-.asset-table thead th{
-    background:#17679f;
-    color:#fff;
-}
-.asset-table tbody tr:nth-child(even){
-    background:#f6f9fc;
-}
-.line-badge{
-    display:inline-block;
-    padding:10px 16px;
-    border-radius:999px;
-    background:#eaf4fb;
-    color:#07578f;
-    font-weight:800;
-}
-.notice{
-    margin-top:20px;
-    padding:18px;
-    border-left:5px solid #e2b400;
-    border-radius:12px;
-    background:#fff9dd;
-}
-@media(max-width:720px){
-    .action-grid{grid-template-columns:1fr}
-    .spec-table th,.spec-table td{display:block;width:auto}
-    .asset-table{display:block;overflow-x:auto}
-}
+.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.action-card{display:flex;align-items:center;justify-content:center;min-height:76px;padding:18px;border:1px solid var(--raumak-border);border-radius:14px;background:#fff;text-decoration:none;font-weight:800;color:var(--raumak-blue-dark);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.action-card:hover{transform:translateY(-2px);border-color:#8ebbd9;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.spec-table,.asset-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--raumak-border);border-radius:14px;overflow:hidden}
+.spec-table th,.spec-table td,.asset-table th,.asset-table td{padding:15px 18px;border-bottom:1px solid #dbe7f1;text-align:left;vertical-align:top}
+.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{border-bottom:0}
+.spec-table th{width:33%;background:#f1f7fb;color:var(--raumak-blue-dark)}
+.asset-table thead th{background:#17679f;color:#fff}
+.asset-table tbody tr:nth-child(even){background:#f6f9fc}
+.machine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.machine-card{border:1px solid var(--raumak-border);border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.machine-card-header{padding:16px 18px;background:linear-gradient(135deg,#17679f,#0a4f86);color:#fff}
+.machine-card-header .line{margin:0 0 4px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.machine-card-header h3{margin:0;font-size:1.25rem}
+.plate-list{margin:0;padding:0;list-style:none}
+.plate-list li{display:grid;grid-template-columns:46% 54%;gap:8px;padding:11px 16px;border-bottom:1px solid #e3edf4}
+.plate-list li:last-child{border-bottom:0}
+.plate-list strong{color:var(--raumak-blue-dark)}
+.plate-list span{color:var(--raumak-text);overflow-wrap:anywhere}
+.line-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:#eaf4fb;color:#07578f;font-weight:800}
+@media(max-width:900px){.machine-grid{grid-template-columns:1fr}}
+@media(max-width:720px){.action-grid{grid-template-columns:1fr}.spec-table th,.spec-table td{display:block;width:auto}.asset-table{display:block;overflow-x:auto}.plate-list li{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 <body>
-
 <main class="page-container">
 
 <header class="page-header">
 <a class="back-link" href="../../index.html">← Home</a>
-
 <div class="header-content">
 <div class="header-icon" aria-hidden="true">📦</div>
 <div>
 <p class="eyebrow">Chips Maintenance</p>
 <h1>Raumak Bagger</h1>
-<p class="header-subtitle">MULTI BAG G</p>
+<p class="header-subtitle">MULTI BAG G — Lines 5 and 6</p>
 </div>
 </div>
 </header>
-
 
 <section class="content-section">
 <div class="section-heading">
@@ -105,7 +61,6 @@
 </div>
 <span class="line-badge">Lines 5 and 6</span>
 </div>
-
 <div class="action-grid">
 <a class="action-card" href="../../manuals/chips/raumak-bagger.html">📘 Manuals</a>
 <a class="action-card" href="../../sops/chips/raumak-bagger.html">📋 SOPs</a>
@@ -113,27 +68,25 @@
 </div>
 </section>
 
-
 <section class="content-section" id="machine-information">
 <div class="section-heading">
 <div>
 <p class="section-label">Equipment Information</p>
-<h2>Machine Specifications</h2>
+<h2>Machine Overview</h2>
 </div>
-<span class="line-badge">Lines 5 and 6</span>
 </div>
-
 <table class="spec-table">
 <tbody>
 <tr><th>Manufacturer</th><td>Raumak Packaging / Raumak Máquinas Ltda.</td></tr>
 <tr><th>Equipment Type</th><td>Automatic Vertical Form Fill Seal Packaging Machine</td></tr>
 <tr><th>Model</th><td>MULTI BAG G</td></tr>
 <tr><th>Installed Lines</th><td>Chips Lines 5 and 6</td></tr>
-<tr><th>Manual Serial Number</th><td>24024140</td></tr>
-<tr><th>Customer</th><td>ARTESANO</td></tr>
-<tr><th>Voltage</th><td>208 VAC</td></tr>
-<tr><th>Control Voltage</th><td>24 VDC</td></tr>
+<tr><th>Year</th><td>2024</td></tr>
+<tr><th>Voltage</th><td>208 V</td></tr>
 <tr><th>Frequency</th><td>60 Hz</td></tr>
+<tr><th>Power</th><td>8.0 kVA</td></tr>
+<tr><th>Nameplate Weight</th><td>1,000 kg</td></tr>
+<tr><th>Control Voltage</th><td>24 VDC</td></tr>
 <tr><th>Pneumatic Working Pressure</th><td>6–7 bar</td></tr>
 <tr><th>Air Consumption</th><td>Up to 800 L/min</td></tr>
 <tr><th>Overall Length with Conveyor</th><td>3483 mm</td></tr>
@@ -147,13 +100,7 @@
 <tr><th>Controls</th><td>PLC controlled with HMI for adjustments, tests, visualization, and production statistics</td></tr>
 </tbody>
 </table>
-
-<div class="notice">
-<strong>Nameplate verification required</strong><br>
-The uploaded manual is tied to serial number 24024140. Verify each installed Line 5 and Line 6 machine nameplate before service or ordering machine-specific parts, especially if the two machines have different serial numbers.
-</div>
 </section>
-
 
 <section class="content-section">
 <div class="section-heading">
@@ -161,37 +108,66 @@ The uploaded manual is tied to serial number 24024140. Verify each installed Lin
 <p class="section-label">Installed Equipment</p>
 <h2>Raumak Bagger Assignment</h2>
 </div>
+<span class="line-badge">MULTI BAG G</span>
 </div>
-
 <table class="asset-table">
 <thead>
-<tr>
-<th>Line</th>
-<th>Manufacturer</th>
-<th>Model</th>
-<th>Serial Number</th>
-<th>Asset / Notes</th>
-</tr>
+<tr><th>Line</th><th>Manufacturer</th><th>Model</th><th>Serial Number</th><th>Year</th></tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Line 5</strong></td>
-<td>Raumak</td>
-<td>MULTI BAG G</td>
-<td>Verify from machine nameplate</td>
-<td>To be added</td>
-</tr>
-<tr>
-<td><strong>Line 6</strong></td>
-<td>Raumak</td>
-<td>MULTI BAG G</td>
-<td>Verify from machine nameplate</td>
-<td>To be added</td>
-</tr>
+<tr><td><strong>Line 5</strong></td><td>Raumak</td><td>MULTI BAG G</td><td>24024140</td><td>2024</td></tr>
+<tr><td><strong>Line 6</strong></td><td>Raumak</td><td>MULTI BAG G</td><td>24024141</td><td>2024</td></tr>
 </tbody>
 </table>
 </section>
 
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
+</div>
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 5</p>
+<h3>Raumak MULTI BAG G</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Raumak Máquinas Ltda.</span></li>
+<li><strong>Model</strong><span>MULTI BAG G</span></li>
+<li><strong>Serial No. / NS</strong><span>24024140</span></li>
+<li><strong>Year</strong><span>2024</span></li>
+<li><strong>Voltage</strong><span>208 V</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Power</strong><span>8.0 kVA</span></li>
+<li><strong>Weight</strong><span>1,000 kg</span></li>
+<li><strong>Country</strong><span>Brazil</span></li>
+</ul>
+</article>
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 6</p>
+<h3>Raumak MULTI BAG G</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Raumak Máquinas Ltda.</span></li>
+<li><strong>Model</strong><span>MULTI BAG G</span></li>
+<li><strong>Serial No. / NS</strong><span>24024141</span></li>
+<li><strong>Year</strong><span>2024</span></li>
+<li><strong>Voltage</strong><span>208 V</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Power</strong><span>8.0 kVA</span></li>
+<li><strong>Weight</strong><span>1,000 kg</span></li>
+<li><strong>Country</strong><span>Brazil</span></li>
+</ul>
+</article>
+
+</div>
+</section>
 
 <section class="content-section">
 <div class="section-heading">
@@ -200,7 +176,6 @@ The uploaded manual is tied to serial number 24024140. Verify each installed Lin
 <h2>Manual Production Examples</h2>
 </div>
 </div>
-
 <table class="spec-table">
 <tbody>
 <tr><th>1 oz Tortillas</th><td>300 mm spool width · up to 55 packages/minute</td></tr>
@@ -211,15 +186,31 @@ The uploaded manual is tied to serial number 24024140. Verify each installed Lin
 </table>
 </section>
 
-
 <section class="content-section">
 <div class="section-heading">
 <div>
 <p class="section-label">Manufacturer Information</p>
+<h2>Raumak Máquinas Ltda.</h2>
+</div>
+</div>
+<table class="spec-table">
+<tbody>
+<tr><th>Address</th><td>Raulino Kreis, 136 - Ilha da Figueira, Jaraguá do Sul - SC - Brasil</td></tr>
+<tr><th>Phone</th><td>+55 (47) 3370-4540</td></tr>
+<tr><th>Fax</th><td>+55 (47) 3370-4003</td></tr>
+<tr><th>Website</th><td>www.raumak.com.br</td></tr>
+<tr><th>Email</th><td>raumak@raumak.com.br</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">North America Support</p>
 <h2>Raumak North America</h2>
 </div>
 </div>
-
 <table class="spec-table">
 <tbody>
 <tr><th>Address</th><td>365 Brogdon Rd, Suite 101, Suwanee, GA 30024</td></tr>
@@ -228,7 +219,6 @@ The uploaded manual is tied to serial number 24024140. Verify each installed Lin
 </tbody>
 </table>
 </section>
-
 
 <footer class="page-footer">
 <p>Siete Maintenance Documentation</p>
