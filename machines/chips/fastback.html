@@ -8,17 +8,34 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
+:root{
+  --fb-blue:#0a5f96;
+  --fb-blue-dark:#074d82;
+  --fb-border:#cfe0ef;
+  --fb-text:#243746;
+}
 .action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
-.action-card{display:flex;align-items:center;justify-content:center;min-height:76px;padding:18px;border:1px solid #cfe0ef;border-radius:14px;background:#fff;text-decoration:none;font-weight:800;color:#0a4f86;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.spec-table,.asset-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #cfe0ef;border-radius:14px;overflow:hidden}
+.action-card{display:flex;align-items:center;justify-content:center;min-height:76px;padding:18px;border:1px solid var(--fb-border);border-radius:14px;background:#fff;text-decoration:none;font-weight:800;color:var(--fb-blue-dark);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.action-card:hover{transform:translateY(-2px);border-color:#8ebbd9;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.spec-table,.asset-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--fb-border);border-radius:14px;overflow:hidden}
 .spec-table th,.spec-table td,.asset-table th,.asset-table td{padding:15px 18px;border-bottom:1px solid #dbe7f1;text-align:left;vertical-align:top}
 .spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{border-bottom:0}
-.spec-table th{width:33%;background:#f1f7fb;color:#074d82}
+.spec-table th{width:33%;background:#f1f7fb;color:var(--fb-blue-dark)}
 .asset-table thead th{background:#17679f;color:#fff}
 .asset-table tbody tr:nth-child(even){background:#f6f9fc}
+.machine-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.machine-card{border:1px solid var(--fb-border);border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.machine-card-header{padding:16px 18px;background:linear-gradient(135deg,#17679f,#0a4f86);color:#fff}
+.machine-card-header .line{margin:0 0 4px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.machine-card-header h3{margin:0;font-size:1.05rem}
+.plate-list{margin:0;padding:0;list-style:none}
+.plate-list li{display:grid;grid-template-columns:43% 57%;gap:8px;padding:11px 16px;border-bottom:1px solid #e3edf4}
+.plate-list li:last-child{border-bottom:0}
+.plate-list strong{color:var(--fb-blue-dark)}
+.plate-list span{color:var(--fb-text);overflow-wrap:anywhere}
 .status-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:#eaf4fb;color:#07578f;font-weight:800}
-.notice{margin-top:20px;padding:18px;border-left:5px solid #e2b400;border-radius:12px;background:#fff9dd}
-@media(max-width:720px){.action-grid{grid-template-columns:1fr}.spec-table th,.spec-table td{display:block;width:auto}.asset-table{display:block;overflow-x:auto}}
+@media(max-width:1000px){.machine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.action-grid,.machine-grid{grid-template-columns:1fr}.spec-table th,.spec-table td{display:block;width:auto}.asset-table{display:block;overflow-x:auto}.plate-list li{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 
@@ -32,7 +49,7 @@
 <div>
 <p class="eyebrow">Chips Maintenance</p>
 <h1>FastBack</h1>
-<p class="header-subtitle">Heat and Control Horizontal Motion Conveyors</p>
+<p class="header-subtitle">Heat and Control Horizontal Motion Conveyors — FastBacks 1–13</p>
 </div>
 </div>
 </header>
@@ -43,7 +60,7 @@
 <p class="section-label">Quick Access</p>
 <h2>FastBack Resources</h2>
 </div>
-<span class="status-badge">Line Assignment TBD</span>
+<span class="status-badge">FastBacks 1–13</span>
 </div>
 
 <div class="action-grid">
@@ -65,20 +82,258 @@
 <tbody>
 <tr><th>Manufacturer</th><td>Heat and Control, Inc.</td></tr>
 <tr><th>Equipment Type</th><td>Horizontal Motion Conveyor</td></tr>
-<tr><th>Models Covered</th><td>FastBack 90E / 90E-G2 and FastBack 260E-G2</td></tr>
+<tr><th>Installed Equipment</th><td>FastBacks 1 through 13</td></tr>
+<tr><th>Models Identified</th><td>CV-FB-90E-G2, CV-FB-260E-G2, and CV-FB-260E-G3</td></tr>
+<tr><th>Utility</th><td>460 V / 3 Phase / 60 Hz</td></tr>
 <tr><th>Primary Function</th><td>Moves product using a slow-forward / fast-backward horizontal motion cycle.</td></tr>
 <tr><th>Major Assemblies</th><td>Pan assembly and drive assembly</td></tr>
-<tr><th>Controls / Drives</th><td>VFD-driven system; documentation includes Yaskawa V1000 and Allen-Bradley PowerFlex drive references.</td></tr>
-<tr><th>90E Optimal Speed</th><td>50 Hz</td></tr>
-<tr><th>260E-G2 Optimal Speed</th><td>60 Hz</td></tr>
-<tr><th>260E-G2 Recommended Max</th><td>Do not operate above 65 Hz without manufacturer guidance.</td></tr>
-<tr><th>Controller Documentation</th><td>PPM CD30/35 controller manual included for compatible electromagnetic vibratory equipment and setup reference.</td></tr>
+<tr><th>Controls / Drives</th><td>VFD-driven system; FastBack documentation includes drive setup and operating references.</td></tr>
 </tbody>
 </table>
+</section>
 
-<div class="notice">
-<strong>Installed model and line information still needs to be added.</strong><br>
-The uploaded FastBack documentation covers multiple models. Verify the exact FastBack model, serial number, drive type, and installed production line from each machine nameplate before ordering model-specific parts or changing drive parameters.
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Installed Equipment</p>
+<h2>FastBack Identification</h2>
+</div>
+<span class="status-badge">13 Machines</span>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>FastBack</th>
+<th>Model</th>
+<th>Serial Number</th>
+<th>Project Number</th>
+<th>Utility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FastBack 1</strong></td>
+<td>CV-FB-260E-G2</td>
+<td>8132</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 2</strong></td>
+<td>CV-FB-260E-G3</td>
+<td>3051</td>
+<td>12000120A</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 3</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>9566</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 4</strong></td>
+<td>CV-FB-260E-G2</td>
+<td>9207</td>
+<td>2024031897</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 5</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>9567</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 6</strong></td>
+<td>CV-FB-260E-G2</td>
+<td>9206</td>
+<td>2024031897</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 7</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>7933</td>
+<td>2017001981</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 8</strong></td>
+<td>CV-FB-260E-G3</td>
+<td>3052</td>
+<td>12000120A</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 9</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>9564</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 10</strong></td>
+<td>CV-FB-260E-G3</td>
+<td>3053</td>
+<td>12000120A</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 11</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>9565</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 12</strong></td>
+<td>CV-FB-260E-G2</td>
+<td>8133</td>
+<td>2020053566</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+<tr>
+<td><strong>FastBack 13</strong></td>
+<td>CV-FB-90E-G2</td>
+<td>7937</td>
+<td>2017001981</td>
+<td>460 V / 3 PH / 60 Hz</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
+</div>
+
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 1</p>
+<h3>Heat and Control CV-FB-260E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G2</span></li><li><strong>Serial No.</strong><span>8132</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>TLA No.</strong><span>32108749</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 2</p>
+<h3>Heat and Control CV-FB-260E-G3</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G3</span></li><li><strong>Serial No.</strong><span>3051</span></li><li><strong>Project No.</strong><span>12000120A</span></li><li><strong>SO No.</strong><span>2021012237</span></li><li><strong>TLA No.</strong><span>32172438</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 3</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>9566</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>TLA No.</strong><span>32172488</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 4</p>
+<h3>Heat and Control CV-FB-260E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G2</span></li><li><strong>Serial No.</strong><span>9207</span></li><li><strong>Project No.</strong><span>2024031897</span></li><li><strong>TLA No.</strong><span>32949549</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 5</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>9567</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 6</p>
+<h3>Heat and Control CV-FB-260E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G2</span></li><li><strong>Serial No.</strong><span>9206</span></li><li><strong>Project No.</strong><span>2024031897</span></li><li><strong>TLA No.</strong><span>32950471</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 7</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>7933</span></li><li><strong>Project No.</strong><span>2017001981</span></li><li><strong>TLA No.</strong><span>31534688</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 8</p>
+<h3>Heat and Control CV-FB-260E-G3</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G3</span></li><li><strong>Serial No.</strong><span>3052</span></li><li><strong>Project No.</strong><span>12000120A</span></li><li><strong>SO No.</strong><span>2021012237</span></li><li><strong>TLA No.</strong><span>32186564</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 9</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>9564</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>TLA No.</strong><span>32108049</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 10</p>
+<h3>Heat and Control CV-FB-260E-G3</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G3</span></li><li><strong>Serial No.</strong><span>3053</span></li><li><strong>Project No.</strong><span>12000120A</span></li><li><strong>SO No.</strong><span>2021012237</span></li><li><strong>TLA No.</strong><span>32176586</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 11</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>9565</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>TLA No.</strong><span>32108779</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 12</p>
+<h3>Heat and Control CV-FB-260E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-260E-G2</span></li><li><strong>Serial No.</strong><span>8133</span></li><li><strong>Project No.</strong><span>2020053566</span></li><li><strong>TLA No.</strong><span>32108851</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">FastBack 13</p>
+<h3>Heat and Control CV-FB-90E-G2</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>CV-FB-90E-G2</span></li><li><strong>Serial No.</strong><span>7937</span></li><li><strong>Project No.</strong><span>2017001981</span></li><li><strong>TLA No.</strong><span>31534696</span></li><li><strong>Utility</strong><span>460 V / 3 PH / 60 Hz</span></li>
+</ul>
+</article>
 </div>
 </section>
 
@@ -89,7 +344,6 @@ The uploaded FastBack documentation covers multiple models. Verify the exact Fas
 <h2>FastBack 90E / 90E-G2</h2>
 </div>
 </div>
-
 <table class="spec-table">
 <tbody>
 <tr><th>Model Family</th><td>FastBack 90E / 90E-G2</td></tr>
@@ -106,48 +360,16 @@ The uploaded FastBack documentation covers multiple models. Verify the exact Fas
 <div class="section-heading">
 <div>
 <p class="section-label">Model Reference</p>
-<h2>FastBack 260E-G2</h2>
+<h2>FastBack 260E</h2>
 </div>
 </div>
-
 <table class="spec-table">
 <tbody>
-<tr><th>Model</th><td>FastBack 260E-G2</td></tr>
+<tr><th>Models Identified</th><td>CV-FB-260E-G2 and CV-FB-260E-G3</td></tr>
 <tr><th>Motion Type</th><td>Slow forward / fast backward horizontal motion</td></tr>
 <tr><th>Factory Operating Speed</th><td>60 Hz</td></tr>
-<tr><th>Operating Guidance</th><td>60–65 Hz may improve travel rate for certain products only with appropriate guidance; operation above 65 Hz is not recommended.</td></tr>
+<tr><th>Operating Guidance</th><td>Do not operate above the manufacturer's recommended frequency without appropriate guidance.</td></tr>
 <tr><th>Major Assemblies</th><td>Pan assembly and drive assembly</td></tr>
-<tr><th>Available Pan Accessories</th><td>Adjustable nose discharge, fines screen, flow levelers, end-gates, mid-gates, and Revolution gates</td></tr>
-</tbody>
-</table>
-</section>
-
-<section class="content-section">
-<div class="section-heading">
-<div>
-<p class="section-label">Asset Identification</p>
-<h2>Installed FastBack Conveyors</h2>
-</div>
-</div>
-
-<table class="asset-table">
-<thead>
-<tr>
-<th>Line</th>
-<th>Model</th>
-<th>Serial Number</th>
-<th>Drive / VFD</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>To be added</td>
-<td>Verify from nameplate</td>
-<td>Verify from nameplate</td>
-<td>Verify installed drive</td>
-<td>Update after field identification</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -159,12 +381,11 @@ The uploaded FastBack documentation covers multiple models. Verify the exact Fas
 <h2>Heat and Control</h2>
 </div>
 </div>
-
 <table class="spec-table">
 <tbody>
 <tr><th>Manufacturer</th><td>Heat and Control, Inc.</td></tr>
-<tr><th>Service / Training</th><td>Use the contact information listed in the FastBack technical manuals for current support.</td></tr>
-<tr><th>Parts Identification</th><td>Have the FastBack model and serial number available when contacting service or ordering replacement parts.</td></tr>
+<tr><th>Nameplate Location</th><td>Hayward, California, USA</td></tr>
+<tr><th>Parts Identification</th><td>Use the FastBack number, model, serial number, and project number when identifying replacement parts.</td></tr>
 </tbody>
 </table>
 </section>
