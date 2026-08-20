@@ -8,69 +8,119 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
+:root{
+    --bagger-blue:#0a5f96;
+    --bagger-blue-dark:#074d82;
+    --bagger-border:#cfe0ef;
+    --bagger-text:#243746;
+}
 .action-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
     gap:16px;
     margin-top:24px;
 }
-
 .action-card{
     display:flex;
     align-items:center;
     justify-content:center;
     min-height:76px;
     padding:18px;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--bagger-border);
     border-radius:14px;
     background:#fff;
     text-decoration:none;
     font-weight:800;
-    color:#0a4f86;
+    color:var(--bagger-blue-dark);
     box-shadow:0 4px 14px rgba(0,0,0,.05);
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
 }
-
-.spec-table,
-.asset-table{
+.action-card:hover{
+    transform:translateY(-2px);
+    border-color:#8ebbd9;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.spec-table,.asset-table{
     width:100%;
     border-collapse:separate;
     border-spacing:0;
-    border:1px solid #cfe0ef;
+    border:1px solid var(--bagger-border);
     border-radius:14px;
     overflow:hidden;
 }
-
-.spec-table th,
-.spec-table td,
-.asset-table th,
-.asset-table td{
+.spec-table th,.spec-table td,.asset-table th,.asset-table td{
     padding:15px 18px;
     border-bottom:1px solid #dbe7f1;
     text-align:left;
     vertical-align:top;
 }
-
-.spec-table tr:last-child th,
-.spec-table tr:last-child td,
-.asset-table tr:last-child td{
+.spec-table tr:last-child th,.spec-table tr:last-child td,.asset-table tr:last-child td{
     border-bottom:0;
 }
-
 .spec-table th{
     width:33%;
     background:#f1f7fb;
-    color:#074d82;
+    color:var(--bagger-blue-dark);
 }
-
 .asset-table thead th{
     background:#17679f;
     color:#fff;
 }
-
 .asset-table tbody tr:nth-child(even){
     background:#f6f9fc;
 }
-
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+.machine-card{
+    border:1px solid var(--bagger-border);
+    border-radius:16px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+.machine-card-header{
+    padding:16px 18px;
+    background:linear-gradient(135deg,#17679f,#0a4f86);
+    color:#fff;
+}
+.machine-card-header .line{
+    margin:0 0 4px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+.machine-card-header h3{
+    margin:0;
+    font-size:1.2rem;
+}
+.plate-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.plate-list li{
+    display:grid;
+    grid-template-columns:44% 56%;
+    gap:8px;
+    padding:11px 16px;
+    border-bottom:1px solid #e3edf4;
+}
+.plate-list li:last-child{
+    border-bottom:0;
+}
+.plate-list strong{
+    color:var(--bagger-blue-dark);
+}
+.plate-list span{
+    color:var(--bagger-text);
+    overflow-wrap:anywhere;
+}
 .status-badge{
     display:inline-block;
     padding:10px 16px;
@@ -79,7 +129,6 @@
     color:#07578f;
     font-weight:800;
 }
-
 .notice{
     margin-top:20px;
     padding:18px;
@@ -87,22 +136,14 @@
     border-radius:12px;
     background:#fff9dd;
 }
-
+@media(max-width:900px){
+    .machine-grid{grid-template-columns:1fr}
+}
 @media(max-width:720px){
-    .action-grid{
-        grid-template-columns:1fr;
-    }
-
-    .spec-table th,
-    .spec-table td{
-        display:block;
-        width:auto;
-    }
-
-    .asset-table{
-        display:block;
-        overflow-x:auto;
-    }
+    .action-grid{grid-template-columns:1fr}
+    .spec-table th,.spec-table td{display:block;width:auto}
+    .asset-table{display:block;overflow-x:auto}
+    .plate-list li{grid-template-columns:1fr;gap:2px}
 }
 </style>
 </head>
@@ -111,318 +152,195 @@
 <main class="page-container">
 
 <header class="page-header">
-
-<a class="back-link" href="../../index.html">
-← Home
-</a>
-
+<a class="back-link" href="../../index.html">← Home</a>
 <div class="header-content">
-
-<div class="header-icon" aria-hidden="true">
-📦
-</div>
-
+<div class="header-icon" aria-hidden="true">📦</div>
 <div>
-
-<p class="eyebrow">
-Chips Maintenance
-</p>
-
-<h1>
-Ishida Baggers
-</h1>
-
-<p class="header-subtitle">
-ATLAS Series Vertical Form Fill Seal Packaging Machines
-</p>
-
+<p class="eyebrow">Chips Maintenance</p>
+<h1>Ishida Baggers</h1>
+<p class="header-subtitle">ATLAS Series Vertical Form Fill Seal Packaging Machines</p>
 </div>
-
 </div>
-
 </header>
 
-
 <section class="content-section">
-
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Quick Access
-</p>
-
-<h2>
-Ishida Bagger Resources
-</h2>
-
+<p class="section-label">Quick Access</p>
+<h2>Ishida Bagger Resources</h2>
 </div>
-
-<span class="status-badge">
-Baggers 1–4
-</span>
-
+<span class="status-badge">Baggers 1–4</span>
 </div>
-
 
 <div class="action-grid">
-
-<a
-    class="action-card"
-    href="../../manuals/chips/ishida-bagger.html"
->
-📘 Manuals
-</a>
-
-<a
-    class="action-card"
-    href="../../sops/chips/ishida-bagger.html"
->
-📋 SOPs
-</a>
-
-<a
-    class="action-card"
-    href="#machine-information"
->
-⚙️ Machine Information
-</a>
-
+<a class="action-card" href="../../manuals/chips/ishida-bagger.html">📘 Manuals</a>
+<a class="action-card" href="../../sops/chips/ishida-bagger.html">📋 SOPs</a>
+<a class="action-card" href="#machine-information">⚙️ Machine Information</a>
 </div>
-
 </section>
 
-
-<section
-    class="content-section"
-    id="machine-information"
->
-
+<section class="content-section" id="machine-information">
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Equipment Information
-</p>
-
-<h2>
-Machine Overview
-</h2>
-
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
 </div>
-
 </div>
-
 
 <table class="spec-table">
-
 <tbody>
-
-<tr>
-<th>Manufacturer</th>
-<td>Ishida Co., Ltd.</td>
-</tr>
-
-<tr>
-<th>Equipment Type</th>
-<td>Vertical Form Fill Seal Packaging Machine</td>
-</tr>
-
-<tr>
-<th>Installed Equipment</th>
-<td>Baggers 1, 2, 3, and 4</td>
-</tr>
-
-<tr>
-<th>Models Installed</th>
-<td>ATLAS-204R-ITPS, ATLAS-234R-ITPS, and ATLAS-202R-ITPS</td>
-</tr>
-
-<tr>
-<th>Manual Family</th>
-<td>ATLAS Series</td>
-</tr>
-
+<tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
+<tr><th>Equipment Type</th><td>Vertical Form Fill Seal Packaging Machine</td></tr>
+<tr><th>Installed Equipment</th><td>Baggers 1, 2, 3, and 4</td></tr>
+<tr><th>Models Installed</th><td>ATLAS-204R-ITPS, ATLAS-234R-ITPS, and ATLAS-202R-ITPS</td></tr>
+<tr><th>Manual Family</th><td>ATLAS Series</td></tr>
 </tbody>
-
 </table>
-
 </section>
 
-
 <section class="content-section">
-
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Installed Equipment
-</p>
-
-<h2>
-Bagger Assignment
-</h2>
-
+<p class="section-label">Installed Equipment</p>
+<h2>Bagger Assignment</h2>
 </div>
-
-<span class="status-badge">
-Baggers 1–4
-</span>
-
+<span class="status-badge">Baggers 1–4</span>
 </div>
-
 
 <table class="asset-table">
-
 <thead>
-
 <tr>
 <th>Bagger</th>
 <th>Model</th>
 <th>Serial Number</th>
-<th>Job / Project Number</th>
+<th>Project / Job Number</th>
 <th>Manufacturing Date</th>
 </tr>
-
 </thead>
-
 <tbody>
-
-<tr>
-<td><strong>Bagger 1</strong></td>
-<td>ATLAS-204R-ITPS</td>
-<td>100515278</td>
-<td>209145207</td>
-<td>January 2021</td>
-</tr>
-
-<tr>
-<td><strong>Bagger 2</strong></td>
-<td>ATLAS-234R-ITPS</td>
-<td>100311221</td>
-<td>203522901</td>
-<td>November 2017</td>
-</tr>
-
-<tr>
-<td><strong>Bagger 3</strong></td>
-<td>ATLAS-202R-ITPS</td>
-<td>12749</td>
-<td>09 / 11298</td>
-<td>March 2010</td>
-</tr>
-
-<tr>
-<td><strong>Bagger 4</strong></td>
-<td>ATLAS-202R-ITPS</td>
-<td>12748</td>
-<td>09 / 11298</td>
-<td>March 2010</td>
-</tr>
-
+<tr><td><strong>Bagger 1</strong></td><td>ATLAS-204R-ITPS</td><td>100515278</td><td>209146207</td><td>January 2021</td></tr>
+<tr><td><strong>Bagger 2</strong></td><td>ATLAS-234R-ITPS</td><td>100311221</td><td>205329901</td><td>November 2017</td></tr>
+<tr><td><strong>Bagger 3</strong></td><td>ATLAS-202R-ITPS</td><td>12749</td><td>09 / 11298</td><td>March 2010</td></tr>
+<tr><td><strong>Bagger 4</strong></td><td>ATLAS-202R-ITPS</td><td>12748</td><td>09 / 11298</td><td>March 2010</td></tr>
 </tbody>
-
 </table>
-
 </section>
-
 
 <section class="content-section">
-
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Model Reference
-</p>
-
-<h2>
-Installed Model Details
-</h2>
-
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
+</div>
 </div>
 
+<div class="machine-grid">
+
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Bagger 1</p>
+<h3>Ishida ATLAS-204R-ITPS</h3>
 </div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Ishida Co., Ltd.</span></li>
+<li><strong>Model</strong><span>ATLAS-204R-ITPS</span></li>
+<li><strong>Project No.</strong><span>209146207</span></li>
+<li><strong>Serial No.</strong><span>100515278</span></li>
+<li><strong>Mfg. Date</strong><span>January 2021</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Phase</strong><span>3 Phase</span></li>
+<li><strong>Current</strong><span>29.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Short-Circuit Rating</strong><span>2.5 kA</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Bagger 2</p>
+<h3>Ishida ATLAS-234R-ITPS</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Ishida Co., Ltd.</span></li>
+<li><strong>Model</strong><span>ATLAS-234R-ITPS</span></li>
+<li><strong>Project No.</strong><span>205329901</span></li>
+<li><strong>Serial No.</strong><span>100311221</span></li>
+<li><strong>Mfg. Date</strong><span>November 2017</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Phase</strong><span>3 Phase</span></li>
+<li><strong>Current</strong><span>29.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
-<table class="spec-table">
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Bagger 3</p>
+<h3>Ishida ATLAS-202R-ITPS</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Ishida Co., Ltd.</span></li>
+<li><strong>Model</strong><span>ATLAS-202R-ITPS</span></li>
+<li><strong>Job Number</strong><span>09 / 11298</span></li>
+<li><strong>Serial No.</strong><span>12749</span></li>
+<li><strong>Mfg. Date</strong><span>March 2010</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Phase</strong><span>3 Phase</span></li>
+<li><strong>Current</strong><span>30 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
-<tbody>
-
-<tr>
-<th>Bagger 1</th>
-<td>
-<strong>ATLAS-204R-ITPS</strong><br>
-Serial: 100515278<br>
-Project / Job: 209145207<br>
-Manufactured: January 2021
-</td>
-</tr>
-
-<tr>
-<th>Bagger 2</th>
-<td>
-<strong>ATLAS-234R-ITPS</strong><br>
-Serial: 100311221<br>
-Project / Job: 203522901<br>
-Manufactured: November 2017
-</td>
-</tr>
-
-<tr>
-<th>Bagger 3</th>
-<td>
-<strong>ATLAS-202R-ITPS</strong><br>
-Serial: 12749<br>
-Project / Job: 09 / 11298<br>
-Manufactured: March 2010
-</td>
-</tr>
-
-<tr>
-<th>Bagger 4</th>
-<td>
-<strong>ATLAS-202R-ITPS</strong><br>
-Serial: 12748<br>
-Project / Job: 09 / 11298<br>
-Manufactured: March 2010
-</td>
-</tr>
-
-</tbody>
-
-</table>
-
-
-<div class="notice">
-
-<strong>
-Verify nameplate information before ordering model-specific parts.
-</strong>
-
-<br>
-
-The manuals section contains ATLAS-204/234 maintenance documentation, 204 electrical and pneumatic prints, and model-specific parts manuals. Use the installed model, serial number, and project/job number above when selecting or ordering parts.
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Bagger 4</p>
+<h3>Ishida ATLAS-202R-ITPS</h3>
+</div>
+<ul class="plate-list">
+<li><strong>Manufacturer</strong><span>Ishida Co., Ltd.</span></li>
+<li><strong>Model</strong><span>ATLAS-202R-ITPS</span></li>
+<li><strong>Job Number</strong><span>09 / 11298</span></li>
+<li><strong>Serial No.</strong><span>12748</span></li>
+<li><strong>Mfg. Date</strong><span>March 2010</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Phase</strong><span>3 Phase</span></li>
+<li><strong>Current</strong><span>30 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
 </div>
-
 </section>
 
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Model Reference</p>
+<h2>Installed Model Details</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>ATLAS-204R-ITPS</th><td>Installed as Bagger 1 · Serial 100515278 · Project 209146207</td></tr>
+<tr><th>ATLAS-234R-ITPS</th><td>Installed as Bagger 2 · Serial 100311221 · Project 205329901</td></tr>
+<tr><th>ATLAS-202R-ITPS</th><td>Installed as Baggers 3 and 4 · Job 09 / 11298</td></tr>
+</tbody>
+</table>
+
+<div class="notice">
+<strong>Use the machine-specific model, serial number, and project/job number when selecting parts.</strong><br>
+The manuals section contains ATLAS-204/234 maintenance documentation, electrical and pneumatic prints, and model-specific parts manuals.
+</div>
+</section>
 
 <footer class="page-footer">
-
-<p>
-Siete Maintenance Documentation
-</p>
-
-<a href="../../index.html">
-Return to Maintenance Portal
-</a>
-
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
 </footer>
 
 </main>
