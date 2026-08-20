@@ -3,97 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Machine information for the Ishida TSC-RS Seal Checker used on Chips Lines 1 through 6.">
+<meta name="description" content="Ishida TSC-RS-120R seal checker machine information for Chips Lines 1 through 4.">
 <title>Seal Checker | Siete Maintenance</title>
-
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
-.machine-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
+:root{
+  --sc-blue:#0a5f96;
+  --sc-blue-dark:#074d82;
+  --sc-border:#cfe0ef;
+  --sc-text:#243746;
 }
-.info-card{
-    padding:20px;
-    background:#fff;
-    border:1px solid #cfe0ef;
-    border-radius:14px;
-    box-shadow:0 4px 14px rgba(0,0,0,.04);
+
+.action-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:24px;
 }
-.info-card h3{
-    margin:0 0 12px;
-    color:#073e69;
+
+.action-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:76px;
+  padding:18px;
+  border:1px solid var(--sc-border);
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--sc-blue-dark);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
 }
-.info-card p{
-    margin:6px 0;
-    color:#516574;
+
+.action-card:hover{
+  transform:translateY(-2px);
+  border-color:#8ebbd9;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
-.resource-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
+
+.spec-table,
+.asset-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--sc-border);
+  border-radius:14px;
+  overflow:hidden;
 }
-.resource-card{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:20px;
-    background:#fff;
-    border:1px solid #cfe0ef;
-    border-radius:14px;
-    text-decoration:none;
-    color:inherit;
-    box-shadow:0 4px 14px rgba(0,0,0,.04);
-}
-.resource-card:hover{
-    border-color:#8dbbdb;
-    transform:translateY(-1px);
-}
-.resource-icon{
-    font-size:30px;
-}
-.resource-card h3{
-    margin:0 0 5px;
-    color:#073e69;
-}
-.resource-card p{
-    margin:0;
-    color:#516574;
-}
-.line-table,
-.spec-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-}
-.line-table th,
-.line-table td,
+
 .spec-table th,
-.spec-table td{
-    padding:12px 14px;
-    border:1px solid #d7e4ee;
-    text-align:left;
-    vertical-align:top;
+.spec-table td,
+.asset-table th,
+.asset-table td{
+  padding:15px 18px;
+  border-bottom:1px solid #dbe7f1;
+  text-align:left;
+  vertical-align:top;
 }
-.line-table th,
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td,
+.asset-table tr:last-child td{
+  border-bottom:0;
+}
+
 .spec-table th{
-    color:#073e69;
-    background:#f5faff;
+  width:33%;
+  background:#f1f7fb;
+  color:var(--sc-blue-dark);
 }
-.spec-table th{
-    width:35%;
+
+.asset-table thead th{
+  background:#17679f;
+  color:#fff;
 }
-.note{
-    margin-top:14px;
-    color:#607687;
-    font-size:.92rem;
+
+.asset-table tbody tr:nth-child(even){
+  background:#f6f9fc;
 }
-@media(max-width:760px){
-    .machine-grid,
-    .resource-grid{
-        grid-template-columns:1fr;
-    }
+
+.machine-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.machine-card{
+  border:1px solid var(--sc-border);
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.machine-card-header{
+  padding:16px 18px;
+  background:linear-gradient(135deg,#17679f,#0a4f86);
+  color:#fff;
+}
+
+.machine-card-header .line{
+  margin:0 0 4px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+.machine-card-header h3{
+  margin:0;
+  font-size:1.2rem;
+}
+
+.plate-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.plate-list li{
+  display:grid;
+  grid-template-columns:44% 56%;
+  gap:8px;
+  padding:11px 16px;
+  border-bottom:1px solid #e3edf4;
+}
+
+.plate-list li:last-child{
+  border-bottom:0;
+}
+
+.plate-list strong{
+  color:var(--sc-blue-dark);
+}
+
+.plate-list span{
+  color:var(--sc-text);
+  overflow-wrap:anywhere;
+}
+
+.status-badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#eaf4fb;
+  color:#07578f;
+  font-weight:800;
+}
+
+@media(max-width:900px){
+  .machine-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:720px){
+  .action-grid{grid-template-columns:1fr}
+  .spec-table th,.spec-table td{display:block;width:auto}
+  .asset-table{display:block;overflow-x:auto}
+  .plate-list li{grid-template-columns:1fr;gap:2px}
 }
 </style>
 </head>
@@ -103,243 +174,185 @@
 
 <header class="page-header">
 <a class="back-link" href="../../index.html">← Home</a>
-
 <div class="header-content">
-<div class="header-icon" aria-hidden="true">⚙️</div>
-
+<div class="header-icon" aria-hidden="true">✅</div>
 <div>
 <p class="eyebrow">Chips Maintenance</p>
 <h1>Seal Checker</h1>
-<p class="header-subtitle">Ishida TSC-RS Series · Lines 1–6</p>
+<p class="header-subtitle">Ishida TSC-RS-120R — Lines 1 through 4</p>
 </div>
 </div>
 </header>
 
-
 <section class="content-section">
-
 <div class="section-heading">
 <div>
-<p class="section-label">Machine Resources</p>
-<h2>Documentation</h2>
+<p class="section-label">Quick Access</p>
+<h2>Seal Checker Resources</h2>
 </div>
+<span class="status-badge">Lines 1–4</span>
 </div>
 
-<div class="resource-grid">
-
-<a class="resource-card" href="../../manuals/chips/seal-checker.html">
-<span class="resource-icon" aria-hidden="true">📘</span>
-<span>
-<h3>Manuals</h3>
-<p>Operation, maintenance, and parts documentation.</p>
-</span>
-</a>
-
-<a class="resource-card" href="../../sops/chips/seal-checker.html">
-<span class="resource-icon" aria-hidden="true">📋</span>
-<span>
-<h3>SOPs</h3>
-<p>Manufacturer and plant procedures for the Seal Checker.</p>
-</span>
-</a>
-
+<div class="action-grid">
+<a class="action-card" href="../../manuals/chips/seal-checker.html">📘 Manuals</a>
+<a class="action-card" href="../../sops/chips/seal-checker.html">📋 SOPs</a>
+<a class="action-card" href="#machine-information">⚙️ Machine Information</a>
 </div>
 </section>
 
-
-<section class="content-section">
-
+<section class="content-section" id="machine-information">
 <div class="section-heading">
 <div>
-<p class="section-label">Installed Equipment</p>
-<h2>Line Assignments</h2>
-</div>
-<span class="count-badge">6 Lines</span>
-</div>
-
-<table class="line-table">
-<thead>
-<tr>
-<th>Line</th>
-<th>Manufacturer</th>
-<th>Machine</th>
-<th>Model</th>
-</tr>
-</thead>
-
-<tbody>
-<tr><td>Line 1</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-<tr><td>Line 2</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-<tr><td>Line 3</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-<tr><td>Line 4</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-<tr><td>Line 5</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-<tr><td>Line 6</td><td>Ishida</td><td>Thickness / Seal Checker</td><td>TSC-RS Series</td></tr>
-</tbody>
-</table>
-
-<p class="note">The available documentation includes TSC-RS Series operation information, TSC-RS-120 maintenance information, and TSC-RS-120R parts information.</p>
-
-</section>
-
-
-<section class="content-section">
-
-<div class="section-heading">
-<div>
-<p class="section-label">Machine Information</p>
-<h2>Standard Specifications</h2>
+<p class="section-label">Equipment Information</p>
+<h2>Machine Overview</h2>
 </div>
 </div>
 
 <table class="spec-table">
-
-<tr>
-<th>Manufacturer</th>
-<td>Ishida Co., Ltd.</td>
-</tr>
-
-<tr>
-<th>Machine Type</th>
-<td>Thickness / Seal Checker</td>
-</tr>
-
-<tr>
-<th>Documented Models</th>
-<td>TSC-RS Series / TSC-RS-120 / TSC-RS-120R</td>
-</tr>
-
-<tr>
-<th>Minimum Thickness Indication</th>
-<td>0.01 mm</td>
-</tr>
-
-<tr>
-<th>Product Type</th>
-<td>Pillow package</td>
-</tr>
-
-<tr>
-<th>Product Width</th>
-<td>50–330 mm</td>
-</tr>
-
-<tr>
-<th>Product Length</th>
-<td>100–650 mm</td>
-</tr>
-
-<tr>
-<th>Product Thickness</th>
-<td>15–120 mm</td>
-</tr>
-
-<tr>
-<th>J-Belt Conveyor Speed</th>
-<td>15–90 m/min</td>
-</tr>
-
-<tr>
-<th>Infeed Conveyor Speed</th>
-<td>15–70 m/min</td>
-</tr>
-
-<tr>
-<th>Brush Conditioner Speed</th>
-<td>15–70 m/min</td>
-</tr>
-
-<tr>
-<th>Seal Check Conveyor Speed</th>
-<td>15–70 m/min</td>
-</tr>
-
-<tr>
-<th>Reject Conveyor Speed</th>
-<td>15–90 m/min</td>
-</tr>
-
-<tr>
-<th>Main Body Size</th>
-<td>Approx. 800 mm × 1500 mm × 2800 mm</td>
-</tr>
-
-<tr>
-<th>Weight</th>
-<td>Approx. 220 kg</td>
-</tr>
-
-<tr>
-<th>Power Supply</th>
-<td>Single-phase AC 200 / 208 / 220 / 230 / 240 V, 50/60 Hz</td>
-</tr>
-
-<tr>
-<th>Air Pressure</th>
-<td>0.4–1.0 MPa</td>
-</tr>
-
-<tr>
-<th>Air Consumption</th>
-<td>6.4 Nl/min (ANR) during reject discharge</td>
-</tr>
-
-<tr>
-<th>Ambient Temperature</th>
-<td>0–40°C, no freezing</td>
-</tr>
-
-<tr>
-<th>Humidity</th>
-<td>30–85% RH, no dew condensation</td>
-</tr>
-
+<tbody>
+<tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
+<tr><th>Equipment Type</th><td>Seal Checker</td></tr>
+<tr><th>Model</th><td>TSC-RS-120R</td></tr>
+<tr><th>Installed Lines</th><td>Chips Lines 1, 2, 3, and 4</td></tr>
+<tr><th>Job Number</th><td>10 / 11575</td></tr>
+<tr><th>Manufacturing Date</th><td>March 2011</td></tr>
+<tr><th>Power</th><td>Single Phase</td></tr>
+<tr><th>Supply Voltage</th><td>208 VAC</td></tr>
+<tr><th>Rated Current</th><td>5.0 A</td></tr>
+<tr><th>Frequency</th><td>60 Hz</td></tr>
+<tr><th>Country of Manufacture</th><td>Japan</td></tr>
+</tbody>
 </table>
-
-<p class="note">Specifications are based on the standard-model information in the Ishida documentation and may differ from the exact configuration installed on each production line.</p>
-
 </section>
 
-
 <section class="content-section">
-
 <div class="section-heading">
 <div>
-<p class="section-label">System Overview</p>
-<h2>Main Components</h2>
+<p class="section-label">Installed Equipment</p>
+<h2>Seal Checker Line Assignment</h2>
+</div>
+<span class="status-badge">TSC-RS-120R</span>
+</div>
+
+<table class="asset-table">
+<thead>
+<tr>
+<th>Line</th>
+<th>Model</th>
+<th>Serial Number</th>
+<th>Job Number</th>
+<th>Mfg. Date</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>Line 1</strong></td><td>TSC-RS-120R</td><td>1137</td><td>10 / 11575</td><td>March 2011</td></tr>
+<tr><td><strong>Line 2</strong></td><td>TSC-RS-120R</td><td>1140</td><td>10 / 11575</td><td>March 2011</td></tr>
+<tr><td><strong>Line 3</strong></td><td>TSC-RS-120R</td><td>1138</td><td>10 / 11575</td><td>March 2011</td></tr>
+<tr><td><strong>Line 4</strong></td><td>TSC-RS-120R</td><td>1135</td><td>10 / 11575</td><td>March 2011</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Nameplate Information</p>
+<h2>Installed Machine Details</h2>
 </div>
 </div>
 
 <div class="machine-grid">
 
-<div class="info-card">
-<h3>Product Infeed</h3>
-<p><strong>J-Belt Conveyor:</strong> receives packaged product from the upstream packer and transfers it to the infeed conveyor.</p>
-<p><strong>Infeed Conveyor:</strong> carries product into the seal-check section.</p>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 1</p>
+<h3>Ishida TSC-RS-120R</h3>
 </div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>TSC-RS-120R</span></li>
+<li><strong>Job Number</strong><span>10 / 11575</span></li>
+<li><strong>Serial Number</strong><span>1137</span></li>
+<li><strong>Mfg. Date</strong><span>March 2011</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Current</strong><span>5.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
-<div class="info-card">
-<h3>Product Conditioning</h3>
-<p><strong>Brush Conditioner:</strong> stabilizes and flattens the package before it enters the seal-check device.</p>
-<p><strong>Cleaning Brush:</strong> removes dirt and debris from the conveyor belt when fitted.</p>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 2</p>
+<h3>Ishida TSC-RS-120R</h3>
 </div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>TSC-RS-120R</span></li>
+<li><strong>Job Number</strong><span>10 / 11575</span></li>
+<li><strong>Serial Number</strong><span>1140</span></li>
+<li><strong>Mfg. Date</strong><span>March 2011</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Current</strong><span>5.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
-<div class="info-card">
-<h3>Seal Inspection</h3>
-<p><strong>Lower Seal Check Conveyor:</strong> carries the package through the measurement area.</p>
-<p><strong>Upper Seal Check Conveyor:</strong> applies load to the passing package so thickness changes can be measured.</p>
-<p><strong>Seal Check Device:</strong> evaluates package thickness for seal quality.</p>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 3</p>
+<h3>Ishida TSC-RS-120R</h3>
 </div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>TSC-RS-120R</span></li>
+<li><strong>Job Number</strong><span>10 / 11575</span></li>
+<li><strong>Serial Number</strong><span>1138</span></li>
+<li><strong>Mfg. Date</strong><span>March 2011</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Current</strong><span>5.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
-<div class="info-card">
-<h3>Reject System</h3>
-<p><strong>Photoelectric Sensors:</strong> detect product presence and movement through the inspection section.</p>
-<p><strong>Reject Conveyor / Air Jet:</strong> directs accepted or rejected product according to the machine judgment.</p>
+<article class="machine-card">
+<div class="machine-card-header">
+<p class="line">Chips Line 4</p>
+<h3>Ishida TSC-RS-120R</h3>
 </div>
+<ul class="plate-list">
+<li><strong>Model</strong><span>TSC-RS-120R</span></li>
+<li><strong>Job Number</strong><span>10 / 11575</span></li>
+<li><strong>Serial Number</strong><span>1135</span></li>
+<li><strong>Mfg. Date</strong><span>March 2011</span></li>
+<li><strong>Power</strong><span>Single Phase</span></li>
+<li><strong>Voltage</strong><span>208 VAC</span></li>
+<li><strong>Current</strong><span>5.0 A</span></li>
+<li><strong>Frequency</strong><span>60 Hz</span></li>
+<li><strong>Country</strong><span>Japan</span></li>
+</ul>
+</article>
 
 </div>
-
 </section>
 
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Manufacturer Information</p>
+<h2>Ishida Co., Ltd.</h2>
+</div>
+</div>
+
+<table class="spec-table">
+<tbody>
+<tr><th>Manufacturer</th><td>Ishida Co., Ltd.</td></tr>
+<tr><th>Country of Manufacture</th><td>Japan</td></tr>
+</tbody>
+</table>
+</section>
 
 <footer class="page-footer">
 <p>Siete Maintenance Documentation</p>
