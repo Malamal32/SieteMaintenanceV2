@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mixer machine information for Tortillas maintenance.">
+<title>Mixer | Siete Maintenance</title>
+<link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
+
+<style>
+.resource-grid,
+.info-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+.resource-card,
+.info-card {
+    background:#fff;
+    border:1px solid #cfe0ef;
+    border-radius:14px;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+.resource-card {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:20px;
+    color:inherit;
+    text-decoration:none;
+}
+.resource-card:hover {
+    border-color:#8dbbdb;
+    transform:translateY(-1px);
+}
+.resource-icon { font-size:30px; }
+.resource-card h3,
+.info-card h3 {
+    margin:0 0 6px;
+    color:#073e69;
+}
+.resource-card p,
+.info-card p {
+    margin:5px 0;
+    color:#516574;
+}
+.info-card { padding:20px; }
+.machine-table {
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+.machine-table th,
+.machine-table td {
+    padding:12px 14px;
+    border:1px solid #d7e4ee;
+    text-align:left;
+    vertical-align:top;
+}
+.machine-table th {
+    width:34%;
+    color:#073e69;
+    background:#f5faff;
+}
+.note {
+    margin-top:14px;
+    color:#607687;
+    font-size:.92rem;
+}
+.placeholder {
+    color:#7a8b99;
+    font-style:italic;
+}
+@media(max-width:760px) {
+    .resource-grid,
+    .info-grid { grid-template-columns:1fr; }
+}
+</style>
+
+</head>
+<body>
+<main class="page-container">
+
+<header class="page-header">
+<a class="back-link" href="../../index.html">← Home</a>
+<div class="header-content">
+<div class="header-icon" aria-hidden="true">⚙️</div>
+<div>
+<p class="eyebrow">Tortillas Maintenance</p>
+<h1>Mixer</h1>
+<p class="header-subtitle">Peerless Mixer</p>
+</div>
+</div>
+</header>
+
+<section class="content-section">
+<div class="section-heading">
+<div>
+<p class="section-label">Machine Resources</p>
+<h2>Documentation</h2>
+</div>
+</div>
+
+<div class="resource-grid">
+<a class="resource-card" href="../../manuals/tortillas/mixer.html">
+<span class="resource-icon" aria-hidden="true">📘</span>
+<span>
+<h3>Manuals</h3>
+<p>Open available manuals, drawings, and technical documents.</p>
+</span>
+</a>
+
+<a class="resource-card" href="../../sops/tortillas/mixer.html">
+<span class="resource-icon" aria-hidden="true">📋</span>
+<span>
+<h3>SOPs</h3>
+<p>Open standard operating procedures and maintenance procedures.</p>
+</span>
+</a>
+</div>
+</section>
+
+
+<section class="content-section">
+<div class="section-heading">
+<div><p class="section-label">Machine Information</p><h2>Equipment Details</h2></div>
+</div>
+
+<table class="machine-table">
+<tr><th>Manufacturer</th><td>Peerless</td></tr>
+<tr><th>Machine Type</th><td>Industrial Mixer</td></tr>
+<tr><th>Model</th><td><span class="placeholder">To be added</span></td></tr>
+<tr><th>Serial Number</th><td><span class="placeholder">To be added</span></td></tr>
+<tr><th>Production Line(s)</th><td><span class="placeholder">To be added</span></td></tr>
+<tr><th>Electrical Supply</th><td><span class="placeholder">To be added from nameplate</span></td></tr>
+</table>
+
+<p class="note">The current documentation identifies the equipment as a Peerless mixer. Model, serial number, line assignment, and nameplate data can be added when available.</p>
+</section>
+
+<section class="content-section">
+<div class="section-heading">
+<div><p class="section-label">Documented Assemblies</p><h2>Major Components</h2></div>
+</div>
+
+<div class="info-grid">
+<div class="info-card">
+<h3>Drive &amp; Transmission</h3>
+<p>Mechanical drawings include the RH gearcase assembly, transmission assembly, drive-related components, and shaft seal assembly.</p>
+</div>
+
+<div class="info-card">
+<h3>Bowl &amp; Bearing Components</h3>
+<p>Available drawings include an LH bearing assembly plus front and rear bowl seal assemblies.</p>
+</div>
+
+<div class="info-card">
+<h3>Product Handling</h3>
+<p>Documentation includes the ingredient door assembly and canopy scraper assembly.</p>
+</div>
+
+<div class="info-card">
+<h3>Tilting System</h3>
+<p>A dedicated tilt assembly drawing is included in the mechanical drawing library.</p>
+</div>
+</div>
+</section>
+
+
+<footer class="page-footer">
+<p>Siete Maintenance Documentation</p>
+<a href="../../index.html">Return to Maintenance Portal</a>
+</footer>
+
+</main>
+</body>
+</html>
