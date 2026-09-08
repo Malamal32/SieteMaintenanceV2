@@ -8,15 +8,8 @@
 <link rel="stylesheet" href="../../assets/css/shared-blue-docs.css?v=2">
 
 <style>
-.pending-card {
-    opacity: .72;
-    cursor: default;
-}
-
-.pending-card .open-label {
-    color: #7a8b99;
-}
-
+.pending-card { opacity: .72; cursor: default; }
+.pending-card .open-label { color: #7a8b99; }
 .pending-note {
     margin-top: 18px;
     padding: 14px 16px;
@@ -30,64 +23,28 @@
 </head>
 
 <body>
-
 <main class="page-container">
 
 <header class="page-header">
-
-<a class="back-link" href="../../machines/chips/fryer.html">
-← Fryer Machine Page
-</a>
-
+<a class="back-link" href="../../machines/chips/fryer.html">← Fryer Machine Page</a>
 <div class="header-content">
-
-<div class="header-icon" aria-hidden="true">
-📋
-</div>
-
+<div class="header-icon" aria-hidden="true">📋</div>
 <div>
-
-<p class="eyebrow">
-Chips Maintenance
-</p>
-
-<h1>
-Fryer SOPs
-</h1>
-
-<p class="header-subtitle">
-Standard Operating Procedures and Preventative Maintenance
-</p>
-
+<p class="eyebrow">Chips Maintenance</p>
+<h1>Fryer SOPs</h1>
+<p class="header-subtitle">Standard Operating Procedures and Preventative Maintenance</p>
 </div>
-
 </div>
-
 </header>
 
-
 <section class="content-section">
-
 <div class="section-heading">
-
 <div>
-
-<p class="section-label">
-Standard Operating Procedures
-</p>
-
-<h2>
-Available SOPs
-</h2>
-
+<p class="section-label">Standard Operating Procedures</p>
+<h2>Available SOPs</h2>
 </div>
-
-<span class="count-badge">
-1 SOP
-</span>
-
+<span class="count-badge">2 SOPs</span>
 </div>
-
 
 <div class="card-list">
 
@@ -99,63 +56,39 @@ Available SOPs
     rel="noopener"
     aria-disabled="true"
 >
-
-<span class="card-icon" aria-hidden="true">
-🛠️
-</span>
-
+<span class="card-icon" aria-hidden="true">🛠️</span>
 <span class="card-info">
-
-<h3>
-Fryer Preventative Maintenance
-</h3>
-
-<p id="pmStatusText">
-Document ready for upload.
-</p>
-
+<h3>Fryer Preventative Maintenance</h3>
+<p id="pmStatusText">Document ready for upload.</p>
 </span>
+<span id="pmOpenLabel" class="open-label">Pending Upload</span>
+</a>
 
-<span
-    id="pmOpenLabel"
-    class="open-label"
->
-Pending Upload
+<a class="content-card" href="fryer/manufacturer-sops.html">
+<span class="card-icon" aria-hidden="true">🏭</span>
+<span class="card-info">
+<h3>Manufacturer SOPs</h3>
+<p>Manufacturer procedures and checklists for fryer filling and the thermal liquid system.</p>
 </span>
-
+<span class="open-label">Open →</span>
 </a>
 
 </div>
-
 
 <div class="pending-note">
-
 <strong>PDF upload path:</strong><br>
 <code>sops/chips/fryer/fryer-preventative-maintenance.pdf</code>
-
 <br><br>
-
 Once a PDF with this exact filename is uploaded, this page will automatically enable the SOP button.
-
 </div>
-
 </section>
 
-
 <footer class="page-footer">
-
-<p>
-Siete Maintenance Documentation
-</p>
-
-<a href="../../machines/chips/fryer.html">
-Return to Fryer
-</a>
-
+<p>Siete Maintenance Documentation</p>
+<a href="../../machines/chips/fryer.html">Return to Fryer</a>
 </footer>
 
 </main>
-
 
 <script>
 const pmDocument = document.getElementById("pmDocument");
@@ -176,9 +109,7 @@ async function checkPreventativeMaintenanceDocument() {
             pmOpenLabel.textContent = "Open PDF →";
             return;
         }
-    } catch (error) {
-        // Leave the document in pending state.
-    }
+    } catch (error) {}
 
     pmDocument.addEventListener("click", function(event) {
         event.preventDefault();
