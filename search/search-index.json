@@ -1,14 +1,1295 @@
 [
   {
-    "title": "DACs Check Weigher",
+    "title": "Collator",
+    "machine": "Collator",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/collator.html",
+    "keywords": [
+      "bpa",
+      "collator",
+      "collator 200",
+      "mechanical",
+      "electrical",
+      "97250",
+      "mechanical assemblies",
+      "electrical schematics",
+      "drawings",
+      "110 vac",
+      "220 vac"
+    ]
+  },
+  {
+    "title": "BPA Collator 200 Service Manual",
+    "machine": "Collator",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/collator/bpa-collator-200-service-manual.html",
+    "keywords": [
+      "service manual",
+      "safety",
+      "installation",
+      "setup",
+      "changeover",
+      "operation",
+      "maintenance",
+      "troubleshooting",
+      "replacement parts"
+    ]
+  },
+  {
+    "title": "BPA Collator Drawings",
+    "machine": "Collator",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/collator/drawings.html",
+    "keywords": [
+      "drawings",
+      "mechanical",
+      "electrical",
+      "110 vac",
+      "220 vac",
+      "job 67510"
+    ]
+  },
+  {
+    "title": "Collator Manuals",
+    "machine": "Collator",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/collator.html",
+    "keywords": [
+      "bpa",
+      "collator 200",
+      "97250",
+      "mechanical assemblies",
+      "electrical schematics",
+      "drawings",
+      "110 vac",
+      "220 vac",
+      "BPA Collator 200 User Manual",
+      "BPA Collator 200 Service Manual",
+      "97250 Mechanical Assemblies",
+      "110 VAC 1 Phase Collator Electrical Schematics",
+      "Drawings"
+    ]
+  },
+  {
+    "title": "BPA Collator Preventative Maintenance",
+    "machine": "Collator",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/collator.html",
+    "keywords": [
+      "bpa",
+      "collator",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Collator SOPs",
+    "machine": "Collator",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/collator.html",
+    "keywords": [
+      "bpa",
+      "collator",
+      "preventative maintenance",
+      "BPA Collator Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "FastBack",
+    "machine": "FastBack",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/fastback.html",
+    "keywords": [
+      "fastback",
+      "heat and control",
+      "ppm",
+      "50e",
+      "90e",
+      "260e",
+      "conveyor",
+      "90e-g2",
+      "260e-g2",
+      "cd30",
+      "cd35",
+      "controller",
+      "drawings",
+      "electrical"
+    ]
+  },
+  {
+    "title": "FastBack 260E-G2 Technical Manual",
+    "machine": "FastBack",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback/fastback-260e-g2-technical-manual.html",
+    "keywords": [
+      "260e-g2",
+      "technical manual"
+    ]
+  },
+  {
+    "title": "FastBack 90E / 90E-G2 Technical Manual",
+    "machine": "FastBack",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback/fastback-90e-90e-g2-technical-manual.html",
+    "keywords": [
+      "90e",
+      "90e-g2",
+      "technical manual"
+    ]
+  },
+  {
+    "title": "FastBack Drawings",
+    "machine": "FastBack",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback/drawings.html",
+    "keywords": [
+      "mechanical",
+      "drive train",
+      "crank shaft",
+      "idler",
+      "pulley",
+      "tensioner"
+    ]
+  },
+  {
+    "title": "FastBack Electrical Diagrams",
+    "machine": "FastBack",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback/electrical-diagrams.html",
+    "keywords": [
+      "electrical",
+      "drawing markups",
+      "tc-2 binder"
+    ]
+  },
+  {
+    "title": "PPM CD30/35 Controller Manual & Start Guide",
+    "machine": "FastBack",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback/ppm-cd30-35-controller-manual.html",
+    "keywords": [
+      "ppm",
+      "cd30",
+      "cd35",
+      "controller",
+      "start guide"
+    ]
+  },
+  {
+    "title": "FastBack Manuals",
+    "machine": "FastBack",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/fastback.html",
+    "keywords": [
+      "heat and control",
+      "ppm",
+      "fastback",
+      "50e",
+      "90e",
+      "90e-g2",
+      "260e-g2",
+      "cd30",
+      "cd35",
+      "controller",
+      "drawings",
+      "electrical",
+      "FastBack 90E / 90E-G2 Technical Manual",
+      "FastBack 260E-G2 Technical Manual",
+      "PPM CD30/35 Controller Manual & Start Guide",
+      "Drawings",
+      "Electrical Diagrams"
+    ]
+  },
+  {
+    "title": "FastBack Preventative Maintenance",
+    "machine": "FastBack",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/fastback.html",
+    "keywords": [
+      "fastback",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "FastBack SOPs",
+    "machine": "FastBack",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/fastback.html",
+    "keywords": [
+      "fastback",
+      "preventative maintenance",
+      "FastBack Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Fryer",
+    "machine": "Fryer",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/fryer.html",
+    "keywords": [
+      "fryer",
+      "lawrence equipment",
+      "honeywell",
+      "parker",
+      "thermal liquid",
+      "heat exchanger",
+      "udc3200",
+      "thermal liquid heater",
+      "installation",
+      "operation",
+      "drawings"
+    ]
+  },
+  {
+    "title": "Fryer Drawings",
+    "machine": "Fryer",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer/drawings.html",
+    "keywords": [
+      "heat exchanger",
+      "boiler electrical",
+      "electrical drawing",
+      "exhaust parts",
+      "tank parts",
+      "pump"
+    ]
+  },
+  {
+    "title": "Fryer Installation and Operations",
+    "machine": "Fryer",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer/installation-and-operations.html",
+    "keywords": [
+      "parker",
+      "thermal liquid heater",
+      "burner",
+      "startup",
+      "maintenance",
+      "controls",
+      "wiring"
+    ]
+  },
+  {
+    "title": "Fryer Manual",
+    "machine": "Fryer",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer/fryer-manual.html",
+    "keywords": [
+      "lawrence equipment",
+      "operation",
+      "adjustments",
+      "maintenance",
+      "cleaning",
+      "troubleshooting",
+      "reference drawings"
+    ]
+  },
+  {
+    "title": "Fryer User Manual",
+    "machine": "Fryer",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer/user-manual.html",
+    "keywords": [
+      "user manual",
+      "fryer"
+    ]
+  },
+  {
+    "title": "Fryer Manuals",
+    "machine": "Fryer",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/fryer.html",
+    "keywords": [
+      "fryer",
+      "lawrence equipment",
+      "honeywell",
+      "udc3200",
+      "parker",
+      "thermal liquid heater",
+      "installation",
+      "operation",
+      "drawings",
+      "heat exchanger",
+      "Honeywell UDC3200 Temperature Controller",
+      "User Manual",
+      "Fryer Manual",
+      "Installation and Operations",
+      "Drawings"
+    ]
+  },
+  {
+    "title": "Fryer Manufacturer SOPs",
+    "machine": "Fryer",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/fryer/manufacturer-sops.html",
+    "keywords": [
+      "fryer filling manufacturer sop",
+      "thermal liquid system checklist",
+      "manufacturer"
+    ]
+  },
+  {
+    "title": "Fryer Preventative Maintenance",
+    "machine": "Fryer",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/fryer.html",
+    "keywords": [
+      "fryer",
+      "preventative maintenance",
+      "manufacturer",
+      "fryer filling",
+      "thermal liquid system checklist",
+      "pm"
+    ]
+  },
+  {
+    "title": "Fryer SOPs",
+    "machine": "Fryer",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/fryer.html",
+    "keywords": [
+      "fryer",
+      "preventative maintenance",
+      "manufacturer",
+      "fryer filling",
+      "thermal liquid system checklist",
+      "Fryer Preventative Maintenance",
+      "Manufacturer SOPs"
+    ]
+  },
+  {
+    "title": "Helix Conveyor",
+    "machine": "Helix Conveyor",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/helix-conveyor.html",
+    "keywords": [
+      "hapman",
+      "helix conveyor",
+      "series 300",
+      "250-300 series",
+      "x20335",
+      "2 hp",
+      "auger",
+      "hopper",
+      "installation",
+      "electrical",
+      "maintenance"
+    ]
+  },
+  {
+    "title": "Helix Conveyor Manual",
+    "machine": "Helix Conveyor",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/helix-conveyor/helix-conveyor-manual.html",
+    "keywords": [
+      "hapman",
+      "installation",
+      "startup",
+      "maintenance",
+      "troubleshooting",
+      "auger",
+      "hopper",
+      "electrical panel"
+    ]
+  },
+  {
+    "title": "Helix Conveyor Manuals",
+    "machine": "Helix Conveyor",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/helix-conveyor.html",
+    "keywords": [
+      "hapman",
+      "helix conveyor",
+      "250-300 series",
+      "series 300",
+      "x20335",
+      "auger",
+      "hopper",
+      "installation",
+      "electrical",
+      "maintenance",
+      "Helix Conveyor Manual"
+    ]
+  },
+  {
+    "title": "Helix Conveyor Preventative Maintenance",
+    "machine": "Helix Conveyor",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/helix-conveyor.html",
+    "keywords": [
+      "hapman",
+      "helix conveyor",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Helix Conveyor SOPs",
+    "machine": "Helix Conveyor",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/helix-conveyor.html",
+    "keywords": [
+      "hapman",
+      "helix conveyor",
+      "preventative maintenance",
+      "Helix Conveyor Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Ishida Bagger",
+    "machine": "Ishida Bagger",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/ishida-bagger.html",
+    "keywords": [
+      "ishida",
+      "bagger",
+      "atlas 202",
+      "atlas 204",
+      "atlas 234",
+      "parts",
+      "maintenance",
+      "electrical",
+      "pneumatic"
+    ]
+  },
+  {
+    "title": "ATLAS-202R-ITPS Parts Manual",
+    "machine": "Ishida Bagger",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-bagger/atlas-202r-itps-parts.html",
+    "keywords": [
+      "atlas-202r-itps",
+      "parts",
+      "main body",
+      "air unit",
+      "end seal",
+      "back seal",
+      "film carrier",
+      "electrical"
+    ]
+  },
+  {
+    "title": "Ishida Bagger Manuals",
+    "machine": "Ishida Bagger",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-bagger.html",
+    "keywords": [
+      "ishida",
+      "atlas 204",
+      "atlas 234",
+      "atlas 202",
+      "bagger",
+      "parts",
+      "maintenance",
+      "electrical",
+      "pneumatic",
+      "ATLAS-204/234 Maintenance Manual",
+      "Manual en Español ATLAS-204/234",
+      "204 Electrical and Pneumatic Prints",
+      "ATLAS-234R Parts Manual",
+      "ATLAS-204R-ITPS Parts Manual",
+      "ATLAS-202R-ITPS Parts Manual"
+    ]
+  },
+  {
+    "title": "Ishida Bagger Preventative Maintenance",
+    "machine": "Ishida Bagger",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/ishida-bagger.html",
+    "keywords": [
+      "ishida",
+      "bagger",
+      "manufacturer",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Ishida Bagger SOPs",
+    "machine": "Ishida Bagger",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/ishida-bagger.html",
+    "keywords": [
+      "ishida",
+      "bagger",
+      "manufacturer",
+      "preventative maintenance",
+      "Manufacturer SOP",
+      "Ishida Bagger Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Ishida Scaler",
+    "machine": "Ishida Scaler",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/ishida-scaler.html",
+    "keywords": [
+      "ishida",
+      "scaler",
+      "ccw",
+      "weigher",
+      "scale",
+      "ccw-rv",
+      "ccw-rve",
+      "parts",
+      "technical notes"
+    ]
+  },
+  {
+    "title": "Ishida Scaler Manuals",
+    "machine": "Ishida Scaler",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/ishida-scaler.html",
+    "keywords": [
+      "ishida",
+      "scaler",
+      "scale",
+      "weigher",
+      "ccw-rv",
+      "ccw-rve",
+      "parts",
+      "technical notes",
+      "CCW-RV-2**W Instruction Manual",
+      "Manual de Instrucciones CCW-RVE-2**W",
+      "CCW-RVE-214W-1S/30-PB Parts Manual",
+      "CCW-R-214W-1S/30 Technical Notes"
+    ]
+  },
+  {
+    "title": "Ishida Scaler Preventative Maintenance",
+    "machine": "Ishida Scaler",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/ishida-scaler.html",
+    "keywords": [
+      "ishida",
+      "scaler",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Ishida Scaler SOPs",
+    "machine": "Ishida Scaler",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/ishida-scaler.html",
+    "keywords": [
+      "ishida",
+      "scaler",
+      "preventative maintenance",
+      "Ishida Scaler Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Oven",
+    "machine": "Oven",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/oven.html",
+    "keywords": [
+      "casa herrera",
+      "odyssey oven",
+      "ctco241/217/193/50",
+      "ov20031860",
+      "460v",
+      "3 phase",
+      "3.9 million btu",
+      "pre-sheeter",
+      "ps1039",
+      "oven",
+      "pre sheeter",
+      "presheeter",
+      "combustion",
+      "powerflex 525"
+    ]
+  },
+  {
+    "title": "Casa Herrera Oven Manual",
+    "machine": "Oven",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/oven/casa-herrera-oven-manual.html",
+    "keywords": [
+      "casa herrera",
+      "odyssey oven",
+      "safety",
+      "operation",
+      "combustion",
+      "maintenance",
+      "powerflex 525",
+      "panelview"
+    ]
+  },
+  {
+    "title": "Pre Sheeter Manual",
+    "machine": "Oven",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/oven/pre-sheeter-manual.html",
+    "keywords": [
+      "casa herrera",
+      "pre sheeter",
+      "presheeter",
+      "powerflex 4",
+      "sumitomo",
+      "operation",
+      "maintenance"
+    ]
+  },
+  {
+    "title": "Oven Manuals",
+    "machine": "Oven",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/oven.html",
+    "keywords": [
+      "casa herrera",
+      "oven",
+      "odyssey oven",
+      "ctco241/217/193/50",
+      "ov20031860",
+      "pre sheeter",
+      "presheeter",
+      "ps1039",
+      "combustion",
+      "powerflex 525",
+      "Casa Herrera Oven Manual",
+      "Pre Sheeter Manual"
+    ]
+  },
+  {
+    "title": "Oven Preventative Maintenance",
+    "machine": "Oven",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/oven.html",
+    "keywords": [
+      "casa herrera",
+      "oven",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Oven SOPs",
+    "machine": "Oven",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/oven.html",
+    "keywords": [
+      "casa herrera",
+      "oven",
+      "preventative maintenance",
+      "Oven Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Raumak Bagger",
+    "machine": "Raumak Bagger",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/raumak-bagger.html",
+    "keywords": [
+      "raumak",
+      "multi bag g",
+      "bagger",
+      "operation",
+      "maintenance"
+    ]
+  },
+  {
+    "title": "Raumak Bagger Manuals",
+    "machine": "Raumak Bagger",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/raumak-bagger.html",
+    "keywords": [
+      "raumak",
+      "multi bag g",
+      "bagger",
+      "operation",
+      "maintenance",
+      "MULTI BAG G Operation and Maintenance Manual"
+    ]
+  },
+  {
+    "title": "Raumak Bagger Preventative Maintenance",
+    "machine": "Raumak Bagger",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/raumak-bagger.html",
+    "keywords": [
+      "raumak",
+      "bagger",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Raumak Bagger SOPs",
+    "machine": "Raumak Bagger",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/raumak-bagger.html",
+    "keywords": [
+      "raumak",
+      "bagger",
+      "preventative maintenance",
+      "Raumak Bagger Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Seal Checker",
+    "machine": "Seal Checker",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/seal-checker.html",
+    "keywords": [
+      "ishida",
+      "tsc-rs",
+      "tsc-rs-120",
+      "seal checker",
+      "lines 1 2 3 4 5 6",
+      "tsc-rs-120r",
+      "maintenance",
+      "parts",
+      "operation"
+    ]
+  },
+  {
+    "title": "TSC-RS Series Operation Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-operation.html",
+    "keywords": [
+      "tsc-rs",
+      "operation",
+      "safety",
+      "production",
+      "cleanup",
+      "periodic maintenance",
+      "troubleshooting",
+      "auto calc"
+    ]
+  },
+  {
+    "title": "TSC-RS-120 Maintenance Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-120-maintenance.html",
+    "keywords": [
+      "tsc-rs-120",
+      "maintenance",
+      "sensor",
+      "servo motor",
+      "timing belt",
+      "conveyor belt",
+      "ssc board",
+      "dmu board"
+    ]
+  },
+  {
+    "title": "TSC-RS-120R Parts Manual",
+    "machine": "Seal Checker",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker/tsc-rs-120r-parts.html",
+    "keywords": [
+      "tsc-rs-120r",
+      "parts",
+      "stabilizer",
+      "conveyor",
+      "conditioning",
+      "rejector",
+      "control unit"
+    ]
+  },
+  {
+    "title": "Seal Checker Manuals",
+    "machine": "Seal Checker",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/seal-checker.html",
+    "keywords": [
+      "ishida",
+      "seal checker",
+      "tsc-rs",
+      "tsc-rs-120",
+      "tsc-rs-120r",
+      "maintenance",
+      "parts",
+      "operation",
+      "TSC-RS Series Operation Manual",
+      "TSC-RS-120 Maintenance Manual",
+      "TSC-RS-120R Parts Manual"
+    ]
+  },
+  {
+    "title": "Seal Checker Manufacturer SOPs",
+    "machine": "Seal Checker",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/seal-checker/manufacturer-sops.html",
+    "keywords": [
+      "belt cover replacement",
+      "servo drive parameters",
+      "ssc board",
+      "manual motor test",
+      "i/o",
+      "auto calc"
+    ]
+  },
+  {
+    "title": "Seal Checker SOPs",
+    "machine": "Seal Checker",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/seal-checker.html",
+    "keywords": [
+      "seal checker",
+      "ishida",
+      "tsc-rs",
+      "belt cover",
+      "servo drive parameters",
+      "ssc board",
+      "motor test",
+      "auto calc",
+      "Manufacturer SOPs"
+    ]
+  },
+  {
+    "title": "Sprayer & Tumbler",
+    "machine": "Sprayer & Tumbler",
+    "type": "Machine Page",
+    "department": "Chips",
+    "url": "../machines/chips/sprayer-tumbler.html",
+    "keywords": [
+      "spray dynamics",
+      "sprayer",
+      "tumbler",
+      "scarf feeder",
+      "unispense",
+      "coating drum",
+      "msi",
+      "uni-spense",
+      "electrical",
+      "drawings"
+    ]
+  },
+  {
+    "title": "Electrical Schematics & Panel Layouts",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/electrical-schematics-panel-layouts.html",
+    "keywords": [
+      "electrical",
+      "schematics",
+      "panel layouts",
+      "control panel"
+    ]
+  },
+  {
+    "title": "Master Series I Liquid Applicator Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/msi-manual.html",
+    "keywords": [
+      "master series i",
+      "msi",
+      "liquid applicator",
+      "pump",
+      "nozzle",
+      "spray arm"
+    ]
+  },
+  {
+    "title": "Soft Flight Coating Drum Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/coating-drum-manual.html",
+    "keywords": [
+      "soft flight",
+      "coating drum",
+      "sanitation",
+      "maintenance",
+      "adjustment"
+    ]
+  },
+  {
+    "title": "Spray Dynamics Scarf Feeder Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/scarf-feeder-manual.html",
+    "keywords": [
+      "scarf feeder",
+      "installation",
+      "operation",
+      "sanitation",
+      "maintenance",
+      "vibratory controller",
+      "spare parts"
+    ]
+  },
+  {
+    "title": "Uni-Spense III Dry Ingredient Feeder Manual",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler/unispense-iii-feeder-manual.html",
+    "keywords": [
+      "uni-spense",
+      "dry ingredient feeder",
+      "auger",
+      "seasoning",
+      "hopper"
+    ]
+  },
+  {
+    "title": "Sprayer & Tumbler Manuals",
+    "machine": "Sprayer & Tumbler",
+    "type": "Manual Library",
+    "department": "Chips",
+    "url": "../manuals/chips/sprayer-tumbler.html",
+    "keywords": [
+      "spray dynamics",
+      "msi",
+      "scarf feeder",
+      "uni-spense",
+      "unispense",
+      "coating drum",
+      "tumbler",
+      "sprayer",
+      "electrical",
+      "drawings",
+      "Master Series I Liquid Applicator",
+      "Spray Dynamics Scarf Feeder",
+      "Uni-Spense III Dry Ingredient Feeder",
+      "Soft Flight Coating Drum",
+      "Electrical Schematics & Panel Layouts",
+      "Drawings"
+    ]
+  },
+  {
+    "title": "Sprayer & Tumbler Preventative Maintenance",
+    "machine": "Sprayer & Tumbler",
+    "type": "SOP",
+    "department": "Chips",
+    "url": "../sops/chips/sprayer-tumbler.html",
+    "keywords": [
+      "sprayer",
+      "tumbler",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Sprayer & Tumbler SOPs",
+    "machine": "Sprayer & Tumbler",
+    "type": "SOP Library",
+    "department": "Chips",
+    "url": "../sops/chips/sprayer-tumbler.html",
+    "keywords": [
+      "sprayer",
+      "tumbler",
+      "preventative maintenance",
+      "Sprayer & Tumbler Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "AM Press",
+    "machine": "AM Press",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/am-press.html",
+    "keywords": [
+      "am press",
+      "apache",
+      "hydraulic",
+      "lines 1 3 4",
+      "apache press",
+      "drawings"
+    ]
+  },
+  {
+    "title": "AM Press Drawings",
+    "machine": "AM Press",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/am-press/drawings.html",
+    "keywords": [
+      "drawings",
+      "lines 1 3 4",
+      "apache",
+      "press"
+    ]
+  },
+  {
+    "title": "AM Press Manuals",
+    "machine": "AM Press",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/am-press.html",
+    "keywords": [
+      "am press",
+      "apache press",
+      "hydraulic",
+      "drawings",
+      "lines 1 3 4",
+      "Drawings"
+    ]
+  },
+  {
+    "title": "AM Press Preventative Maintenance",
+    "machine": "AM Press",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/am-press.html",
+    "keywords": [
+      "am press",
+      "hydraulic",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "AM Press SOPs",
+    "machine": "AM Press",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/am-press.html",
+    "keywords": [
+      "am press",
+      "hydraulic",
+      "preventative maintenance",
+      "AM Press Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Box Former",
+    "machine": "Box Former",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/box-former.html",
+    "keywords": [
+      "box former",
+      "wexxar",
+      "bel 505",
+      "eastey",
+      "ex-cf",
+      "bel 505s",
+      "case former",
+      "pneumatic"
+    ]
+  },
+  {
+    "title": "Box Former Manuals",
+    "machine": "Box Former",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/box-former.html",
+    "keywords": [
+      "wexxar",
+      "bel 505",
+      "bel 505s",
+      "eastey",
+      "ex-cf",
+      "box former",
+      "case former",
+      "pneumatic",
+      "Wexxar BEL 505 / BEL 505S Operation & Service Manual",
+      "Eastey EX-CF Industrial Semi-Automatic Case Former"
+    ]
+  },
+  {
+    "title": "Box Former Preventative Maintenance",
+    "machine": "Box Former",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/box-former.html",
+    "keywords": [
+      "box former",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Box Former SOPs",
+    "machine": "Box Former",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/box-former.html",
+    "keywords": [
+      "box former",
+      "preventative maintenance",
+      "Box Former Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Counter Stacker",
+    "machine": "Counter Stacker",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/counter-stacker.html",
+    "keywords": [
+      "arr-tech",
+      "genesis",
+      "gv38-40",
+      "counter stacker",
+      "lines 3 4",
+      "drawings",
+      "electrical",
+      "ladder",
+      "schematic"
+    ]
+  },
+  {
+    "title": "Counter Stacker Drawings",
+    "machine": "Counter Stacker",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/counter-stacker/drawings.html",
+    "keywords": [
+      "mechanical drawings",
+      "parts",
+      "sensors",
+      "guards",
+      "frame"
+    ]
+  },
+  {
+    "title": "Counter Stacker Electrical Drawings",
+    "machine": "Counter Stacker",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/counter-stacker/electrical-drawings.html",
+    "keywords": [
+      "electrical",
+      "ladder",
+      "panel",
+      "schematic",
+      "symbol legend"
+    ]
+  },
+  {
+    "title": "Genesis GV38-40 Counter Stacker Manual & Training Guide",
+    "machine": "Counter Stacker",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/counter-stacker/gv38-40-manual.html",
+    "keywords": [
+      "genesis",
+      "gv38-40",
+      "operation",
+      "hmi",
+      "plc",
+      "troubleshooting",
+      "training"
+    ]
+  },
+  {
+    "title": "Counter Stacker Manuals",
+    "machine": "Counter Stacker",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/counter-stacker.html",
+    "keywords": [
+      "arr-tech",
+      "genesis",
+      "gv38-40",
+      "counter stacker",
+      "drawings",
+      "electrical",
+      "ladder",
+      "schematic",
+      "Genesis GV38-40 Counter Stacker Manual & Training Guide",
+      "Drawings",
+      "Electrical Drawings"
+    ]
+  },
+  {
+    "title": "Counter Stacker Preventative Maintenance",
+    "machine": "Counter Stacker",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/counter-stacker.html",
+    "keywords": [
+      "counter stacker",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Counter Stacker SOPs",
+    "machine": "Counter Stacker",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/counter-stacker.html",
+    "keywords": [
+      "counter stacker",
+      "preventative maintenance",
+      "Counter Stacker Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "DACs",
     "machine": "DACs",
     "type": "Machine Page",
     "department": "Tortillas",
     "url": "../machines/tortillas/dacs.html",
     "keywords": [
+      "ishida",
+      "dacs",
       "check weigher",
-      "weight",
-      "lines 1 3 4"
+      "checkweigher",
+      "lines 1 3 4",
+      "operation",
+      "service",
+      "calibration",
+      "troubleshooting"
     ]
   },
   {
@@ -26,6 +1307,24 @@
     ]
   },
   {
+    "title": "DACs Manuals",
+    "machine": "DACs",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/dacs.html",
+    "keywords": [
+      "ishida",
+      "dacs",
+      "check weigher",
+      "checkweigher",
+      "operation",
+      "service",
+      "calibration",
+      "troubleshooting",
+      "DACs Operation and Service Manual"
+    ]
+  },
+  {
     "title": "DACs Check Weigher Calibration",
     "machine": "DACs",
     "type": "SOP",
@@ -33,394 +1332,563 @@
     "url": "../sops/tortillas/dacs/calibration.pdf",
     "keywords": [
       "calibration",
-      "weight"
+      "weight",
+      "check weigher"
     ]
   },
   {
-    "title": "Ishida Bagger Manuals",
-    "machine": "Ishida Bagger",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/ishida-bagger.html",
+    "title": "DACs Preventative Maintenance",
+    "machine": "DACs",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/dacs.html",
     "keywords": [
-      "atlas 204 234",
-      "maintenance",
-      "spanish",
-      "electrical",
-      "pneumatic",
-      "atlas 234r parts",
-      "atlas 204r itps parts",
-      "atlas 202r itps parts"
+      "dacs",
+      "check weigher",
+      "preventative maintenance",
+      "pm"
     ]
   },
   {
-    "title": "ATLAS-202R-ITPS Parts Manual",
-    "machine": "Ishida Bagger",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/ishida-bagger/atlas-202r-itps-parts.html",
+    "title": "DACs SOPs",
+    "machine": "DACs",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/dacs.html",
     "keywords": [
-      "atlas-202r-itps",
-      "202r itps",
-      "parts",
-      "main body",
-      "air unit",
-      "end seal",
-      "back seal",
-      "film carrier",
-      "electrical",
-      "remote control"
+      "dacs",
+      "check weigher",
+      "preventative maintenance",
+      "DACs Preventative Maintenance"
     ]
   },
   {
-    "title": "Raumak Bagger Manuals",
-    "machine": "Raumak Bagger",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/raumak-bagger.html",
+    "title": "Mixer",
+    "machine": "Mixer",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/mixer.html",
     "keywords": [
-      "multi bag g",
-      "operation",
-      "maintenance",
-      "raumak"
-    ]
-  },
-  {
-    "title": "Ishida Scaler Manuals",
-    "machine": "Ishida Scaler",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/ishida-scaler.html",
-    "keywords": [
-      "ccw-rv",
-      "ccw-rve",
+      "peerless",
+      "mixer",
+      "bearing",
+      "gearcase",
+      "transmission",
+      "bowl seal",
+      "tilt",
       "instruction manual",
-      "manual de instrucciones",
-      "parts manual",
-      "technical notes",
-      "weigher",
-      "scale"
+      "electrical drawings"
     ]
   },
   {
-    "title": "Collator Manuals",
-    "machine": "Collator",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/collator.html",
-    "keywords": [
-      "bpa collator 200",
-      "user manual",
-      "service manual",
-      "61391",
-      "mechanical assemblies",
-      "electrical schematics",
-      "drawings"
-    ]
-  },
-  {
-    "title": "BPA Collator 200 Service Manual",
-    "machine": "Collator",
+    "title": "Mixer Drawings",
+    "machine": "Mixer",
     "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/collator/bpa-collator-200-service-manual.html",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/mixer/drawings.html",
     "keywords": [
-      "bpa",
-      "collator 200",
-      "service manual",
-      "61391",
-      "introduction",
+      "bearing assembly",
+      "gearcase",
+      "bowl seal",
+      "tilt assembly",
+      "ingredient door",
+      "transmission",
+      "shaft seal"
+    ]
+  },
+  {
+    "title": "Mixer Electrical Drawings",
+    "machine": "Mixer",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/mixer/electrical-drawings.html",
+    "keywords": [
+      "wd19-81",
+      "wd19-82",
+      "electrical",
+      "wiring"
+    ]
+  },
+  {
+    "title": "Mixer Instruction Manual",
+    "machine": "Mixer",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/mixer/instruction-manual.html",
+    "keywords": [
+      "peerless",
       "safety",
       "installation",
-      "setup",
-      "changeover",
       "operation",
       "maintenance",
-      "troubleshooting",
-      "replacement parts",
-      "index"
+      "sanitation",
+      "refrigeration"
     ]
   },
   {
-    "title": "BPA Collator Drawings",
-    "machine": "Collator",
-    "type": "Drawings",
-    "department": "Chips",
-    "url": "../manuals/chips/collator/drawings.html",
-    "keywords": [
-      "drawings",
-      "mechanical",
-      "electrical",
-      "110 vac",
-      "220 vac",
-      "rev g packer",
-      "job 67510",
-      "assembly",
-      "schematics"
-    ]
-  },
-  {
-    "title": "FastBack Manuals",
-    "machine": "FastBack",
+    "title": "Mixer Manuals",
+    "machine": "Mixer",
     "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/fastback.html",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/mixer.html",
     "keywords": [
-      "fastback 90e",
-      "90e-g2",
-      "260e-g2",
-      "technical manual",
-      "ppm cd30",
-      "cd35",
-      "controller",
-      "start guide"
+      "peerless",
+      "mixer",
+      "instruction manual",
+      "electrical drawings",
+      "bearing",
+      "gearcase",
+      "bowl seal",
+      "transmission",
+      "tilt",
+      "Instruction Manual",
+      "Electrical Drawings",
+      "Drawings"
     ]
   },
   {
-    "title": "Fryer Manuals",
-    "machine": "Fryer",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/fryer.html",
+    "title": "Mixer Preventative Maintenance",
+    "machine": "Mixer",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/mixer.html",
     "keywords": [
-      "honeywell",
-      "udc3200",
-      "temperature controller",
-      "fryer"
+      "peerless",
+      "mixer",
+      "preventative maintenance",
+      "pm"
     ]
   },
   {
-    "title": "Sprayer & Tumbler Manuals",
-    "machine": "Sprayer & Tumbler",
-    "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler.html",
+    "title": "Mixer SOPs",
+    "machine": "Mixer",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/mixer.html",
     "keywords": [
-      "spray dynamics",
-      "master series i",
-      "msi",
-      "liquid applicator",
-      "scarf feeder",
-      "uni-spense iii",
-      "soft flight coating drum",
-      "electrical schematics",
-      "panel layouts",
-      "drawings"
+      "peerless",
+      "mixer",
+      "preventative maintenance",
+      "Mixer Preventative Maintenance"
     ]
   },
   {
-    "title": "Master Series I Liquid Applicator Manual",
-    "machine": "Sprayer & Tumbler",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler/msi-manual.html",
+    "title": "Rotary Table",
+    "machine": "Rotary Table",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/rotary-table.html",
     "keywords": [
-      "msi",
-      "master series i",
-      "micro-meter",
-      "airless",
-      "liquid applicator",
-      "spray dynamics",
-      "pump",
-      "nozzle",
-      "spray arm",
+      "rotary table",
+      "table",
+      "manual",
       "maintenance"
     ]
   },
   {
-    "title": "Spray Dynamics Scarf Feeder Manual",
-    "machine": "Sprayer & Tumbler",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler/scarf-feeder-manual.html",
+    "title": "Rotary Table Manuals",
+    "machine": "Rotary Table",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/rotary-table.html",
     "keywords": [
-      "scarf feeder",
-      "scarf plate feeder",
-      "vibratory",
-      "controller",
+      "rotary table",
+      "table",
+      "manual",
       "maintenance",
+      "Rotary Table Manuals and Technical Sections"
+    ]
+  },
+  {
+    "title": "Rotary Table Preventative Maintenance",
+    "machine": "Rotary Table",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/rotary-table.html",
+    "keywords": [
+      "rotary table",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Rotary Table SOPs",
+    "machine": "Rotary Table",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/rotary-table.html",
+    "keywords": [
+      "rotary table",
+      "preventative maintenance",
+      "Rotary Table Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Sealer",
+    "machine": "Sealer",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/sealer.html",
+    "keywords": [
+      "sealer",
+      "ce-3000-hve",
+      "heat seal",
       "operation",
-      "installation",
+      "manual"
+    ]
+  },
+  {
+    "title": "Sealer Manuals",
+    "machine": "Sealer",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/sealer.html",
+    "keywords": [
+      "sealer",
+      "ce-3000-hve",
+      "heat seal",
+      "operation",
+      "manual",
+      "CE-3000-HVE Manual Sections"
+    ]
+  },
+  {
+    "title": "Sealer Preventative Maintenance",
+    "machine": "Sealer",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/sealer.html",
+    "keywords": [
+      "sealer",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Sealer SOPs",
+    "machine": "Sealer",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/sealer.html",
+    "keywords": [
+      "sealer",
+      "preventative maintenance",
+      "Sealer Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "Taping Machine",
+    "machine": "Taping Machine",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/taping-machine.html",
+    "keywords": [
+      "eastey",
+      "taping machine",
+      "case taper",
+      "sb-2",
+      "bb-2",
+      "ec series",
+      "bb-2/3t",
+      "sb-2 hd",
+      "ec1248",
+      "ec1848",
+      "ec2472",
+      "conveyor"
+    ]
+  },
+  {
+    "title": "Taping Machine Manuals",
+    "machine": "Taping Machine",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/taping-machine.html",
+    "keywords": [
+      "eastey",
+      "taping machine",
+      "case taper",
+      "bb-2",
+      "bb-2/3t",
+      "sb-2",
+      "sb-2 hd",
+      "ec1248",
+      "ec1848",
+      "ec2472",
+      "conveyor",
+      "Eastey BB-2/3T Case Taping System",
+      "Eastey SB-2 HD User Guide",
+      "Eastey EC Series Variable Speed Conveyor"
+    ]
+  },
+  {
+    "title": "Taping Machine Preventative Maintenance",
+    "machine": "Taping Machine",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/taping-machine.html",
+    "keywords": [
+      "taping machine",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "Taping Machine SOPs",
+    "machine": "Taping Machine",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/taping-machine.html",
+    "keywords": [
+      "taping machine",
+      "preventative maintenance",
+      "Taping Machine Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "VEMAG",
+    "machine": "VEMAG",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/vemag.html",
+    "keywords": [
+      "vemag",
+      "robot hp",
+      "vacuum filler",
+      "hp7e",
+      "hp10e",
+      "hp12e",
+      "hp15e",
+      "hp20e",
       "spare parts"
     ]
   },
   {
-    "title": "Uni-Spense III Dry Ingredient Feeder Manual",
-    "machine": "Sprayer & Tumbler",
+    "title": "VEMAG Spare Parts Catalogue",
+    "machine": "VEMAG",
     "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler/unispense-iii-feeder-manual.html",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/vemag/spare-parts-catalogue.html",
     "keywords": [
-      "uni-spense iii",
-      "unispense",
-      "dry ingredient feeder",
-      "auger",
-      "seasoning",
-      "hopper",
-      "maintenance",
-      "troubleshooting"
+      "spare parts",
+      "robot hp7e",
+      "hp10e",
+      "hp12e",
+      "hp15e",
+      "hp20e"
     ]
   },
   {
-    "title": "Soft Flight Coating Drum Manual",
-    "machine": "Sprayer & Tumbler",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler/coating-drum-manual.html",
-    "keywords": [
-      "soft flight",
-      "coating drum",
-      "drum",
-      "tumbler",
-      "spray dynamics",
-      "sanitation",
-      "maintenance",
-      "adjustment",
-      "operation"
-    ]
-  },
-  {
-    "title": "Electrical Schematics & Panel Layouts",
-    "machine": "Sprayer & Tumbler",
-    "type": "Electrical Drawings",
-    "department": "Chips",
-    "url": "../manuals/chips/sprayer-tumbler/electrical-schematics-panel-layouts.html",
-    "keywords": [
-      "electrical schematics",
-      "panel layouts",
-      "control panel 32095129",
-      "bill of material",
-      "device key",
-      "drum",
-      "uni-spense",
-      "msi",
-      "scarf"
-    ]
-  },
-  {
-    "title": "Seal Checker",
-    "machine": "Seal Checker",
-    "type": "Machine Page",
-    "department": "Chips",
-    "url": "../machines/chips/seal-checker.html",
-    "keywords": [
-      "ishida",
-      "tsc-rs",
-      "tsc rs",
-      "thickness seal checker",
-      "lines 1 2 3 4 5 6",
-      "seal inspection",
-      "reject conveyor",
-      "brush conditioner",
-      "j-belt",
-      "infeed conveyor"
-    ]
-  },
-  {
-    "title": "Seal Checker Manuals",
-    "machine": "Seal Checker",
+    "title": "VEMAG Manuals",
+    "machine": "VEMAG",
     "type": "Manual Library",
-    "department": "Chips",
-    "url": "../manuals/chips/seal-checker.html",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/vemag.html",
     "keywords": [
-      "ishida",
-      "tsc-rs",
-      "tsc-rs-120",
-      "tsc-rs-120r",
-      "operation manual",
-      "maintenance manual",
-      "parts manual",
-      "troubleshooting",
-      "electrical",
-      "replacement",
-      "adjustment"
+      "vemag",
+      "robot hp",
+      "hp7e",
+      "hp10e",
+      "hp12e",
+      "hp15e",
+      "hp20e",
+      "vacuum filler",
+      "spare parts",
+      "Spare Parts Catalogue"
     ]
   },
   {
-    "title": "TSC-RS Series Operation Manual",
-    "machine": "Seal Checker",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/seal-checker/tsc-rs-operation.html",
-    "keywords": [
-      "ishida",
-      "tsc-rs",
-      "operation",
-      "safety",
-      "installation",
-      "rcu",
-      "remote control unit",
-      "production",
-      "cleanup",
-      "periodic maintenance",
-      "troubleshooting",
-      "preset",
-      "auto calc"
-    ]
-  },
-  {
-    "title": "TSC-RS-120 Maintenance Manual",
-    "machine": "Seal Checker",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/seal-checker/tsc-rs-120-maintenance.html",
-    "keywords": [
-      "ishida",
-      "tsc-rs-120",
-      "maintenance",
-      "replacement",
-      "adjustment",
-      "sensor",
-      "dc motor",
-      "servo motor",
-      "timing belt",
-      "conveyor belt",
-      "electrical control unit",
-      "ssc board",
-      "dmu board",
-      "expert settings",
-      "troubleshooting"
-    ]
-  },
-  {
-    "title": "TSC-RS-120R Parts Manual",
-    "machine": "Seal Checker",
-    "type": "Manual",
-    "department": "Chips",
-    "url": "../manuals/chips/seal-checker/tsc-rs-120r-parts.html",
-    "keywords": [
-      "ishida",
-      "tsc-rs-120r",
-      "parts",
-      "replacement parts",
-      "main body",
-      "stabilizer",
-      "conveyor",
-      "conditioning",
-      "chute",
-      "rejector",
-      "drop belt",
-      "remote control box",
-      "control unit",
-      "harness"
-    ]
-  },
-  {
-    "title": "Seal Checker Manufacturer SOPs",
-    "machine": "Seal Checker",
+    "title": "VEMAG Manufacturer Manuals",
+    "machine": "VEMAG",
     "type": "SOP",
-    "department": "Chips",
-    "url": "../sops/chips/seal-checker/manufacturer-sops.html",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/vemag/manufacturer-manuals.html",
     "keywords": [
-      "manufacturer sops",
-      "belt cover replacement",
-      "save servo drive parameters",
-      "motor setting ssc board",
-      "manual motor test",
-      "i/o",
-      "io",
-      "auto calc",
-      "turning off on tsc rs auto calc"
+      "4 point bearing replacement",
+      "four point bearing",
+      "manufacturer procedure"
+    ]
+  },
+  {
+    "title": "VEMAG Preventative Maintenance",
+    "machine": "VEMAG",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/vemag.html",
+    "keywords": [
+      "vemag",
+      "preventative maintenance",
+      "manufacturer",
+      "4 point bearing replacement",
+      "pm"
+    ]
+  },
+  {
+    "title": "VEMAG SOPs",
+    "machine": "VEMAG",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/vemag.html",
+    "keywords": [
+      "vemag",
+      "preventative maintenance",
+      "manufacturer",
+      "4 point bearing replacement",
+      "VEMAG Preventative Maintenance",
+      "Manufacturer Manuals"
+    ]
+  },
+  {
+    "title": "Waterwheel",
+    "machine": "Waterwheel",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/waterwheel.html",
+    "keywords": [
+      "waterwheel",
+      "line 1",
+      "lines 3 4",
+      "owner manual",
+      "owners manual"
+    ]
+  },
+  {
+    "title": "Waterwheel Owners Manuals",
+    "machine": "Waterwheel",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/waterwheel/owners-manuals.html",
+    "keywords": [
+      "line 1",
+      "line 3 and 4",
+      "owners manual",
+      "waterwheel"
+    ]
+  },
+  {
+    "title": "Waterwheel Manuals",
+    "machine": "Waterwheel",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/waterwheel.html",
+    "keywords": [
+      "waterwheel",
+      "owner manual",
+      "owners manual",
+      "line 1",
+      "lines 3 4",
+      "Owners Manuals"
+    ]
+  },
+  {
+    "title": "Waterwheel Preventative Maintenance",
+    "machine": "Waterwheel",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/waterwheel.html",
+    "keywords": [
+      "waterwheel",
+      "preventative maintenance",
+      "lines 1 3 4",
+      "pm"
+    ]
+  },
+  {
+    "title": "Waterwheel SOPs",
+    "machine": "Waterwheel",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/waterwheel.html",
+    "keywords": [
+      "waterwheel",
+      "preventative maintenance",
+      "lines 1 3 4",
+      "Waterwheel Preventative Maintenance"
+    ]
+  },
+  {
+    "title": "X-Ray",
+    "machine": "X-Ray",
+    "type": "Machine Page",
+    "department": "Tortillas",
+    "url": "../machines/tortillas/x-ray.html",
+    "keywords": [
+      "ishida",
+      "x-ray",
+      "ix-en-4093",
+      "rejector",
+      "re-060",
+      "parts",
+      "inspection"
+    ]
+  },
+  {
+    "title": "IX-EN-4093 X-Ray Parts Manual",
+    "machine": "X-Ray",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/x-ray/ix-en-4093-parts-manual.html",
+    "keywords": [
+      "ix-en-4093",
+      "parts",
+      "x-ray",
+      "ishida"
+    ]
+  },
+  {
+    "title": "RE-060-A3-3/SS-M-B Rejector Parts Manual",
+    "machine": "X-Ray",
+    "type": "Manual",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/x-ray/re-060-rejector-parts-manual.html",
+    "keywords": [
+      "rejector",
+      "re-060",
+      "parts",
+      "ishida"
+    ]
+  },
+  {
+    "title": "X-Ray Manuals",
+    "machine": "X-Ray",
+    "type": "Manual Library",
+    "department": "Tortillas",
+    "url": "../manuals/tortillas/x-ray.html",
+    "keywords": [
+      "ishida",
+      "x-ray",
+      "ix-en-4093",
+      "rejector",
+      "re-060",
+      "parts",
+      "inspection",
+      "IX-EN-4093 X-Ray Parts Manual",
+      "RE-060-A3-3/SS-M-B Rejector Parts Manual"
+    ]
+  },
+  {
+    "title": "X-Ray Preventative Maintenance",
+    "machine": "X-Ray",
+    "type": "SOP",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/x-ray.html",
+    "keywords": [
+      "x-ray",
+      "ishida",
+      "preventative maintenance",
+      "pm"
+    ]
+  },
+  {
+    "title": "X-Ray SOPs",
+    "machine": "X-Ray",
+    "type": "SOP Library",
+    "department": "Tortillas",
+    "url": "../sops/tortillas/x-ray.html",
+    "keywords": [
+      "x-ray",
+      "ishida",
+      "preventative maintenance",
+      "X-Ray Preventative Maintenance"
     ]
   }
 ]
