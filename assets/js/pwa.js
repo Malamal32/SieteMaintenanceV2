@@ -34,6 +34,28 @@
         });
     }
 
+    document.addEventListener("click", event => {
+        const link = event.target.closest("a[href]");
+
+        if (!link) {
+            return;
+        }
+
+        try {
+            const target = new URL(link.href, window.location.href);
+
+            if (
+                target.origin === window.location.origin &&
+                target.pathname.toLowerCase().endsWith(".pdf")
+            ) {
+                link.target = "_blank";
+                link.rel = "noopener";
+            }
+        } catch (_error) {
+            // Leave malformed or nonstandard links to the browser.
+        }
+    }, true);
+
     window.addEventListener("appinstalled", () => {
         installPrompt = null;
 

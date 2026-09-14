@@ -4,6 +4,14 @@ const path = require("path");
 const PORTAL_URL = "https://malamal32.github.io/SieteMaintenanceV2/";
 const PORTAL_ORIGIN = new URL(PORTAL_URL).origin;
 
+function isPdfUrl(url) {
+    try {
+        return new URL(url).pathname.toLowerCase().endsWith(".pdf");
+    } catch (_error) {
+        return false;
+    }
+}
+
 app.setAppUserModelId("com.siete.documentportal");
 
 function createWindow() {
@@ -28,7 +36,9 @@ function createWindow() {
     window.webContents.setWindowOpenHandler(({ url }) => {
         const target = new URL(url);
 
-        if (target.origin === PORTAL_ORIGIN) {
+        if (isPdfUrl(url)) {
+            shell.openExternal(url);
+        } else if (target.origin === PORTAL_ORIGIN) {
             window.loadURL(url);
         } else {
             shell.openExternal(url);
@@ -40,7 +50,7 @@ function createWindow() {
     window.webContents.on("will-navigate", (event, url) => {
         const target = new URL(url);
 
-        if (target.origin !== PORTAL_ORIGIN) {
+        if (isPdfUrl(url) || target.origin !== PORTAL_ORIGIN) {
             event.preventDefault();
             shell.openExternal(url);
         }
