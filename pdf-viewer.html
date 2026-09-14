@@ -6,131 +6,309 @@
     <meta name="theme-color" content="#851765">
     <title>Manual · Siete Document Portal</title>
     <style>
-        * { box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        body {
             color: #172033;
-            background: #eef2f6;
+            background: #dfe5eb;
             font-family: "Segoe UI", Arial, sans-serif;
         }
+
         .viewer-toolbar {
-            position: relative;
-            z-index: 10;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 8px;
-            padding: calc(10px + env(safe-area-inset-top)) 10px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            min-height: 58px;
+            padding:
+                calc(8px + env(safe-area-inset-top))
+                10px
+                8px;
             background: #851765;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.24);
         }
-        .viewer-toolbar a,
+
         .viewer-toolbar button {
             min-height: 42px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 10px;
+            padding: 9px 16px;
             color: #851765;
             background: #ffffff;
             border: 0;
             border-radius: 9px;
             font: inherit;
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             font-weight: 750;
-            line-height: 1.15;
-            text-align: center;
-            text-decoration: none;
             cursor: pointer;
         }
-        .viewer-toolbar a:focus-visible,
+
         .viewer-toolbar button:focus-visible {
             outline: 3px solid #ffb31a;
             outline-offset: 2px;
         }
-        #pdfFrame {
-            display: block;
-            flex: 1 1 auto;
+
+        .viewer-status {
             width: 100%;
-            min-height: 0;
-            border: 0;
-            background: #ffffff;
-        }
-        .viewer-error {
-            display: none;
-            margin: auto;
-            padding: 28px;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 18px 12px;
+            color: #4c5968;
+            font-size: 0.86rem;
             text-align: center;
         }
+
+        .pdf-pages {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 8px calc(18px + env(safe-area-inset-bottom));
+            overflow-x: hidden;
+        }
+
+        .pdf-page {
+            position: relative;
+            width: 100%;
+            min-height: 180px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(25, 38, 51, 0.2);
+        }
+
+        .pdf-page canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .page-loading {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: #667382;
+            font-size: 0.78rem;
+        }
+
+        .viewer-error {
+            display: none;
+            max-width: 440px;
+            margin: 36px auto;
+            padding: 28px 20px;
+            color: #5b253f;
+            background: #ffffff;
+            border-radius: 14px;
+            text-align: center;
+        }
+
         @media (max-width: 430px) {
-            .viewer-toolbar { gap: 6px; padding-right: 7px; padding-left: 7px; }
-            .viewer-toolbar a,
-            .viewer-toolbar button { padding: 7px 5px; font-size: 0.75rem; }
+            .viewer-toolbar {
+                min-height: 54px;
+                padding-right: 8px;
+                padding-left: 8px;
+            }
+
+            .viewer-toolbar button {
+                min-height: 40px;
+                padding: 8px 13px;
+                font-size: 0.82rem;
+            }
+
+            .pdf-pages {
+                gap: 8px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .pdf-page {
+                box-shadow: 0 1px 5px rgba(25, 38, 51, 0.18);
+            }
         }
     </style>
 </head>
 <body>
     <nav class="viewer-toolbar" aria-label="Document navigation">
-        <button id="backButton" type="button">← Back</button>
-        <a id="manualPageLink" href="/SieteMaintenanceV2/">Manual Page</a>
-        <a href="/SieteMaintenanceV2/">Home</a>
+        <button id="backButton" type="button">← Back to Manual</button>
     </nav>
 
-    <iframe id="pdfFrame" title="PDF manual"></iframe>
+    <p class="viewer-status" id="viewerStatus">Loading manual…</p>
+    <main class="pdf-pages" id="pdfPages" aria-label="PDF pages"></main>
 
     <div class="viewer-error" id="viewerError">
         <h1>Manual unavailable</h1>
-        <p>This PDF link could not be opened safely.</p>
+        <p id="errorMessage">This PDF could not be displayed.</p>
     </div>
 
-    <script>
-        (() => {
-            const params = new URLSearchParams(window.location.search);
-            const frame = document.getElementById("pdfFrame");
-            const error = document.getElementById("viewerError");
-            const manualPageLink = document.getElementById("manualPageLink");
-            const backButton = document.getElementById("backButton");
-            const appRoot = "/SieteMaintenanceV2/";
+    <script type="module">
+        import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.min.mjs";
 
-            function safeAppUrl(value, fallback) {
-                try {
-                    const url = new URL(value, window.location.origin);
+        const PDFJS_ROOT =
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/";
 
-                    if (
-                        url.origin === window.location.origin &&
-                        url.pathname.startsWith(appRoot)
-                    ) {
-                        return url;
-                    }
-                } catch (_error) {
-                    // Use the safe fallback.
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            `${PDFJS_ROOT}build/pdf.worker.min.mjs`;
+
+        const params = new URLSearchParams(window.location.search);
+        const backButton = document.getElementById("backButton");
+        const status = document.getElementById("viewerStatus");
+        const pagesContainer = document.getElementById("pdfPages");
+        const errorPanel = document.getElementById("viewerError");
+        const errorMessage = document.getElementById("errorMessage");
+        const appRoot = "/SieteMaintenanceV2/";
+        const renderedPages = new Set();
+        let pdfDocument = null;
+
+        function safeAppUrl(value, fallback) {
+            try {
+                const url = new URL(value, window.location.origin);
+
+                if (
+                    url.origin === window.location.origin &&
+                    url.pathname.startsWith(appRoot)
+                ) {
+                    return url;
                 }
-
-                return new URL(fallback, window.location.origin);
+            } catch (_error) {
+                // Use the safe fallback.
             }
 
-            const returnUrl = safeAppUrl(params.get("return"), appRoot);
-            const fileUrl = safeAppUrl(params.get("file"), appRoot);
+            return new URL(fallback, window.location.origin);
+        }
 
-            manualPageLink.href = returnUrl.href;
+        const returnUrl = safeAppUrl(params.get("return"), appRoot);
+        const fileUrl = safeAppUrl(params.get("file"), appRoot);
 
-            backButton.addEventListener("click", () => {
-                if (window.history.length > 1) {
-                    window.history.back();
-                } else {
-                    window.location.href = returnUrl.href;
-                }
-            });
+        backButton.addEventListener("click", () => {
+            window.location.href = returnUrl.href;
+        });
 
-            if (!fileUrl.pathname.toLowerCase().endsWith(".pdf")) {
-                frame.remove();
-                error.style.display = "block";
+        function showError(message) {
+            status.hidden = true;
+            pagesContainer.hidden = true;
+            errorMessage.textContent = message;
+            errorPanel.style.display = "block";
+        }
+
+        async function renderPage(pageNumber, wrapper) {
+            if (renderedPages.has(pageNumber)) {
                 return;
             }
 
-            frame.src = fileUrl.href;
-        })();
+            renderedPages.add(pageNumber);
+
+            try {
+                const page = await pdfDocument.getPage(pageNumber);
+                const baseViewport = page.getViewport({ scale: 1 });
+                const availableWidth = Math.min(
+                    pagesContainer.clientWidth || window.innerWidth,
+                    960
+                );
+                const cssScale = availableWidth / baseViewport.width;
+                const outputScale = Math.min(
+                    window.devicePixelRatio || 1,
+                    2
+                );
+                const renderViewport = page.getViewport({
+                    scale: cssScale * outputScale
+                });
+
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d", {
+                    alpha: false
+                });
+
+                canvas.width = Math.floor(renderViewport.width);
+                canvas.height = Math.floor(renderViewport.height);
+                canvas.style.width =
+                    `${Math.floor(renderViewport.width / outputScale)}px`;
+                canvas.style.height =
+                    `${Math.floor(renderViewport.height / outputScale)}px`;
+
+                await page.render({
+                    canvasContext: context,
+                    viewport: renderViewport
+                }).promise;
+
+                wrapper.replaceChildren(canvas);
+                wrapper.style.aspectRatio = "auto";
+                page.cleanup();
+            } catch (error) {
+                renderedPages.delete(pageNumber);
+                wrapper.innerHTML =
+                    `<p class="page-loading">Page ${pageNumber} could not be rendered.</p>`;
+                console.error("PDF page render failed:", error);
+            }
+        }
+
+        async function loadManual() {
+            if (!fileUrl.pathname.toLowerCase().endsWith(".pdf")) {
+                showError("This link does not point to a PDF manual.");
+                return;
+            }
+
+            try {
+                const loadingTask = pdfjsLib.getDocument({
+                    url: fileUrl.href,
+                    cMapUrl: `${PDFJS_ROOT}cmaps/`,
+                    cMapPacked: true,
+                    standardFontDataUrl: `${PDFJS_ROOT}standard_fonts/`,
+                    wasmUrl: `${PDFJS_ROOT}wasm/`
+                });
+
+                pdfDocument = await loadingTask.promise;
+                status.textContent =
+                    `${pdfDocument.numPages} page${pdfDocument.numPages === 1 ? "" : "s"}`;
+
+                const observer = new IntersectionObserver(entries => {
+                    for (const entry of entries) {
+                        if (!entry.isIntersecting) {
+                            continue;
+                        }
+
+                        const wrapper = entry.target;
+                        const pageNumber = Number(wrapper.dataset.pageNumber);
+                        observer.unobserve(wrapper);
+                        renderPage(pageNumber, wrapper);
+                    }
+                }, {
+                    rootMargin: "1200px 0px"
+                });
+
+                for (
+                    let pageNumber = 1;
+                    pageNumber <= pdfDocument.numPages;
+                    pageNumber += 1
+                ) {
+                    const wrapper = document.createElement("section");
+                    wrapper.className = "pdf-page";
+                    wrapper.dataset.pageNumber = String(pageNumber);
+                    wrapper.style.aspectRatio = "8.5 / 11";
+                    wrapper.innerHTML =
+                        `<p class="page-loading">Loading page ${pageNumber}…</p>`;
+                    pagesContainer.appendChild(wrapper);
+                    observer.observe(wrapper);
+                }
+            } catch (error) {
+                console.error("PDF load failed:", error);
+                showError(
+                    "This manual could not be loaded. Please check your connection and try again."
+                );
+            }
+        }
+
+        loadManual();
     </script>
 </body>
 </html>

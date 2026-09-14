@@ -1,4 +1,4 @@
-const CACHE_NAME = "siete-document-portal-v3";
+const CACHE_NAME = "siete-document-portal-v4";
 const APP_ROOT = "/SieteMaintenanceV2/";
 const APP_SHELL = [
     APP_ROOT,
