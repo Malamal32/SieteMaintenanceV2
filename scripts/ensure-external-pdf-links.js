@@ -12,6 +12,15 @@ const files = execFileSync("git", ["ls-files", "*.html"], {
 
 const pdfAnchor =
     /<a\b([^>]*\bhref\s*=\s*(["'])([^"']*\.pdf(?:[?#][^"']*)?)\2[^>]*)>/gi;
+const viewerAnchor =
+    /<a\b([^>]*\bhref\s*=\s*(["'])[^"']*pdf-viewer\.html[^"']*\2[^>]*)>/gi;
+
+function removeOldWindowBehavior(attributes) {
+    return attributes
+        .replace(/\s+target\s*=\s*(?:"[^"]*"|'[^']*')/gi, "")
+        .replace(/\s+rel\s*=\s*(?:"[^"]*"|'[^']*')/gi, "")
+        .replace(/\s+onclick\s*=\s*(?:"[^"]*"|'[^']*')/gi, "");
+}
 
 let changedFiles = 0;
 let changedLinks = 0;
@@ -25,7 +34,7 @@ for (const file of files) {
     const pagePath = file.replace(/\\/g, "/");
     const pageUrl = new URL(pagePath, `${SITE_ORIGIN}${APP_ROOT}`);
 
-    const updated = original.replace(
+    let updated = original.replace(
         pdfAnchor,
         (match, attributes, _quote, href) => {
             let pdfUrl;
@@ -56,10 +65,7 @@ for (const file of files) {
                 `href="${viewerUrl.pathname}${viewerUrl.search}"`
             );
 
-            next = next
-                .replace(/\s+target\s*=\s*(["'])[^"']*\1/gi, "")
-                .replace(/\s+rel\s*=\s*(["'])[^"']*\1/gi, "")
-                .replace(/\s+onclick\s*=\s*(["'])[^"']*\1/gi, "");
+            next = removeOldWindowBehavior(next);
 
             const replacement = `<a${next}>`;
 
@@ -70,6 +76,16 @@ for (const file of files) {
             return replacement;
         }
     );
+
+    updated = updated.replace(viewerAnchor, (match, attributes) => {
+        const cleaned = `<a${removeOldWindowBehavior(attributes)}>`;
+
+        if (cleaned !== match) {
+            changedLinks += 1;
+        }
+
+        return cleaned;
+    });
 
     if (updated !== original) {
         fs.writeFileSync(file, updated, "utf8");
