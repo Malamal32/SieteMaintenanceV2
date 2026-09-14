@@ -1,4 +1,4 @@
-const CACHE_NAME = "siete-document-portal-v2";
+const CACHE_NAME = "siete-document-portal-v3";
 const APP_ROOT = "/SieteMaintenanceV2/";
 const APP_SHELL = [
     APP_ROOT,
@@ -6,6 +6,9 @@ const APP_SHELL = [
     `${APP_ROOT}styles.css`,
     `${APP_ROOT}logo.png`,
     `${APP_ROOT}app-icon.svg`,
+    `${APP_ROOT}assets/icons/app-icon-192.png`,
+    `${APP_ROOT}assets/icons/app-icon-512.png`,
+    `${APP_ROOT}assets/icons/apple-touch-icon.png`,
     `${APP_ROOT}offline.html`,
     `${APP_ROOT}pdf-viewer.html`
 ];
