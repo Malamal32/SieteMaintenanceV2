@@ -13,13 +13,23 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: siete-windows-release
+  cancel-in-progress: true
+
 jobs:
   build-windows:
     runs-on: windows-latest
 
     steps:
-      - name: Check out repository
+      - name: Check out desktop source
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            desktop
+            logo.png
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
