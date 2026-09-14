@@ -48,16 +48,8 @@
                 target.origin === window.location.origin &&
                 target.pathname.toLowerCase().endsWith(".pdf")
             ) {
-                event.preventDefault();
-
-                const viewer = new URL(
-                    "/SieteMaintenanceV2/pdf-viewer.html",
-                    window.location.origin
-                );
-
-                viewer.searchParams.set("file", target.href);
-                viewer.searchParams.set("return", window.location.href);
-                window.location.href = viewer.href;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
             }
         } catch (_error) {
             // Leave malformed or nonstandard links to the browser.

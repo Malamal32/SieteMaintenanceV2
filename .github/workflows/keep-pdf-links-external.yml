@@ -1,0 +1,45 @@
+name: Keep PDF Links External
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.html"
+      - "scripts/ensure-external-pdf-links.js"
+      - ".github/workflows/keep-pdf-links-external.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: siete-pdf-link-updates
+  cancel-in-progress: false
+
+jobs:
+  update-pdf-links:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Make PDF links open separately
+        run: node scripts/ensure-external-pdf-links.js
+
+      - name: Save updated PDF links
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if git diff --cached --quiet; then
+            echo "All PDF links already open separately."
+            exit 0
+          fi
+          git commit -m "Open PDF manuals outside the portal"
+          git push
