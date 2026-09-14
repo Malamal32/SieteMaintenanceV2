@@ -1,4 +1,4 @@
-const CACHE_NAME = "siete-document-portal-v1";
+const CACHE_NAME = "siete-document-portal-v2";
 const APP_ROOT = "/SieteMaintenanceV2/";
 const APP_SHELL = [
     APP_ROOT,
@@ -6,7 +6,8 @@ const APP_SHELL = [
     `${APP_ROOT}styles.css`,
     `${APP_ROOT}logo.png`,
     `${APP_ROOT}app-icon.svg`,
-    `${APP_ROOT}offline.html`
+    `${APP_ROOT}offline.html`,
+    `${APP_ROOT}pdf-viewer.html`
 ];
 
 self.addEventListener("install", event => {

@@ -36,14 +36,29 @@ jobs:
         with:
           node-version: 22
 
-      - name: Create Windows icon
+      - name: Create proportional app icons
         shell: pwsh
         run: |
           if (-not (Get-Command magick -ErrorAction SilentlyContinue)) {
             choco install imagemagick.app -y
           }
           New-Item -ItemType Directory -Force -Path desktop/build | Out-Null
-          magick logo.png -resize 224x224 -gravity center -background "#851765" -extent 256x256 desktop/build/icon.ico
+          New-Item -ItemType Directory -Force -Path assets/icons | Out-Null
+          magick logo.png -resize "208x208>" -gravity center -background "#851765" -extent 256x256 -define icon:auto-resize="256,128,64,48,32,16" desktop/build/icon.ico
+          magick logo.png -resize "448x448>" -gravity center -background "#851765" -extent 512x512 assets/icons/app-icon-512.png
+          magick logo.png -resize "168x168>" -gravity center -background "#851765" -extent 192x192 assets/icons/app-icon-192.png
+          magick logo.png -resize "156x156>" -gravity center -background "#851765" -extent 180x180 assets/icons/apple-touch-icon.png
+
+      - name: Save mobile icons to repository
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/icons/app-icon-512.png assets/icons/app-icon-192.png assets/icons/apple-touch-icon.png
+          if (-not (git diff --cached --quiet)) {
+            git commit -m "Generate proportional mobile app icons"
+            git push
+          }
 
       - name: Install desktop dependencies
         working-directory: desktop

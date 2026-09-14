@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#851765">
+    <title>Manual · Siete Document Portal</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+        body {
+            display: flex;
+            flex-direction: column;
+            color: #172033;
+            background: #eef2f6;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+        .viewer-toolbar {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            padding: calc(10px + env(safe-area-inset-top)) 10px 10px;
+            background: #851765;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+        }
+        .viewer-toolbar a,
+        .viewer-toolbar button {
+            min-height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 10px;
+            color: #851765;
+            background: #ffffff;
+            border: 0;
+            border-radius: 9px;
+            font: inherit;
+            font-size: 0.82rem;
+            font-weight: 750;
+            line-height: 1.15;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .viewer-toolbar a:focus-visible,
+        .viewer-toolbar button:focus-visible {
+            outline: 3px solid #ffb31a;
+            outline-offset: 2px;
+        }
+        #pdfFrame {
+            display: block;
+            flex: 1 1 auto;
+            width: 100%;
+            min-height: 0;
+            border: 0;
+            background: #ffffff;
+        }
+        .viewer-error {
+            display: none;
+            margin: auto;
+            padding: 28px;
+            text-align: center;
+        }
+        @media (max-width: 430px) {
+            .viewer-toolbar { gap: 6px; padding-right: 7px; padding-left: 7px; }
+            .viewer-toolbar a,
+            .viewer-toolbar button { padding: 7px 5px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="viewer-toolbar" aria-label="Document navigation">
+        <button id="backButton" type="button">← Back</button>
+        <a id="manualPageLink" href="/SieteMaintenanceV2/">Manual Page</a>
+        <a href="/SieteMaintenanceV2/">Home</a>
+    </nav>
+
+    <iframe id="pdfFrame" title="PDF manual"></iframe>
+
+    <div class="viewer-error" id="viewerError">
+        <h1>Manual unavailable</h1>
+        <p>This PDF link could not be opened safely.</p>
+    </div>
+
+    <script>
+        (() => {
+            const params = new URLSearchParams(window.location.search);
+            const frame = document.getElementById("pdfFrame");
+            const error = document.getElementById("viewerError");
+            const manualPageLink = document.getElementById("manualPageLink");
+            const backButton = document.getElementById("backButton");
+            const appRoot = "/SieteMaintenanceV2/";
+
+            function safeAppUrl(value, fallback) {
+                try {
+                    const url = new URL(value, window.location.origin);
+
+                    if (
+                        url.origin === window.location.origin &&
+                        url.pathname.startsWith(appRoot)
+                    ) {
+                        return url;
+                    }
+                } catch (_error) {
+                    // Use the safe fallback.
+                }
+
+                return new URL(fallback, window.location.origin);
+            }
+
+            const returnUrl = safeAppUrl(params.get("return"), appRoot);
+            const fileUrl = safeAppUrl(params.get("file"), appRoot);
+
+            manualPageLink.href = returnUrl.href;
+
+            backButton.addEventListener("click", () => {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = returnUrl.href;
+                }
+            });
+
+            if (!fileUrl.pathname.toLowerCase().endsWith(".pdf")) {
+                frame.remove();
+                error.style.display = "block";
+                return;
+            }
+
+            frame.src = fileUrl.href;
+        })();
+    </script>
+</body>
+</html>
