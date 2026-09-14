@@ -1,0 +1,38 @@
+{
+  "id": "/SieteMaintenanceV2/",
+  "name": "Siete Document Portal",
+  "short_name": "Siete Portal",
+  "description": "Maintenance manuals, SOPs, and machine documentation.",
+  "start_url": "/SieteMaintenanceV2/",
+  "scope": "/SieteMaintenanceV2/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#851765",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chips Manuals",
+      "url": "/SieteMaintenanceV2/chips-manuals.html"
+    },
+    {
+      "name": "Tortillas Manuals",
+      "url": "/SieteMaintenanceV2/tortillas-manuals.html"
+    },
+    {
+      "name": "Chips SOPs",
+      "url": "/SieteMaintenanceV2/chips-sops.html"
+    },
+    {
+      "name": "Tortillas SOPs",
+      "url": "/SieteMaintenanceV2/tortillas-sops.html"
+    }
+  ]
+}

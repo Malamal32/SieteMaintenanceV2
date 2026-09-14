@@ -10,8 +10,16 @@
         content="Siete Maintenance documentation portal for SOPs, manuals, and machine information."
     >
 
-    <title>Siete Maintenance</title>
+    <title>Siete Document Portal</title>
 
+    <meta name="theme-color" content="#851765">
+    <meta name="application-name" content="Siete Document Portal">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Siete Portal">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="app-icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -183,17 +191,26 @@
 
         <header class="site-header">
 
-            <h1>Siete Maintenance</h1>
+            <h1>Siete Document Portal</h1>
 
             <img
                 src="logo.png"
-                alt="Siete Maintenance logo"
+                alt="Siete Document Portal logo"
                 class="site-logo"
             >
 
             <p class="site-subtitle">
                 Maintenance Documentation Portal
             </p>
+
+            <button
+                class="pwa-install-button"
+                id="pwaInstallButton"
+                type="button"
+                hidden
+            >
+                Install App
+            </button>
 
         </header>
 
@@ -1386,6 +1403,8 @@
             }
         });
     </script>
+
+    <script src="assets/js/pwa.js"></script>
 
 </body>
 </html>

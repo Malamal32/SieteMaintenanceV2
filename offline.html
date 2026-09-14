@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#851765">
+    <title>Offline · Siete Document Portal</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            color: #172033;
+            background: linear-gradient(135deg, #f7eef5, #ffffff);
+            font-family: "Segoe UI", Arial, sans-serif;
+            text-align: center;
+        }
+        main {
+            width: min(100%, 440px);
+            padding: 32px;
+            background: #ffffff;
+            border: 1px solid #ead7e5;
+            border-radius: 18px;
+            box-shadow: 0 16px 40px rgba(82, 15, 65, 0.14);
+        }
+        img { width: 120px; height: 120px; object-fit: contain; border-radius: 24px; }
+        h1 { margin: 20px 0 10px; color: #851765; font-size: 1.55rem; }
+        p { color: #5f6875; line-height: 1.55; }
+        button {
+            margin-top: 12px;
+            padding: 11px 18px;
+            color: #ffffff;
+            background: #851765;
+            border: 0;
+            border-radius: 999px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="app-icon.svg" alt="">
+        <h1>You’re offline</h1>
+        <p>Reconnect to the internet to load the latest Siete documents. Pages you opened previously may still be available from your browser history.</p>
+        <button type="button" onclick="location.reload()">Try Again</button>
+    </main>
+</body>
+</html>

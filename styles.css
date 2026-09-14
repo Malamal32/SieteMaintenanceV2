@@ -848,3 +848,34 @@ summary:focus-visible {
     }
 
 }
+
+/* =========================
+   Installable App
+========================= */
+
+.pwa-install-button {
+    margin: 16px auto 0;
+    padding: 10px 18px;
+    color: #ffffff;
+    background: #851765;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 5px 14px rgba(82, 15, 65, 0.22);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.pwa-install-button:hover {
+    background: #6f1254;
+}
+
+.pwa-install-button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+}
+
+.pwa-install-button[hidden] {
+    display: none;
+}
