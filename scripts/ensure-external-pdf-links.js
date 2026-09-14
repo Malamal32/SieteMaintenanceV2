@@ -1,11 +1,8 @@
 const fs = require("fs");
-const path = require("path");
 const { execFileSync } = require("child_process");
 
-const RAW_ORIGIN = "https://raw.githubusercontent.com";
-const RAW_PREFIX = "/Malamal32/SieteMaintenanceV2/main/";
-const OPEN_ACTION =
-    "event.preventDefault(); window.open(this.href, '_blank'); return false;";
+const SITE_ORIGIN = "https://malamal32.github.io";
+const APP_ROOT = "/SieteMaintenanceV2/";
 
 const files = execFileSync("git", ["ls-files", "*.html"], {
     encoding: "utf8"
@@ -18,110 +15,51 @@ const pdfAnchor =
 
 let changedFiles = 0;
 let changedLinks = 0;
-let restoredLocalLinks = 0;
-
-function decodeRepositoryPath(pathname) {
-    return pathname
-        .split("/")
-        .map(segment => {
-            try {
-                return decodeURIComponent(segment);
-            } catch (_error) {
-                return segment;
-            }
-        })
-        .join("/");
-}
-
-function encodeRelativePath(pathname) {
-    return pathname
-        .split("/")
-        .map(segment => {
-            if (segment === "." || segment === "..") {
-                return segment;
-            }
-
-            return encodeURIComponent(segment);
-        })
-        .join("/");
-}
 
 for (const file of files) {
+    if (file === "pdf-viewer.html") {
+        continue;
+    }
+
     const original = fs.readFileSync(file, "utf8");
     const pagePath = file.replace(/\\/g, "/");
+    const pageUrl = new URL(pagePath, `${SITE_ORIGIN}${APP_ROOT}`);
 
     const updated = original.replace(
         pdfAnchor,
         (match, attributes, _quote, href) => {
-            let next = attributes;
+            let pdfUrl;
 
             try {
-                const pdfUrl = new URL(href);
-
-                if (
-                    pdfUrl.origin === RAW_ORIGIN &&
-                    pdfUrl.pathname.startsWith(RAW_PREFIX)
-                ) {
-                    const repositoryPath = decodeRepositoryPath(
-                        pdfUrl.pathname.slice(RAW_PREFIX.length)
-                    );
-                    const relativePath = path.posix.relative(
-                        path.posix.dirname(pagePath),
-                        repositoryPath
-                    );
-                    const localHref =
-                        `${encodeRelativePath(relativePath)}${pdfUrl.search}${pdfUrl.hash}`;
-
-                    next = next.replace(
-                        /\bhref\s*=\s*(["'])[^"']*\1/i,
-                        `href="${localHref}"`
-                    );
-                    restoredLocalLinks += 1;
-                }
+                pdfUrl = new URL(href, pageUrl);
             } catch (_error) {
-                // Relative and nonstandard links are already local.
+                return match;
             }
 
-            if (/\btarget\s*=\s*(["'])[^"']*\1/i.test(next)) {
-                next = next.replace(
-                    /\btarget\s*=\s*(["'])[^"']*\1/i,
-                    'target="_blank"'
-                );
-            } else {
-                next += ' target="_blank"';
+            if (
+                pdfUrl.origin !== SITE_ORIGIN ||
+                !pdfUrl.pathname.startsWith(APP_ROOT)
+            ) {
+                return match;
             }
 
-            const relMatch = next.match(
-                /\brel\s*=\s*(["'])([^"']*)\1/i
+            const viewerUrl = new URL(
+                `${APP_ROOT}pdf-viewer.html`,
+                SITE_ORIGIN
             );
 
-            if (relMatch) {
-                const values = new Set(
-                    relMatch[2]
-                        .split(/\s+/)
-                        .filter(Boolean)
-                        .map(value => value.toLowerCase())
-                );
+            viewerUrl.searchParams.set("file", pdfUrl.href);
+            viewerUrl.searchParams.set("return", pageUrl.href);
 
-                values.add("noopener");
-                values.add("noreferrer");
+            let next = attributes.replace(
+                /\bhref\s*=\s*(["'])[^"']*\1/i,
+                `href="${viewerUrl.pathname}${viewerUrl.search}"`
+            );
 
-                next = next.replace(
-                    relMatch[0],
-                    `rel="${Array.from(values).join(" ")}"`
-                );
-            } else {
-                next += ' rel="noopener noreferrer"';
-            }
-
-            if (/\bonclick\s*=\s*(["'])[^"']*\1/i.test(next)) {
-                next = next.replace(
-                    /\bonclick\s*=\s*(["'])[^"']*\1/i,
-                    `onclick="${OPEN_ACTION}"`
-                );
-            } else {
-                next += ` onclick="${OPEN_ACTION}"`;
-            }
+            next = next
+                .replace(/\s+target\s*=\s*(["'])[^"']*\1/gi, "")
+                .replace(/\s+rel\s*=\s*(["'])[^"']*\1/gi, "")
+                .replace(/\s+onclick\s*=\s*(["'])[^"']*\1/gi, "");
 
             const replacement = `<a${next}>`;
 
@@ -140,8 +78,5 @@ for (const file of files) {
 }
 
 console.log(
-    `Updated ${changedLinks} PDF links across ${changedFiles} HTML files.`
-);
-console.log(
-    `Restored ${restoredLocalLinks} PDFs to the faster GitHub Pages URLs.`
+    `Routed ${changedLinks} PDF links through the portal viewer across ${changedFiles} HTML files.`
 );
