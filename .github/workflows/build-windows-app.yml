@@ -43,7 +43,7 @@ jobs:
             choco install imagemagick.app -y
           }
           New-Item -ItemType Directory -Force -Path desktop/build | Out-Null
-          magick logo.png -resize 256x256! desktop/build/icon.ico
+          magick logo.png -resize 224x224 -gravity center -background "#851765" -extent 256x256 desktop/build/icon.ico
 
       - name: Install desktop dependencies
         working-directory: desktop
