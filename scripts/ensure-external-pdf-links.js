@@ -1,10 +1,11 @@
 const fs = require("fs");
+const path = require("path");
 const { execFileSync } = require("child_process");
 
-const SITE_ORIGIN = "https://malamal32.github.io";
-const APP_ROOT = "/SieteMaintenanceV2/";
-const RAW_ROOT =
-    "https://raw.githubusercontent.com/Malamal32/SieteMaintenanceV2/main/";
+const RAW_ORIGIN = "https://raw.githubusercontent.com";
+const RAW_PREFIX = "/Malamal32/SieteMaintenanceV2/main/";
+const OPEN_ACTION =
+    "event.preventDefault(); window.open(this.href, '_blank'); return false;";
 
 const files = execFileSync("git", ["ls-files", "*.html"], {
     encoding: "utf8"
@@ -17,17 +18,30 @@ const pdfAnchor =
 
 let changedFiles = 0;
 let changedLinks = 0;
-let movedOutsideApp = 0;
+let restoredLocalLinks = 0;
 
-function encodeRepositoryPath(pathname) {
+function decodeRepositoryPath(pathname) {
     return pathname
         .split("/")
         .map(segment => {
             try {
-                return encodeURIComponent(decodeURIComponent(segment));
+                return decodeURIComponent(segment);
             } catch (_error) {
-                return encodeURIComponent(segment);
+                return segment;
             }
+        })
+        .join("/");
+}
+
+function encodeRelativePath(pathname) {
+    return pathname
+        .split("/")
+        .map(segment => {
+            if (segment === "." || segment === "..") {
+                return segment;
+            }
+
+            return encodeURIComponent(segment);
         })
         .join("/");
 }
@@ -35,7 +49,6 @@ function encodeRepositoryPath(pathname) {
 for (const file of files) {
     const original = fs.readFileSync(file, "utf8");
     const pagePath = file.replace(/\\/g, "/");
-    const pageUrl = new URL(pagePath, `${SITE_ORIGIN}${APP_ROOT}`);
 
     const updated = original.replace(
         pdfAnchor,
@@ -43,26 +56,30 @@ for (const file of files) {
             let next = attributes;
 
             try {
-                const pdfUrl = new URL(href, pageUrl);
+                const pdfUrl = new URL(href);
 
                 if (
-                    pdfUrl.origin === SITE_ORIGIN &&
-                    pdfUrl.pathname.startsWith(APP_ROOT)
+                    pdfUrl.origin === RAW_ORIGIN &&
+                    pdfUrl.pathname.startsWith(RAW_PREFIX)
                 ) {
-                    const repositoryPath = encodeRepositoryPath(
-                        pdfUrl.pathname.slice(APP_ROOT.length)
+                    const repositoryPath = decodeRepositoryPath(
+                        pdfUrl.pathname.slice(RAW_PREFIX.length)
                     );
-                    const externalUrl =
-                        `${RAW_ROOT}${repositoryPath}${pdfUrl.search}${pdfUrl.hash}`;
+                    const relativePath = path.posix.relative(
+                        path.posix.dirname(pagePath),
+                        repositoryPath
+                    );
+                    const localHref =
+                        `${encodeRelativePath(relativePath)}${pdfUrl.search}${pdfUrl.hash}`;
 
                     next = next.replace(
                         /\bhref\s*=\s*(["'])[^"']*\1/i,
-                        `href="${externalUrl}"`
+                        `href="${localHref}"`
                     );
-                    movedOutsideApp += 1;
+                    restoredLocalLinks += 1;
                 }
             } catch (_error) {
-                // Leave links that cannot be parsed unchanged.
+                // Relative and nonstandard links are already local.
             }
 
             if (/\btarget\s*=\s*(["'])[^"']*\1/i.test(next)) {
@@ -97,6 +114,15 @@ for (const file of files) {
                 next += ' rel="noopener noreferrer"';
             }
 
+            if (/\bonclick\s*=\s*(["'])[^"']*\1/i.test(next)) {
+                next = next.replace(
+                    /\bonclick\s*=\s*(["'])[^"']*\1/i,
+                    `onclick="${OPEN_ACTION}"`
+                );
+            } else {
+                next += ` onclick="${OPEN_ACTION}"`;
+            }
+
             const replacement = `<a${next}>`;
 
             if (replacement !== match) {
@@ -117,5 +143,5 @@ console.log(
     `Updated ${changedLinks} PDF links across ${changedFiles} HTML files.`
 );
 console.log(
-    `Moved ${movedOutsideApp} repository PDFs to GitHub's external document domain.`
+    `Restored ${restoredLocalLinks} PDFs to the faster GitHub Pages URLs.`
 );
