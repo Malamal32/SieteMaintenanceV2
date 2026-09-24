@@ -73,7 +73,7 @@
 <a
     id="functionSettingsDocument"
     class="content-card pending-card"
-    href="/SieteMaintenanceV2/pdf-viewer.html?file=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag%2Fvemag-function-settings.pdf&return=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag.html"
+    href="/SieteMaintenanceV2/pdf-viewer.html?file=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag%2Fvemag-function-settings%2Fvemag-function-settings.pdf&return=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag.html"
     aria-disabled="true">
 <span class="card-icon" aria-hidden="true">⚙️</span>
 
@@ -99,13 +99,13 @@
 </div>
 
 <div class="pending-note">
-<strong>PDF upload path:</strong><br>
+<strong>Preventative Maintenance PDF upload path:</strong><br>
 <code>sops/tortillas/vemag/vemag-preventative-maintenance.pdf</code>
 <br><br>
 Once a PDF with this exact filename is uploaded, this page will automatically enable the Preventative Maintenance button.
 <br><br>
-<strong>Vemag Function Settings upload path:</strong><br>
-<code>sops/tortillas/vemag/vemag-function-settings.pdf</code>
+<strong>Vemag Function Settings PDF upload path:</strong><br>
+<code>sops/tortillas/vemag/vemag-function-settings/vemag-function-settings.pdf</code>
 <br><br>
 Once a PDF with this exact filename is uploaded, this page will automatically enable the Vemag Function Settings button.
 </div>
@@ -123,13 +123,16 @@ Once a PDF with this exact filename is uploaded, this page will automatically en
 const pmDocument = document.getElementById("pmDocument");
 const pmStatusText = document.getElementById("pmStatusText");
 const pmOpenLabel = document.getElementById("pmOpenLabel");
+
 const functionSettingsDocument = document.getElementById("functionSettingsDocument");
 const functionSettingsStatusText = document.getElementById("functionSettingsStatusText");
 const functionSettingsOpenLabel = document.getElementById("functionSettingsOpenLabel");
 
 async function checkPreventativeMaintenanceDocument() {
+    const pdfUrl = "https://malamal32.github.io/SieteMaintenanceV2/sops/tortillas/vemag/vemag-preventative-maintenance.pdf";
+
     try {
-        const response = await fetch(pmDocument.getAttribute("href"), {
+        const response = await fetch(pdfUrl, {
             method: "HEAD",
             cache: "no-store"
         });
@@ -149,7 +152,7 @@ async function checkPreventativeMaintenanceDocument() {
 }
 
 async function checkFunctionSettingsDocument() {
-    const pdfUrl = "https://malamal32.github.io/SieteMaintenanceV2/sops/tortillas/vemag/vemag-function-settings.pdf";
+    const pdfUrl = "https://malamal32.github.io/SieteMaintenanceV2/sops/tortillas/vemag/vemag-function-settings/vemag-function-settings.pdf";
 
     try {
         const response = await fetch(pdfUrl, {
