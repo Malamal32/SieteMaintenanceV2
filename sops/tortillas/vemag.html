@@ -50,7 +50,7 @@
 <p class="section-label">Standard Operating Procedures</p>
 <h2>Available SOPs</h2>
 </div>
-<span class="count-badge">2 SOPs</span>
+<span class="count-badge">3 SOPs</span>
 </div>
 
 <div class="card-list">
@@ -68,6 +68,21 @@
 </span>
 
 <span id="pmOpenLabel" class="open-label">Pending Upload</span>
+</a>
+
+<a
+    id="functionSettingsDocument"
+    class="content-card pending-card"
+    href="/SieteMaintenanceV2/pdf-viewer.html?file=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag%2Fvemag-function-settings.pdf&return=https%3A%2F%2Fmalamal32.github.io%2FSieteMaintenanceV2%2Fsops%2Ftortillas%2Fvemag.html"
+    aria-disabled="true">
+<span class="card-icon" aria-hidden="true">⚙️</span>
+
+<span class="card-info">
+<h3>Vemag Function Settings</h3>
+<p id="functionSettingsStatusText">Document ready for upload.</p>
+</span>
+
+<span id="functionSettingsOpenLabel" class="open-label">Pending Upload</span>
 </a>
 
 <a class="content-card" href="vemag/manufacturer-manuals.html">
@@ -88,6 +103,11 @@
 <code>sops/tortillas/vemag/vemag-preventative-maintenance.pdf</code>
 <br><br>
 Once a PDF with this exact filename is uploaded, this page will automatically enable the Preventative Maintenance button.
+<br><br>
+<strong>Vemag Function Settings upload path:</strong><br>
+<code>sops/tortillas/vemag/vemag-function-settings.pdf</code>
+<br><br>
+Once a PDF with this exact filename is uploaded, this page will automatically enable the Vemag Function Settings button.
 </div>
 
 </section>
@@ -103,6 +123,9 @@ Once a PDF with this exact filename is uploaded, this page will automatically en
 const pmDocument = document.getElementById("pmDocument");
 const pmStatusText = document.getElementById("pmStatusText");
 const pmOpenLabel = document.getElementById("pmOpenLabel");
+const functionSettingsDocument = document.getElementById("functionSettingsDocument");
+const functionSettingsStatusText = document.getElementById("functionSettingsStatusText");
+const functionSettingsOpenLabel = document.getElementById("functionSettingsOpenLabel");
 
 async function checkPreventativeMaintenanceDocument() {
     try {
@@ -125,7 +148,31 @@ async function checkPreventativeMaintenanceDocument() {
     });
 }
 
+async function checkFunctionSettingsDocument() {
+    const pdfUrl = "https://malamal32.github.io/SieteMaintenanceV2/sops/tortillas/vemag/vemag-function-settings.pdf";
+
+    try {
+        const response = await fetch(pdfUrl, {
+            method: "HEAD",
+            cache: "no-store"
+        });
+
+        if (response.ok) {
+            functionSettingsDocument.classList.remove("pending-card");
+            functionSettingsDocument.removeAttribute("aria-disabled");
+            functionSettingsStatusText.textContent = "VEMAG HP20E function access and user-level settings procedure.";
+            functionSettingsOpenLabel.textContent = "Open PDF →";
+            return;
+        }
+    } catch (error) {}
+
+    functionSettingsDocument.addEventListener("click", function(event) {
+        event.preventDefault();
+    });
+}
+
 checkPreventativeMaintenanceDocument();
+checkFunctionSettingsDocument();
 </script>
 
 </body>
