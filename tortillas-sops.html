@@ -43,17 +43,20 @@
 <section class="content-section">
 <div class="section-heading">
 <div><p class="section-label">SOP Library</p><h2>Available Equipment</h2></div>
-<span class="count-badge">11 Machines · 12 SOPs Entries</span>
+<span class="count-badge">12 Machines · 13 SOPs Entries</span>
 </div>
 
 <div class="search-panel">
 <label for="librarySearch" class="section-label">Search SOPs</label>
 <input id="librarySearch" class="library-search" type="search"
 placeholder="Search machine, model, SOP, electrical, drawings, maintenance..." autocomplete="off">
-<p id="searchStatus" class="search-status">Showing all 11 equipment groups.</p>
+<p id="searchStatus" class="search-status">Showing all 12 equipment groups.</p>
 </div>
 
 <div class="library-grid">
+<a class="library-card searchable-card" href="sops/tortillas/stretch-wrapper.html" data-search="stretch wrapper orion sentry lp v-8146 preventative maintenance service drawings spanish espanol quick start operational instructions">
+<div class="library-icon" aria-hidden="true">📋</div><div><p class="machine-label">Stretch Wrapper</p><h3>Stretch Wrapper SOPs</h3><ul><li>Stretch Wrapper Preventative Maintenance (Pending Upload)</li></ul></div><span class="open-arrow" aria-hidden="true">›</span></a>
+
 
 <a class="library-card searchable-card"
    href="sops/tortillas/dacs.html"
@@ -197,7 +200,7 @@ search.addEventListener('input',()=>{
    card.style.display=match?'':'none';
    if(match) visible++;
  });
- status.textContent=terms.length?`Showing ${visible} matching equipment group${visible===1?'':'s'}.`:'Showing all 11 equipment groups.';
+ status.textContent=terms.length?`Showing ${visible} matching equipment group${visible===1?'':'s'}.`:'Showing all 12 equipment groups.';
  empty.style.display=visible===0?'block':'none';
 });
 </script>
